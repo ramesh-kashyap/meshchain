@@ -16,10 +16,11 @@ function App() {
             <Routes>
                 <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
                 <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
+                <Route path="/Dashboard" element={<PublicRoute><Dashboard /></PublicRoute>} />
 
 
 
-                <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+                {/* <Route path="/Dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} /> */}
 
             </Routes>
         </Router>

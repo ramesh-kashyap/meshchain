@@ -1,6 +1,8 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
+
 import PublicRoute from './components/PublicRoute'; // ✅ Import PublicRoute
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -13,6 +15,8 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+                <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
+
 
 
                 <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />

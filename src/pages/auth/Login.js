@@ -19,6 +19,7 @@ const LoginForm = () => {
   };
 
   return (
+    <div className="flex items-center justify-center min-h-screen">
     <div className="bg-[#FFF] max-w-[385px] rounded-[20px] py-6 px-6 md:px-8 w-full shadow-lg">
       <h2 className="text-[28px] font-semibold text-gray-800 text-center mb-2">Log In</h2>
       <p className="text-sm text-[#999] text-center mb-6">
@@ -77,6 +78,8 @@ const LoginForm = () => {
         </span>
       </div>
     </div>
+  </div>
+  
   );
 };
 

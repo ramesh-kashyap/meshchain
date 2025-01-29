@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 
-import PublicRoute from './components/PublicRoute'; // ✅ Import PublicRoute
+import PublicRoute from './components/PublicRoute'; 
 import ProtectedRoute from './components/ProtectedRoute';
 
 

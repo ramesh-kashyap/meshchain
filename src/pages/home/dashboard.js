@@ -1,8 +1,14 @@
 import React from 'react';
+import Header from '../../components/Header';
+
 
 const Dashboard = () => {
     return (
+        
         <div id="__next">
+           
+           <Header />
+
             <div className="Toastify"></div>
             <div className="w-full h-screen bg-gray-100 flex justify-center">
                 <div className="w-full max-w-[1920px] flex bg-white shadow-lg">
@@ -89,6 +95,11 @@ const Dashboard = () => {
                                 </div>
                             </div>
                         </div>
+
+
+
+
+
                         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
                             <div className="w-full mt-10 flex flex-col justify-center text-primary">
                                 <div className="max-w-[1920px] w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

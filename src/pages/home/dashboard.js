@@ -5,9 +5,7 @@ const Dashboard = () => {
 
     return (
         
-        <div id="__next">
-
-                        <div>
+       
 
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
         <div className="w-full mt-10 flex flex-col justify-center text-primary">
@@ -396,10 +394,7 @@ const Dashboard = () => {
                                 marginBottom: '-5px',
                                 opacity: '0.2'
                               }}/>
-                    </a><a target="_blank"
-                        className="relative min-h-[70px] h-full text-left w-full py-4 text-white font-semibold bg-[#003724] rounded-[16px] flex items-center justify-center space-x-2 overflow-hidden"
-                        href="https://docs.meshchain.ai/getting-started/resource-provider-guide/install-dedicated-node">
-                        <div className="absolute top-[-50px] inset-0 flex items-center justify-center">
+                    </a>
                             <div className="w-[140%] h-[150%] rounded-full opacity-30"
                                 style={{
                                     backgroundColor: '#0093E9',
@@ -419,7 +414,7 @@ const Dashboard = () => {
                         </a>
                         <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/team">
                             <img alt="referrals Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
-                            <span className="text-xs mt-1 text-gray-400">sagar</span>
+                            <span className="text-xs mt-1 text-gray-400">Referrals</span>
                         </a>
                         <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/wallet">
                             <img alt="wallet Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
@@ -432,7 +427,6 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 

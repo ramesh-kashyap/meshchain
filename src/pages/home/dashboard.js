@@ -419,7 +419,7 @@ const Dashboard = () => {
                         </a>
                         <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/team">
                             <img alt="referrals Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
-                            <span className="text-xs mt-1 text-gray-400">Referrals</span>
+                            <span className="text-xs mt-1 text-gray-400">sagar</span>
                         </a>
                         <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/wallet">
                             <img alt="wallet Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />

@@ -1,13 +1,10 @@
 import React from 'react';
-import Header from '../../components/Header';
 
 
 const Dashboard = () => {
     return (
         
         <div id="__next">
-           
-           <Header />
 
             <div className="Toastify"></div>
             <div className="w-full h-screen bg-gray-100 flex justify-center">

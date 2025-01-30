@@ -213,7 +213,7 @@ const Dashboard = () => {
                         </a>
                         <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/profile-setting">
                             <img alt="wallet Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
-                            <span className="text-xs mt-1 text-green-500">Profile</span>
+                            <span className="text-xs mt-1 text-green-500">Profil</span>
                         </a>
                     </div>
                 </div>

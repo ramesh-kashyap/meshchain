@@ -125,7 +125,7 @@ const Dashboard = () => {
                                             <h3 className="font-medium mb-1"> Total invested </h3>
                                             <div className="flex flex-row md:flex-col xl:flex-row items-baseline">
                                                 <p className="text-[40px] md:text-[36px] lg:text-[40px] font-semibold mr-2" style={{ fontFamily: 'ClashDisplay-Semibold' }}>
-                                                    <span style={{ fontSize: '25px' }}>400.00</span>
+                                                    <span style={{ fontSize: '25px' }}>800</span>
                                                 </p>
                                             </div>
                                         </div>

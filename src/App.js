@@ -8,6 +8,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 
 import Dashboard from './pages/home/dashboard';
+import Profile from './pages/home/profile';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
                 <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
                 <Route path="/Dashboard" element={<PublicRoute><Dashboard /></PublicRoute>} />
+                <Route path="/Profile" element={<PublicRoute><Profile /></PublicRoute>} />
 
 
 

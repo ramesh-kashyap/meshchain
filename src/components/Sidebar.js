@@ -136,6 +136,7 @@ export default function Header() {
                     src="upnl/assets/icons/icon-profile.svg"
                     style={{ color: "transparent" }}
                   />
+                  
                   <span className="ml-4">Profile</span>
                 </Link>
               </nav>

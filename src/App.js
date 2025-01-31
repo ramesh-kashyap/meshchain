@@ -14,25 +14,9 @@ import Profile from './pages/profile/Profile';
 import Changepass from './pages/profile/Changepass';
 import Email from './pages/profile/Email';
 import Tpassword from './pages/profile/Tpassword';
-
-
-
-
-
-
-
-
-
-
-
-
-
 import PublicRoute from './components/PublicRoute'; 
 import ProtectedRoute from './components/ProtectedRoute';
-
-
 import Dashboard from './pages/home/dashboard';
-import Profile from './pages/home/profile';
 
 
 function App() {

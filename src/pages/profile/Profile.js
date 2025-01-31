@@ -9,30 +9,30 @@ const Profile = () => {
                     <div className="hidden max-h-screen md:flex flex-col text-black transition-all duration-300 justify-between w-[264px]">
                         <div>
                             <div className="flex items-center justify-between border-b border-gray-200">
-                                <a className="flex items-center py-5 pl-[22px] h-[80px]" href="user/dashboard" style={{ width: '119px' }}>
+                                <a className="flex items-center py-5 pl-[22px] h-[80px]" href="/Dashboard" style={{ width: '119px' }}>
                                     <img alt="Logo" loading="lazy" width="163" height="40" decoding="async" src="upnl/assets/icons/logo.png" style={{ color: 'transparent', width: '150px' }} />
                                 </a>
                             </div>
 
                             <nav className="my-5 px-5 text-sm font-medium text-[#555]">
                                 <div className="text-gray-400 text-xs mb-2">MENU</div>
-                                <a className="flex items-center py-2 px-3 mb-2 rounded-md bg-green-500 text-white" href="user/dashboard">
+                                <a className="flex items-center py-2 px-3 mb-2 rounded-md bg-green-500 text-white" href="/Dashboard">
                                     <img alt="overview Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-overview_active.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Overview</span>
                                 </a>
-                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="user/node-power">
+                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="/Nodepower">
                                     <img alt="my_nodes Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Nodes</span>
                                 </a>
-                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="user/team">
+                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="/Team">
                                     <img alt="referrals Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Referrals</span>
                                 </a>
-                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="user/wallet">
+                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="/Wallet">
                                     <img alt="wallet Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Wallet</span>
                                 </a>
-                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="user/profile-setting">
+                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="/Profile">
                                     <img alt="profile Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-profile.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Profile</span>
                                 </a>
@@ -94,14 +94,14 @@ const Profile = () => {
                                 <div className="max-w-[1920px] w-full">
                                     <div className="w-full relative max-w-[669px] pb-[46px] text-center pt-[36px] bg-[#FFF] rounded-[16px] mx-auto mt-[100px]">
                                         <div className="w-[100px] h-[100px] rounded-full mx-auto text-[72px] font-semibold" style={{ background: '#2da9dd', fontFamily: 'ClashDisplay-Semibold' }}>B</div>
-                                        <a href="user/ChangeMail" className="absolute right-10 top-10" id="profileShow">
+                                        <a href="/Email" className="absolute right-10 top-10" id="profileShow">
                                             <img alt="Edit Icon" loading="lazy" width="28" height="28" decoding="async" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                                         </a>
                                         <div className="mx-auto w-full text-primary text-[28px] font-semibold" style={{ fontFamily: 'ClashDisplay-Semibold' }}>Bernila!</div>
                                         <div className="mx-auto w-full text-secondary text-sm mb-[60px]">kumar@gmail.com!</div>
                                         <div className="flex flex-wrap md:flex-nowrap mx-auto w-full justify-center">
                                             <button className="rounded-[30px] h-[48px] py-3 px-6 bg-[#F1F1F1] md:mr-2 mb-2" id="show">Login Password</button>
-                                            <a className="rounded-[30px] h-[48px] py-3 px-6 bg-[#F1F1F1] md:mr-2 flex items-center justify-center" href="user/tpassword">Change Trx Password</a>
+                                            <a className="rounded-[30px] h-[48px] py-3 px-6 bg-[#F1F1F1] md:mr-2 flex items-center justify-center" href="/Tpassword">Change Trx Password</a>
                                         </div>
                                     </div>
                                     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" style={{ display: 'none' }} id="popup">

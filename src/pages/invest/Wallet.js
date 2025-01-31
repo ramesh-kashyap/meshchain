@@ -9,30 +9,30 @@ const Wallet= () => {
                     <div className="hidden max-h-screen md:flex flex-col text-black transition-all duration-300 justify-between w-[264px]">
                         <div>
                             <div className="flex items-center justify-between border-b border-gray-200">
-                                <a className="flex items-center py-5 pl-[22px] h-[80px]" href="user/dashboard" style={{ width: '119px' }}>
+                                <a className="flex items-center py-5 pl-[22px] h-[80px]" href="/Dashboard" style={{ width: '119px' }}>
                                     <img alt="Logo" loading="lazy" width="163" height="40" decoding="async" src="upnl/assets/icons/logo.png" style={{ color: 'transparent', width: '150px' }} />
                                 </a>
                             </div>
 
                             <nav className="my-5 px-5 text-sm font-medium text-[#555]">
                                 <div className="text-gray-400 text-xs mb-2">MENU</div>
-                                <a className="flex items-center py-2 px-3 mb-2 rounded-md bg-green-500 text-white" href="user/dashboard">
+                                <a className="flex items-center py-2 px-3 mb-2 rounded-md bg-green-500 text-white" href="/Dashboard">
                                     <img alt="overview Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-overview_active.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Overview</span>
                                 </a>
-                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="user/node-power">
+                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="/Nodepower">
                                     <img alt="my_nodes Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Nodes</span>
                                 </a>
-                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="user/team">
+                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="/Team">
                                     <img alt="referrals Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Referrals</span>
                                 </a>
-                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="user/wallet">
+                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="/Wallet">
                                     <img alt="wallet Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Wallet</span>
                                 </a>
-                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="user/profile-setting">
+                                <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="/Profile">
                                     <img alt="profile Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-profile.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Profile</span>
                                 </a>
@@ -103,11 +103,11 @@ const Wallet= () => {
                                                 <p className="text-secondary" style={{ paddingBottom: '10px' }}></p>
                                             </div>
                                             <div className="flex flex-row gap-2 items-end">
-                                                <a className="bg-black text-white h-[46px] px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center" href="user/rechargeFunds" style={{ color: 'black' }}>Deposit</a>
-                                                <a href="user/select-network">
+                                                <a className="bg-black text-white h-[46px] px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center" href="/RechargeFunds" style={{ color: 'black' }}>Deposit</a>
+                                                <a href="/NetworkSelect">
                                                     <button className="border border-black h-[46px] text-black px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center">Withdraw</button>
                                                 </a>
-                                                <a href="user/transfer_fund">
+                                                <a href="Transfer">
                                                     <button className="border border-black h-[46px] text-black px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center" onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#000000'; e.currentTarget.style.color = 'white'; }} onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'white'; e.currentTarget.style.color = 'black'; }}>Transfer</button>
                                                 </a>
                                             </div>
@@ -179,7 +179,7 @@ const Wallet= () => {
                         <img alt="referrals Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                         <span className="text-xs mt-1 text-gray-400">Referrals</span>
                     </a>
-                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/wallet">
+                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="/Wallet">
                         <img alt="wallet Icon" loading="lazy" width="20" height="20" decoding="async" className="green-filter" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                         <span className="text-xs mt-1 text-green-500">Wallet</span>
                     </a>

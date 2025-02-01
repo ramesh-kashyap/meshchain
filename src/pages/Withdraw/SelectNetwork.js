@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Withdraw = () => {
+const SelectNetwork = () => {
     return (
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
             <div className="bg-blue-100 text-blue-800 p-4 rounded-md mb-6">
@@ -106,4 +106,4 @@ const Withdraw = () => {
     );
 };
 
-export default Withdraw;
+export default SelectNetwork;

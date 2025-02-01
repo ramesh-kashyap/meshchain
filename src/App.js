@@ -2,16 +2,22 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import Team from './pages/team/Team';
+import Node from './pages/team/Node';
+
 import Profile from './pages/profile/Profile';
 import Tpassword from './pages/profile/Tpassword';
 import Email from './pages/profile/Email';
-import Withdraw from './pages/Withdraw/Withdraw';
+import SelectNetwork from './pages/Withdraw/SelectNetwork';
+import WithdrawReq from './pages/Withdraw/WithdrawReq';
+
 
 
 
 
 import Wallet from './pages/invest/Wallet';
 import RechargeFunds from './pages/invest/RechargeFunds';
+import Transferfund from './pages/invest/Transferfund';
+
 
 
 
@@ -46,12 +52,18 @@ function App() {
                                 {/* Other routes */}
                                 <Route path="/nodedetails" element={<PublicRoute><NodeDetails /></PublicRoute>} />
                                 <Route path="/Team" element={<PublicRoute><Team /></PublicRoute>} />
+                                <Route path="/Node" element={<PublicRoute><Node/></PublicRoute>} />
+
                                 <Route path="/Wallet" element={<PublicRoute><Wallet /></PublicRoute>} />
                                 <Route path="/Profile" element={<PublicRoute><Profile /></PublicRoute>} />
                                 <Route path="/Tpassword" element={<PublicRoute><Tpassword /></PublicRoute>} />
                                 <Route path="/Email" element={<PublicRoute><Email /></PublicRoute>} />
                                 <Route path="/RechargeFunds" element={<PublicRoute><RechargeFunds/></PublicRoute>} />
-                                <Route path="/Withdraw" element={<PublicRoute><Withdraw/></PublicRoute>} />
+                                <Route path="/SelectNetwork" element={<PublicRoute><SelectNetwork/></PublicRoute>} />
+                                <Route path="/WithdrawReq" element={<PublicRoute><WithdrawReq/></PublicRoute>} />
+                                <Route path="/Transferfund" element={<PublicRoute><Transferfund/></PublicRoute>} />
+
+
 
 
 

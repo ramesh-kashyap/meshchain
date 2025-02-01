@@ -5,6 +5,8 @@ import Team from './pages/team/Team';
 import Profile from './pages/profile/Profile';
 import Tpassword from './pages/profile/Tpassword';
 import Email from './pages/profile/Email';
+import Withdraw from './pages/Withdraw/Withdraw';
+
 
 
 
@@ -49,6 +51,8 @@ function App() {
                                 <Route path="/Tpassword" element={<PublicRoute><Tpassword /></PublicRoute>} />
                                 <Route path="/Email" element={<PublicRoute><Email /></PublicRoute>} />
                                 <Route path="/RechargeFunds" element={<PublicRoute><RechargeFunds/></PublicRoute>} />
+                                <Route path="/Withdraw" element={<PublicRoute><Withdraw/></PublicRoute>} />
+
 
 
 

@@ -60,7 +60,7 @@ export default function Header() {
                 </Link>
                 <Link
                   className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                  to="/nodedetails"
+                  to="/Node"
                 >
                   <img
                     alt="my_nodes Icon"

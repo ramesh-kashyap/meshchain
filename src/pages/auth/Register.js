@@ -1,7 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Register = () => {
+    const [user, setUser] = useState({
+        username: "",
+        email: "",
+        password: ""
+    });
+
+    const [message, setMessage] = useState("");
+
+    // Handle Input Change
+    const handleChange = (e) => {
+        setUser({ ...user, [e.target.name]: e.target.value });
+    };
+
+    // Handle Form Submit
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setMessage("");
+
+        try {
+            const response = await fetch("http://localhost:5000/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(user)
+            });
+
+            const data = await response.json();
+            setMessage(data.message);
+
+            if (response.ok) {
+                setUser({ username: "", email: "", password: "" });
+            }
+        } catch (error) {
+            setMessage("Error: Unable to register");
+        }
+    };
+
   return (
+
     <div className="min-h-screen flex flex-col items-center justify-center pt-[100px] bg-gray-50 p-6">
       <div className="absolute top-6 flex justify-between w-full px-6">
         <img
@@ -35,6 +72,8 @@ const Register = () => {
           >
             Sign Up
           </button>
+          {message && <p>{message}</p>}
+
         </div>
       </div>
       <div
@@ -47,20 +86,22 @@ const Register = () => {
         <p className="text-sm text-[#999] text-center mb-6">
           Welcome back! Log in to stay updated with all your nodes and rewards.
         </p>
-        <form action="/registers" method="POST" name="login_frm" id="form-id">
+        <form onSubmit={handleSubmit} name="login_frm" id="form-id">
           <input type="hidden" id="country-name" name="country" value="" />
           <input type="hidden" id="dial-code" name="dialCode" value="" />
           <input type="hidden" id="country_iso" name="country_iso" value="1" />
           <div>
-            <label className="block text-sm font-medium text-gray-700">Phone Number</label>
+            <label className="block text-sm font-medium text-gray-700">Username </label>
             <div className="input-group mb-3">
               <span className="input-group-text" style={{ paddingLeft: "2px", padding: "7px" }} id="phone_code">+1</span>
               <input
                 type="text"
+                value={user.username}
                 className="form-control"
-                placeholder="Enter Phone Number"
-                name="phone"
+                name="username"
+                onChange={handleChange}
                 style={{ height: "38px", width: "70%", borderRadius: "12px", borderColor: "grey", background: "transparent" }}
+                required
               />
             </div>
           </div>
@@ -68,23 +109,26 @@ const Register = () => {
             <label className="block text-sm font-medium text-gray-700">Email</label>
             <input
               type="email"
-              placeholder="Enter Email"
+              value={user.email}
+              onChange={handleChange}
               className="mt-1 h-[48px] block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
               name="email"
               id="emailId"
+              required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Referral Code</label>
+            <label className="block text-sm font-medium text-gray-700">Password</label>
             <input
-              name="sponsor"
+              name="password"
               id="sponsor"
-              type="text"
-              placeholder="Invitation code cannot be empty"
+              type="password"
+              value={user.password}
+              onChange={handleChange}
               className="mt-1 h-[48px] block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
             />
           </div>
-          <div>
+          {/* <div>
             <label className="block text-sm font-medium text-gray-700">Password</label>
             <input
               name="password"
@@ -92,8 +136,8 @@ const Register = () => {
               placeholder="Password"
               className="mt-1 h-[48px] block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
             />
-          </div>
-          <div>
+          </div> */}
+          {/* <div>
             <label className="block text-sm font-medium text-gray-700">Repeat Password</label>
             <input
               name="password_confirmation"
@@ -102,7 +146,7 @@ const Register = () => {
               placeholder="Confirm password"
               className="mt-1 h-[48px] block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
             />
-          </div>
+          </div> */}
           <div>
             <label className="block text-sm font-medium text-gray-700">Captcha Code</label>
             <input

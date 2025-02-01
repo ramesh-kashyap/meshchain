@@ -47,7 +47,7 @@ const Node = () => {
                         </div>
                     </div>
                     <div className="space-y-4">
-                        <a href="http://127.0.0.1:8000/user/node_power_data">
+                        <a href="/nodedetails">
                             <div className="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
                                 <div className="hidden md:grid grid-cols-5 lg:grid-cols-6 items-center">
                                     <div className="flex items-center space-x-3">

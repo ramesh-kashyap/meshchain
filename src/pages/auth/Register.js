@@ -107,7 +107,6 @@ const Register = () => {
                 name="username"
                 onChange={handleChange}
                 style={{ height: "38px", width: "70%", borderRadius: "12px", borderColor: "grey", background: "transparent" }}
-                required
               />
             </div>
           </div>
@@ -120,7 +119,6 @@ const Register = () => {
               className="mt-1 h-[48px] block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
               name="email"
               id="emailId"
-              required
             />
           </div>
           <div>

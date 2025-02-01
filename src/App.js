@@ -1,6 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
+import Team from './pages/team/Team';
+import Profile from './pages/profile/Profile';
+import Tpassword from './pages/profile/Tpassword';
+import Email from './pages/profile/Email';
+import Withdraw from './pages/Withdraw/Withdraw';
+
+
+
+
+import Wallet from './pages/invest/Wallet';
+import RechargeFunds from './pages/invest/RechargeFunds';
+
+
+
 
 import PublicRoute from './components/PublicRoute'; 
 // import ProtectedRoute from './components/ProtectedRoute';
@@ -47,7 +61,6 @@ function App() {
 
                                 <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
                                 <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
-
                             </Routes>
                         </div>
                     </div>

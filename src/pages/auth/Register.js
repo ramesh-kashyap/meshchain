@@ -1,45 +1,51 @@
 import React, { useState } from "react";
 
 const Register = () => {
-    const [user, setUser] = useState({
-        username: "",
-        email: "",
-        password: ""
-    });
+  const [user, setUser] = useState({
+      username: "",
+      email: "",
+      password: ""
+  });
 
-    const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
-    // Handle Input Change
-    const handleChange = (e) => {
-        setUser({ ...user, [e.target.name]: e.target.value });
-    };
+  // Input Change Handler
+  const handleChange = (e) => {
+      setUser({ ...user, [e.target.name]: e.target.value });
+  };
 
-    // Handle Form Submit
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setMessage("");
+  // Form Submit Handler
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      setMessage("");  // Clear previous success message
+      setError("");    // Clear previous error message
 
-        try {
-            const response = await fetch("http://localhost:5000/register", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(user)
-            });
+      try {
+          const response = await fetch("http://localhost:5000/register", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(user)
+          });
 
-            const data = await response.json();
-            setMessage(data.message);
+          const data = await response.json();
 
-            if (response.ok) {
-                setUser({ username: "", email: "", password: "" });
-            }
-        } catch (error) {
-            setMessage("Error: Unable to register");
-        }
-    };
+          if (!response.ok) {
+              throw new Error(data.error || "Something went wrong");
+          }
+
+          setMessage(data.success);
+          setUser({ username: "", email: "", password: "" }); // Clear form after success
+      } catch (error) {
+          setError(error.message);
+      }
+  };
 
   return (
 
     <div className="min-h-screen flex flex-col items-center justify-center pt-[100px] bg-gray-50 p-6">
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      {message && <p style={{ color: "green" }}>{message}</p>}
       <div className="absolute top-6 flex justify-between w-full px-6">
         <img
           alt="MeshNode Logo"
@@ -72,7 +78,7 @@ const Register = () => {
           >
             Sign Up
           </button>
-          {message && <p>{message}</p>}
+          
 
         </div>
       </div>
@@ -87,9 +93,9 @@ const Register = () => {
           Welcome back! Log in to stay updated with all your nodes and rewards.
         </p>
         <form onSubmit={handleSubmit} name="login_frm" id="form-id">
-          <input type="hidden" id="country-name" name="country" value="" />
+          {/* <input type="hidden" id="country-name" name="country" value="" />
           <input type="hidden" id="dial-code" name="dialCode" value="" />
-          <input type="hidden" id="country_iso" name="country_iso" value="1" />
+          <input type="hidden" id="country_iso" name="country_iso" value="1" /> */}
           <div>
             <label className="block text-sm font-medium text-gray-700">Username </label>
             <div className="input-group mb-3">
@@ -147,7 +153,7 @@ const Register = () => {
               className="mt-1 h-[48px] block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
             />
           </div> */}
-          <div>
+          {/* <div>
             <label className="block text-sm font-medium text-gray-700">Captcha Code</label>
             <input
               type="text"
@@ -155,7 +161,7 @@ const Register = () => {
               name="captcha"
               placeholder="Captcha Code"
             />
-          </div>
+          </div> */}
           <div className="flex items-center justify-center mt-4">
             <button
               type="submit"

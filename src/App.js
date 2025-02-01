@@ -22,9 +22,9 @@ function App() {
                 <div className="Toastify"></div>
                 <div className="w-full h-screen flex justify-center">
                     <div className="w-full max-w-[1920px] flex bg-white shadow-lg">
-                        <Sidebar />
+                        {/* <Sidebar /> */}
                         <div className="flex-1 flex flex-col text-black bg-[#F1F1F1] h-screen">
-                            <Header />
+                            {/* <Header /> */}
                             {/* Main content should be routed here */}
                             <Routes>
                                 {/* Default route for Dashboard */}

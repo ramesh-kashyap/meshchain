@@ -7,7 +7,7 @@ const Profile = () => {
             <div className="w-full h-screen bg-gray-100 flex justify-center">
                 <div className="w-full max-w-[1920px] flex bg-white shadow-lg">
                     <div className="hidden max-h-screen md:flex flex-col text-black transition-all duration-300 justify-between w-[264px]">
-                        <div>
+                        <div>as
                             <div className="flex items-center justify-between border-b border-gray-200">
                                 <a className="flex items-center py-5 pl-[22px] h-[80px]" href="/Dashboard" style={{ width: '119px' }}>
                                     <img alt="Logo" loading="lazy" width="163" height="40" decoding="async" src="upnl/assets/icons/logo.png" style={{ color: 'transparent', width: '150px' }} />

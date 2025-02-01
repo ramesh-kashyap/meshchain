@@ -2,14 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
-import Nodepower from './pages/team/Nodepower';
-import Nodepowerdata from './pages/team/Nodepowerdata';
 import Team from './pages/team/Team';
-import Wallet from './pages/invest/Wallet';
-import RechargeFunds from './pages/invest/RechargeFunds';
-import NetworkSelect from './pages/Withdraw/NetworkSelect';
-import Withdraw from './pages/Withdraw/Withdraw';
-import Transfer from './pages/Withdraw/Transfer';
 import Profile from './pages/profile/Profile';
 import Tpassword from './pages/profile/Tpassword';
 import Email from './pages/profile/Email';
@@ -69,7 +62,6 @@ function App() {
 
                                 <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
                                 <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
-
                             </Routes>
                         </div>
                     </div>

@@ -20,7 +20,7 @@ const Profile = () => {
                         <div className="w-[100px] h-[100px] rounded-full mx-auto text-[72px] font-semibold" style={{ background: '#2da9dd', fontFamily: 'ClashDisplay-Semibold' }}>
                             B
                         </div>
-                        <a href="http://127.0.0.1:8000/user/ChangeMail" className="absolute right-10 top-10" id="profileShow">
+                        <a href="/Email" className="absolute right-10 top-10" id="profileShow">
                             <img alt="Edit Icon" loading="lazy" width="28" height="28" src="http://127.0.0.1:8000/upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                         </a>
                         <div className="mx-auto w-full text-primary text-[28px] font-semibold" style={{ fontFamily: 'ClashDisplay-Semibold' }}>
@@ -33,7 +33,7 @@ const Profile = () => {
                             <button className="rounded-[30px] h-[48px] py-3 px-6 bg-[#F1F1F1] md:mr-2 mb-2" onClick={handlePasswordPopupToggle}>
                                 Login Password
                             </button>
-                            <a className="rounded-[30px] h-[48px] py-3 px-6 bg-[#F1F1F1] md:mr-2 flex items-center justify-center" href="http://127.0.0.1:8000/user/tpassword">
+                            <a className="rounded-[30px] h-[48px] py-3 px-6 bg-[#F1F1F1] md:mr-2 flex items-center justify-center" href="/Tpassword">
                                 Change Trx Password
                             </a>
                         </div>

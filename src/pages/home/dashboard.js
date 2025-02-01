@@ -28,6 +28,8 @@ const Dashboard = () => {
                     </div>
                  </div>
               </div>
+
+              
               <div className="bg-white p-6 rounded-[16px] max-h-[226px] h-full flex flex-col items-left">
                  <div className="flex items-center justify-left mb-4">
                     <div className="bg-green-100 rounded-full p-2"><img alt="Today's Rewards Icon" loading="lazy" width="32"

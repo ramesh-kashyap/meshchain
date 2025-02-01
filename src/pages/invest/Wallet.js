@@ -14,11 +14,11 @@ const Wallet = () => {
                                 <p className="text-secondary" style={{ paddingBottom: '10px' }}></p>
                             </div>
                             <div className="flex flex-row gap-2 items-end">
-                                <a className="bg-black text-white h-[46px] px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center" href="http://127.0.0.1:8000/user/rechargeFunds" style={{ color: 'black' }}>Deposit</a>
-                                <a href="http://127.0.0.1:8000/user/select-network">
+                                <a className="bg-black text-white h-[46px] px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center" href="/RechargeFunds" style={{ color: 'black' }}>Deposit</a>
+                                <a href="/SelectNetwork">
                                     <button className="border border-black h-[46px] text-black px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center">Withdraw</button>
                                 </a>
-                                <a href="http://127.0.0.1:8000/user/transfer_fund">
+                                <a href="/Transferfund">
                                     <button className="border border-black h-[46px] text-black px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center"
                                         onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#000000'; e.currentTarget.style.color = 'white'; }}
                                         onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'white'; e.currentTarget.style.color = 'black'; }}>

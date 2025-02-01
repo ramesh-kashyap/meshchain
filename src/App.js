@@ -11,9 +11,15 @@ import NetworkSelect from './pages/Withdraw/NetworkSelect';
 import Withdraw from './pages/Withdraw/Withdraw';
 import Transfer from './pages/Withdraw/Transfer';
 import Profile from './pages/profile/Profile';
-import Changepass from './pages/profile/Changepass';
-import Email from './pages/profile/Email';
 import Tpassword from './pages/profile/Tpassword';
+import Email from './pages/profile/Email';
+
+
+
+import Wallet from './pages/invest/Wallet';
+
+
+
 import PublicRoute from './components/PublicRoute'; 
 // import ProtectedRoute from './components/ProtectedRoute';
 
@@ -43,6 +49,16 @@ function App() {
                                 
                                 {/* Other routes */}
                                 <Route path="/nodedetails" element={<PublicRoute><NodeDetails /></PublicRoute>} />
+                                <Route path="/Team" element={<PublicRoute><Team /></PublicRoute>} />
+                                <Route path="/Wallet" element={<PublicRoute><Wallet /></PublicRoute>} />
+                                <Route path="/Profile" element={<PublicRoute><Profile /></PublicRoute>} />
+                                <Route path="/Tpassword" element={<PublicRoute><Tpassword /></PublicRoute>} />
+                                <Route path="/Email" element={<PublicRoute><Email /></PublicRoute>} />
+
+
+
+
+
                                 <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
                                 <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
 

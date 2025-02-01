@@ -1,7 +1,12 @@
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
+import Team from './pages/team/Team';
+import Profile from './pages/profile/Profile';
+
+import Wallet from './pages/invest/Wallet';
+
+
 
 import PublicRoute from './components/PublicRoute'; 
 // import ProtectedRoute from './components/ProtectedRoute';
@@ -22,9 +27,9 @@ function App() {
                 <div className="Toastify"></div>
                 <div className="w-full h-screen flex justify-center">
                     <div className="w-full max-w-[1920px] flex bg-white shadow-lg">
-                        {/* <Sidebar /> */}
+                        <Sidebar />
                         <div className="flex-1 flex flex-col text-black bg-[#F1F1F1] h-screen">
-                            {/* <Header /> */}
+                            <Header />
                             {/* Main content should be routed here */}
                             <Routes>
                                 {/* Default route for Dashboard */}
@@ -32,6 +37,12 @@ function App() {
                                 
                                 {/* Other routes */}
                                 <Route path="/nodedetails" element={<PublicRoute><NodeDetails /></PublicRoute>} />
+                                <Route path="/Team" element={<PublicRoute><Team /></PublicRoute>} />
+                                <Route path="/Wallet" element={<PublicRoute><Wallet /></PublicRoute>} />
+                                <Route path="/Profile" element={<PublicRoute><Profile /></PublicRoute>} />
+
+
+
                                 <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
                                 <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
 

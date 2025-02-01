@@ -3,6 +3,10 @@ import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import Team from './pages/team/Team';
 import Profile from './pages/profile/Profile';
+import Tpassword from './pages/profile/Tpassword';
+import Email from './pages/profile/Email';
+
+
 
 import Wallet from './pages/invest/Wallet';
 
@@ -40,6 +44,10 @@ function App() {
                                 <Route path="/Team" element={<PublicRoute><Team /></PublicRoute>} />
                                 <Route path="/Wallet" element={<PublicRoute><Wallet /></PublicRoute>} />
                                 <Route path="/Profile" element={<PublicRoute><Profile /></PublicRoute>} />
+                                <Route path="/Tpassword" element={<PublicRoute><Tpassword /></PublicRoute>} />
+                                <Route path="/Email" element={<PublicRoute><Email /></PublicRoute>} />
+
+
 
 
 

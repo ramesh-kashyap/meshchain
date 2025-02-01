@@ -29,7 +29,7 @@ const Dashboard = () => {
                  </div>
               </div>
 
-              
+
               <div className="bg-white p-6 rounded-[16px] max-h-[226px] h-full flex flex-col items-left">
                  <div className="flex items-center justify-left mb-4">
                     <div className="bg-green-100 rounded-full p-2"><img alt="Today's Rewards Icon" loading="lazy" width="32"
@@ -335,6 +335,8 @@ const Dashboard = () => {
            </div>
         </div>
      </div>
+
+     
      <div className="flex space-x-4 mt-6">
         <div className="flex items-center"><span
            className="w-[22px] h-[22px] bg-green-500 rounded-full mr-2"></span><span

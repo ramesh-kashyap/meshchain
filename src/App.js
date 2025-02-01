@@ -9,6 +9,8 @@ import Email from './pages/profile/Email';
 
 
 import Wallet from './pages/invest/Wallet';
+import RechargeFunds from './pages/invest/RechargeFunds';
+
 
 
 
@@ -46,6 +48,8 @@ function App() {
                                 <Route path="/Profile" element={<PublicRoute><Profile /></PublicRoute>} />
                                 <Route path="/Tpassword" element={<PublicRoute><Tpassword /></PublicRoute>} />
                                 <Route path="/Email" element={<PublicRoute><Email /></PublicRoute>} />
+                                <Route path="/RechargeFunds" element={<PublicRoute><RechargeFunds/></PublicRoute>} />
+
 
 
 

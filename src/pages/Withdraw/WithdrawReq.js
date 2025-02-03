@@ -37,7 +37,7 @@ const WithdrawReq = () => {
             <div>
                 <div className="flex justify-between">
                     <span className="text-white text-sm rounded-[22px] h-[33px] px-3 bg-black mb-4 mt-10 flex items-center space-x-2 cursor-pointer">
-                        <img alt="Back Icons" loading="lazy" width="17" height="12" src="http://127.0.0.1:8000/upnl/assets/icons/icon-back.svg" />
+                        <img alt="Back Icons" loading="lazy" width="17" height="12" src="upnl/assets/icons/icon-back.svg" />
                         <span>Back</span>
                     </span>
                 </div>
@@ -47,7 +47,7 @@ const WithdrawReq = () => {
                         <br /><br />
                         <div className="flex justify-between items-center w-full bg-[#F9F9F9] rounded-[27px] px-[40px] max-sm:px-[20px] py-[4px] max-sm:py-[10px] text-[14px] text-[#999999] my-4 sm:my-6 sm:py-6 max-sm:gap-0">
                             <span className="text-center text-[#171717] cursor-pointer">Select token</span>
-                            <img alt="right-arrow" loading="lazy" width="30" height="30" src="http://127.0.0.1:8000/upnl/assets/icons/right-arrow.svg" />
+                            <img alt="right-arrow" loading="lazy" width="30" height="30" src="upnl/assets/icons/right-arrow.svg" />
                             <span className="text-center text-[#171717] cursor-pointer">Withdraw details</span>
                         </div>
                         <br />
@@ -55,7 +55,7 @@ const WithdrawReq = () => {
                             <div className="relative py-[20px] md:py-[30px]">
                                 <div className="w-full h-[2px] bg-[#DFDFDF]"></div>
                                 <div className="absolute flex items-center gap-1 translate-x-[-50%] translate-y-[-50%] top-[50%] left-[50%] bg-white px-2" style={{ marginLeft: '313px' }}>
-                                    <img alt="USDT logo" loading="lazy" width="30" height="30" src="http://127.0.0.1:8000/upnl/assets/icons/logo_usdt_2.svg" />
+                                    <img alt="USDT logo" loading="lazy" width="30" height="30" src="upnl/assets/icons/logo_usdt_2.svg" />
                                     <span className="text-[20px] font-bold">USDT</span>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@ const WithdrawReq = () => {
                         <div className="space-y-4 h-full">
                             <div className="flex h-full justify-center items-center w-full text-secondary">
                                 <div className="w-full text-center">
-                                    <img alt="Icon Empty" loading="lazy" width="64" height="40" src="http://127.0.0.1:8000/upnl/assets/images/empty_state.svg" />
+                                    <img alt="Icon Empty" loading="lazy" width="64" height="40" src="upnl/assets/images/empty_state.svg" />
                                     <span>No transactions found</span>
                                 </div>
                             </div>

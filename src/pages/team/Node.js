@@ -6,7 +6,7 @@ const Node = () => {
             <div className="w-full mt-10 flex justify-center text-primary">
                 <div className="w-full max-w-[1440px] rounded-lg">
                     <div className="flex justify-between mb-4 items-center">
-                        <a href="http://127.0.0.1:8000/user/subscribe">
+                        <a href="user/subscribe">
                             <button className="px-3 flex items-center h-[34px] bg-[#171717] rounded-[22px] text-[14px] text-white">
                                 <img
                                     alt="Add Node Icon"
@@ -14,7 +14,7 @@ const Node = () => {
                                     width="16"
                                     height="16"
                                     className="mr-1"
-                                    src="http://127.0.0.1:8000/upnl/assets/icons/add_node.svg"
+                                    src="upnl/assets/icons/add_node.svg"
                                 />
                                 New Node
                             </button>
@@ -26,7 +26,7 @@ const Node = () => {
                                     loading="lazy"
                                     width="16"
                                     height="16"
-                                    src="http://127.0.0.1:8000/upnl/assets/icons/bars-filter.svg"
+                                    src="upnl/assets/icons/bars-filter.svg"
                                 />
                             </button>
                         </div>
@@ -57,7 +57,7 @@ const Node = () => {
                                                 loading="lazy"
                                                 width="16"
                                                 height="16"
-                                                src="http://127.0.0.1:8000/upnl/assets/icons/icon-referrals.svg"
+                                                src="upnl/assets/icons/icon-referrals.svg"
                                             />
                                         </div>
                                         <div>
@@ -88,7 +88,7 @@ const Node = () => {
                                                 loading="lazy"
                                                 width="16"
                                                 height="16"
-                                                src="http://127.0.0.1:8000/upnl/assets/icons/icon-referrals.svg"
+                                                src="upnl/assets/icons/icon-referrals.svg"
                                             />
                                         </div>
                                         <div>
@@ -104,7 +104,7 @@ const Node = () => {
                                                 width="16"
                                                 height="16"
                                                 className="mr-1"
-                                                src="http://127.0.0.1:8000/upnl/assets/icons/icon-referrals.svg"
+                                                src="upnl/assets/icons/icon-referrals.svg"
                                             />
                                             Online
                                         </span>
@@ -120,55 +120,55 @@ const Node = () => {
                 </div>
             </div>
             <div className="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg">
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/dashboard">
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/dashboard">
                     <img
                         alt="overview Icon"
                         loading="lazy"
                         width="20"
                         height="20"
-                        src="http://127.0.0.1:8000/upnl/assets/icons/icon-overview.svg"
+                        src="upnl/assets/icons/icon-overview.svg"
                     />
                     <span className="text-xs mt-1 text-gray-400">Overview</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/node-power">
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/node-power">
                     <img
                         alt="my_nodes Icon"
                         loading="lazy"
                         width="20"
                         height="20"
-                        src="http://127.0.0.1:8000/upnl/assets/icons/icon-nodes.svg"
+                        src="upnl/assets/icons/icon-nodes.svg"
                     />
                     <span className="text-xs mt-1 text-gray-400">Nodes</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/team">
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/team">
                     <img
                         alt="referrals Icon"
                         loading="lazy"
                         width="20"
                         height="20"
-                        src="http://127.0.0.1:8000/upnl/assets/icons/icon-referrals.svg"
+                        src="upnl/assets/icons/icon-referrals.svg"
                     />
                     <span className="text-xs mt-1 text-gray-400">Referrals</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/wallet">
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/wallet">
                     <img
                         alt="wallet Icon"
                         loading="lazy"
                         width="20"
                         height="20"
                         className="green-filter"
-                        src="http://127.0.0.1:8000/upnl/assets/icons/icon-wallet.svg"
+                        src="upnl/assets/icons/icon-wallet.svg"
                     />
                     <span className="text-xs mt-1 text-green-500">Wallet</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/profile-setting">
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/profile-setting">
                     <img
                         alt="profile Icon"
                         loading="lazy"
                         width="20"
                         height="20"
                         className="green-filter"
-                        src="http://127.0.0.1:8000/upnl/assets/icons/icon-wallet.svg"
+                        src="upnl/assets/icons/icon-wallet.svg"
                     />
                     <span className="text-xs mt-1 text-green-500">Profile</span>
                 </a>

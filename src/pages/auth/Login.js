@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const LoginForm = () => {
+const Login = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -100,4 +100,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default Login;

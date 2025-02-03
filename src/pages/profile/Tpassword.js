@@ -15,7 +15,7 @@ const Tpassword = () => {
                         <center>
                             <h3 className="font-semibold mb-3">Change Transaction Password</h3>
                         </center>
-                        <form method="post" action="http://127.0.0.1:8000/user/change-trxpasswword" onSubmit={handleSubmit}>
+                        <form method="post" action="user/change-trxpasswword" onSubmit={handleSubmit}>
                             <input type="hidden" name="_token" value="KKX0De0b1aF69ZyhV4ctcUqPaDEGxVrpSEIoZILh" />
                             <div className="mb-4">
                                 <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email</label>
@@ -44,7 +44,7 @@ const Tpassword = () => {
                                 </button>
                                 <br />
                                 <br />
-                                <a href="http://127.0.0.1:8000/user/profile-setting" className="w-full h-[46px] px-4 py-2 rounded-[30px] bg-gray-300 inline-block text-center">
+                                <a href="user/profile-setting" className="w-full h-[46px] px-4 py-2 rounded-[30px] bg-gray-300 inline-block text-center">
                                     Cancel
                                 </a>
                             </div>
@@ -53,24 +53,24 @@ const Tpassword = () => {
                 </div>
             </div>
             <div className="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg">
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/dashboard">
-                    <img alt="overview Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-overview.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/dashboard">
+                    <img alt="overview Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-overview.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-gray-400">Overview</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/node-power">
-                    <img alt="my_nodes Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/node-power">
+                    <img alt="my_nodes Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-gray-400">Nodes</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/team">
-                    <img alt="referrals Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/team">
+                    <img alt="referrals Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-gray-400">Referrals</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/wallet">
-                    <img alt="wallet Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/wallet">
+                    <img alt="wallet Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-green-500">Wallet</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/profile-setting">
-                    <img alt="profile Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/profile-setting">
+                    <img alt="profile Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-green-500">Profile</span>
                 </a>
             </div>

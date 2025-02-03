@@ -102,7 +102,7 @@ const Email = () => {
                                 </button>
                                 <br /><br />
                                 <a
-                                    href="http://127.0.0.1:8000/user/profile-setting"
+                                    href="user/profile-setting"
                                     className="w-full h-[46px] px-4 py-2 rounded-[30px] bg-gray-300 inline-block text-center"
                                 >
                                     Cancel

@@ -21,7 +21,7 @@ const Profile = () => {
                             B
                         </div>
                         <a href="/Email" className="absolute right-10 top-10" id="profileShow">
-                            <img alt="Edit Icon" loading="lazy" width="28" height="28" src="http://127.0.0.1:8000/upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
+                            <img alt="Edit Icon" loading="lazy" width="28" height="28" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                         </a>
                         <div className="mx-auto w-full text-primary text-[28px] font-semibold" style={{ fontFamily: 'ClashDisplay-Semibold' }}>
                             Bernila!
@@ -42,7 +42,7 @@ const Profile = () => {
                     {/* Change Password Modal */}
                     {isPasswordPopupOpen && (
                         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                            <form method="post" action="http://127.0.0.1:8000/user/edit-password">
+                            <form method="post" action="user/edit-password">
                                 <input type="hidden" name="_token" value="KKX0De0b1aF69ZyhV4ctcUqPaDEGxVrpSEIoZILh" />
                                 <div className="bg-white rounded-[20px] w-[400px] px-8 pt-10 pb-6 text-center relative">
                                     <h2 className="text-lg font-semibold">Change Password</h2>
@@ -69,7 +69,7 @@ const Profile = () => {
                                     </div>
                                     <div className="mt-10">
                                         <button className="w-full h-[46px] mb-2 px-4 py-2 rounded-[30px] bg-black text-white">Confirm</button>
-                                        <a href="http://127.0.0.1:8000/user/profile-setting" className="w-full h-[46px] px-4 py-2 rounded-[30px] bg-gray-300 inline-block text-center">Cancel</a>
+                                        <a href="user/profile-setting" className="w-full h-[46px] px-4 py-2 rounded-[30px] bg-gray-300 inline-block text-center">Cancel</a>
                                     </div>
                                 </div>
                             </form>
@@ -102,24 +102,24 @@ const Profile = () => {
 
             {/* Bottom Navigation Bar */}
             <div className="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg">
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/dashboard">
-                    <img alt="overview Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-overview.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/dashboard">
+                    <img alt="overview Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-overview.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-gray-400">Overview</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/node-power">
-                    <img alt="my_nodes Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/node-power">
+                    <img alt="my_nodes Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-gray-400">Nodes</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/team">
-                    <img alt="referrals Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/team">
+                    <img alt="referrals Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-gray-400">Referrals</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/wallet">
-                    <img alt="wallet Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/wallet">
+                    <img alt="wallet Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-green-500">Wallet</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/profile-setting">
-                    <img alt="wallet Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/profile-setting">
+                    <img alt="wallet Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-green-500">Profile</span>
                 </a>
             </div>

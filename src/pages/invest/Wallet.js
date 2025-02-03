@@ -49,7 +49,7 @@ const Wallet = () => {
                                 ].map((asset, index) => (
                                     <tr className="border-t h-[72px]" key={index}>
                                         <td className="py-4 flex items-center space-x-2 lg:space-x-3 text-sm">
-                                            <img alt={`${asset.name} logo`} loading="lazy" width="40" height="40" src={`http://127.0.0.1:8000/upnl/assets/icons/${asset.logo}`} style={{ color: 'transparent' }} />
+                                            <img alt={`${asset.name} logo`} loading="lazy" width="40" height="40" src={`upnl/assets/icons/${asset.logo}`} style={{ color: 'transparent' }} />
                                             <span>{asset.name}</span>
                                         </td>
                                         <td className="py-4 text-right text-sm"><span>{asset.holdings}</span></td>
@@ -79,12 +79,12 @@ const Wallet = () => {
                             <div className="flex justify-between items-center text-sm mb-4" key={index}>
                                 <div className="flex">
                                     <div className="flex items-center justify-center rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
-                                        <img alt="IN Icon" loading="lazy" width="28" height="28" src="http://127.0.0.1:8000/upnl/assets/icons/icon_down.svg" style={{ color: 'transparent' }} />
+                                        <img alt="IN Icon" loading="lazy" width="28" height="28" src="upnl/assets/icons/icon_down.svg" style={{ color: 'transparent' }} />
                                     </div>
                                     <div className="ml-3">
                                         <p className="font-medium">
                                             {history.type}
-                                            <a target="_blank" href={`http://127.0.0.1:8000/user/viewdetail/${history.detailLink}`} style={{ marginLeft: '10px', color: '#ffffff', textTransform: 'lowercase' }}>
+                                            <a target="_blank" href={`user/viewdetail/${history.detailLink}`} style={{ marginLeft: '10px', color: '#ffffff', textTransform: 'lowercase' }}>
                                                 <i className="fa fa-share-alt" aria-hidden="true"></i>
                                             </a>
                                         </p>
@@ -101,24 +101,24 @@ const Wallet = () => {
                 </div>
             </div>
             <div className="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg">
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/dashboard">
-                    <img alt="overview Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-overview.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/dashboard">
+                    <img alt="overview Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-overview.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-gray-400">Overview</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/node-power">
-                    <img alt="my_nodes Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/node-power">
+                    <img alt="my_nodes Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-gray-400">Nodes</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/team">
-                    <img alt="referrals Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/team">
+                    <img alt="referrals Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-gray-400">Referrals</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/wallet">
-                    <img alt="wallet Icon" loading="lazy" width="20" height="20" className="green-filter" src="http://127.0.0.1:8000/upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/wallet">
+                    <img alt="wallet Icon" loading="lazy" width="20" height="20" className="green-filter" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-green-500">Wallet</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/profile-setting">
-                    <img alt="wallet Icon" loading="lazy" width="20" height="20" className="green-filter" src="http://127.0.0.1:8000/upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/profile-setting">
+                    <img alt="wallet Icon" loading="lazy" width="20" height="20" className="green-filter" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-green-500">Profile</span>
                 </a>
             </div>

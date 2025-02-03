@@ -18,6 +18,7 @@ const Footer = () => {
           height="20"
           decoding="async"
           className=""
+          
           src="upnl/assets/icons/icon-overview.svg"
         />
         <span className="text-xs mt-1 text-white">Nodes</span>

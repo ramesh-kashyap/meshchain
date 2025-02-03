@@ -23,7 +23,7 @@ import Transferfund from './pages/invest/Transferfund';
 
 
 import PublicRoute from './components/PublicRoute'; 
-// import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute from './components/ProtectedRoute';
 
 import Dashboard from './pages/home/dashboard';
 // import Profile from './pages/home/profile';
@@ -47,7 +47,7 @@ function App() {
                             {/* Main content should be routed here */}
                             <Routes>
                                 {/* Default route for Dashboard */}
-                                <Route path="/" element={<PublicRoute><Dashboard /></PublicRoute>} />
+                                <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
                                 
                                 {/* Other routes */}
                                 <Route path="/nodedetails" element={<PublicRoute><NodeDetails /></PublicRoute>} />
@@ -62,13 +62,6 @@ function App() {
                                 <Route path="/SelectNetwork" element={<PublicRoute><SelectNetwork/></PublicRoute>} />
                                 <Route path="/WithdrawReq" element={<PublicRoute><WithdrawReq/></PublicRoute>} />
                                 <Route path="/Transferfund" element={<PublicRoute><Transferfund/></PublicRoute>} />
-
-
-
-
-
-
-
 
 
                                 <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />

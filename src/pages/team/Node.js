@@ -16,7 +16,7 @@ const Node = () => {
                                     className="mr-1"
                                     src="upnl/assets/icons/add_node.svg"
                                 />
-                                New Node
+                                raj
                             </button>
                         </a>
                         <div className="relative">

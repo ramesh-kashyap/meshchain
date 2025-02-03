@@ -11,7 +11,7 @@ const Transferfund = () => {
                         </center>
                         <h3 className="font-semibold mb-3">Activation Wallet: $990.00</h3>
                         <br />
-                        <form action="http://127.0.0.1:8000/user/SubmitTransferFunds" method="post">
+                        <form action="user/SubmitTransferFunds" method="post">
                             <input type="hidden" name="_token" value="KKX0De0b1aF69ZyhV4ctcUqPaDEGxVrpSEIoZILh" />
                             <div className="mb-4">
                                 <label htmlFor="amount" className="block text-gray-700 font-medium mb-2">Enter Amount</label>
@@ -58,7 +58,7 @@ const Transferfund = () => {
                         <div className="flex justify-between items-center text-sm mb-4">
                             <div className="flex">
                                 <div className="flex items-center justify-center rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
-                                    <img alt="IN Icon" loading="lazy" width="28" height="28" src="http://127.0.0.1:8000/upnl/assets/icons/icon_down.svg" />
+                                    <img alt="IN Icon" loading="lazy" width="28" height="28" src="upnl/assets/icons/icon_down.svg" />
                                 </div>
                                 <div className="ml-3">
                                     <p className="font-medium">Transfer</p>
@@ -74,24 +74,24 @@ const Transferfund = () => {
                 </div>
             </div>
             <div className="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg">
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/dashboard">
-                    <img alt="overview Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-overview.svg" />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/dashboard">
+                    <img alt="overview Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-overview.svg" />
                     <span className="text-xs mt-1 text-gray-400">Overview</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/node-power">
-                    <img alt="my_nodes Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-nodes.svg" />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/node-power">
+                    <img alt="my_nodes Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-nodes.svg" />
                     <span className="text-xs mt-1 text-gray-400">Nodes</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/team">
-                    <img alt="referrals Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-referrals.svg" />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/team">
+                    <img alt="referrals Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-referrals.svg" />
                     <span className="text-xs mt-1 text-gray-400">Referrals</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/wallet">
-                    <img alt="wallet Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-wallet.svg" />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/wallet">
+                    <img alt="wallet Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-wallet.svg" />
                     <span className="text-xs mt-1 text-green-500">Wallet</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="http://127.0.0.1:8000/user/profile-setting">
-                    <img alt="profile Icon" loading="lazy" width="20" height="20" src="http://127.0.0.1:8000/upnl/assets/icons/icon-wallet.svg" />
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/profile-setting">
+                    <img alt="profile Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-wallet.svg" />
                     <span className="text-xs mt-1 text-green-500">Profile</span>
                 </a>
             </div>

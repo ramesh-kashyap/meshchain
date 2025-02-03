@@ -1,11 +1,35 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
-  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [username, setusername] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate(); // Redirect function
 
-  const togglePasswordVisibility = () => {
-    setPasswordVisible(!passwordVisible);
-  };
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+        const response = await axios.post(
+            "http://localhost:5001/api/auth/login", // URL for login API
+            { username, password } // Data to send in the body
+        );
+console.log(response);
+        // Check if the response is successful (status code 200)
+        if (response.status === 200) {
+            // Store username in local storage
+            localStorage.setItem("username", response.data.username);
+            setMessage("Login successful! Redirecting...");
+            setTimeout(() => navigate("/dashboard"), 1000); // Redirect after 1 second
+        }
+
+    } catch (error) {
+        // Handle error from the server
+        console.error("Error during login:", error); // Log the error
+        setMessage(error.response?.data?.error || "Login failed"); // Show the error message
+    }
+};
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center pt-[100px] bg-gray-50 p-6">
@@ -42,16 +66,13 @@ const Login = () => {
         <p className="text-sm text-gray-500 text-center mb-6">
           Welcome back! Log in to stay updated with all your nodes and rewards.
         </p>
-        <form action="/login" method="POST">
-          <input
-            type="hidden"
-            name="_token"
-            value="YOUR_CSRF_TOKEN"
-          />
+        <form onSubmit={handleLogin}> {/* Change here */}
           <div className="mb-3">
             <input
-              type="text"
               name="username"
+              type="text"
+              value={username}
+              onChange={(e) => setusername(e.target.value)}
               placeholder="Enter username"
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
             />
@@ -62,16 +83,19 @@ const Login = () => {
             </label>
             <div className="relative">
               <input
-                type={passwordVisible ? "text" : "password"}
                 name="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
                 placeholder="Enter Password"
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
               />
               <span
                 className="absolute inset-y-0 right-3 flex items-center cursor-pointer"
-                onClick={togglePasswordVisibility}
+                onClick=""
               >
-                <i className={`fa ${passwordVisible ? "fa-eye" : "fa-eye-slash"} text-lg`}></i>
+                <i className ></i>
               </span>
             </div>
           </div>

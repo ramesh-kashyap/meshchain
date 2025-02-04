@@ -64,6 +64,7 @@ function App() {
                                 <Route path="/Transferfund" element={<PublicRoute><Transferfund/></PublicRoute>} />
 
 
+
                                 <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
                                 <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
                             </Routes>

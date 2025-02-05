@@ -1,6 +1,43 @@
-import React from 'react';
+// import React from 'react';
+import React, { useEffect, useState } from "react";
+
 
 const Node = () => {
+    const [incomes, setIncomes] = useState([]);
+    const [loading, setLoading] = useState(true);
+  
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+      
+        if (!token) {
+          console.error("❌ Token not found. Please login first.");
+          return;
+        }
+      
+        fetch("http://localhost:5001/api/auth/income/roi", {
+          method: "GET",
+          headers: {
+            "Authorization": `Bearer ${token}`,  // ✅ Token Header में भेजें
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            console.log("Response status:", res.status); // ✅ Debugging
+            return res.json();
+          })
+          .then((data) => {
+            console.log("API Response:", data); // ✅ Debugging
+            if (data.success) {
+              setIncomes(data.data);
+            } else {
+              console.error("Error fetching income data:", data.message);
+            }
+            setLoading(false);
+          })
+          .catch((err) => console.error("Fetch error:", err));
+      }, []);
+
+      
     return (
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
             <div className="w-full mt-10 flex justify-center text-primary">
@@ -31,6 +68,10 @@ const Node = () => {
                             </button>
                         </div>
                     </div>
+
+
+
+
                     <div className="bg-white mb-3 p-4 rounded-[16px] font-semibold text-gray-600 text-center">
                         <div className="hidden md:grid grid-cols-5 lg:grid-cols-6">
                             <div className="text-left">Node</div>
@@ -49,6 +90,11 @@ const Node = () => {
                     <div className="space-y-4">
                         <a href="/nodedetails">
                             <div className="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
+
+
+
+
+                                
                                 <div className="hidden md:grid grid-cols-5 lg:grid-cols-6 items-center">
                                     <div className="flex items-center space-x-3">
                                         <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
@@ -60,6 +106,9 @@ const Node = () => {
                                                 src="upnl/assets/icons/icon-referrals.svg"
                                             />
                                         </div>
+
+
+
                                         <div>
                                             <p className="text-sm font-medium">raj</p>
                                             <p className="text-xs text-[#999999]">Telegram Node</p>
@@ -80,40 +129,14 @@ const Node = () => {
                                         <p className="text-xs">Total: <span>0pt</span></p>
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
-                                    <div className="flex items-center space-x-3">
-                                        <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
-                                            <img
-                                                alt="Node Icon"
-                                                loading="lazy"
-                                                width="16"
-                                                height="16"
-                                                src="upnl/assets/icons/icon-referrals.svg"
-                                            />
-                                        </div>
-                                        <div>
-                                            <p className="text-sm font-medium">Sahildewan2</p>
-                                            <p className="text-xs text-[#999999]">Telegram Node</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex justify-end">
-                                        <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">
-                                            <img
-                                                alt="Status Icon"
-                                                loading="lazy"
-                                                width="16"
-                                                height="16"
-                                                className="mr-1"
-                                                src="upnl/assets/icons/icon-referrals.svg"
-                                            />
-                                            Online
-                                        </span>
-                                    </div>
-                                    <div className="text-right hidden sm:block">
-                                        <p className="text-lg font-semibold"><span>0pt</span></p>
-                                        <p className="text-xs">Total: <span>0pt</span></p>
-                                    </div>
-                                </div>
+
+
+
+
+
+
+
+                            
                             </div>
                         </a>
                     </div>

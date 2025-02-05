@@ -12,6 +12,8 @@ const Profile = () => {
         setProfilePopupOpen(!isProfilePopupOpen);
     };
 
+    
+
     return (
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
             <div className="w-full mt-10 flex justify-center text-primary">

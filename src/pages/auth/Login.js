@@ -11,25 +11,23 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post(
-            "http://localhost:5001/api/auth/login", // URL for login API
-            { username, password } // Data to send in the body
-        );
-console.log(response);
-        // Check if the response is successful (status code 200)
-        if (response.status === 200) {
-            // Store username in local storage
-            localStorage.setItem("username", response.data.username);
-            setMessage("Login successful! Redirecting...");
-            setTimeout(() => navigate("/Dashboard"), 1000); // Redirect after 1 second
-        }
-
+      const response = await axios.post("http://localhost:5001/api/auth/login", {
+        username,
+        password,
+      });
+  
+      if (response.status === 200) {
+        localStorage.setItem("token", response.data.token);
+        console.log("Token Stored:", localStorage.getItem("token")); // ✅ Debugging
+  
+        setMessage("Login successful! Redirecting...");
+        setTimeout(() => navigate("/Dashboard"), 1000);
+      }
     } catch (error) {
-        // Handle error from the server
-        console.error("Error during login:", error); // Log the error
-        setMessage(error.response?.data?.error || "Login failed"); // Show the error message
+      console.error("Error during login:", error);
+      setMessage(error.response?.data?.error || "Login failed");
     }
-};
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center pt-[100px] bg-gray-50 p-6">

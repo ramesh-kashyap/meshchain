@@ -2,7 +2,6 @@ import React from 'react';
 
 
 const Dashboard = () => {
-
     return (
         
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
@@ -28,6 +27,8 @@ const Dashboard = () => {
                     </div>
                  </div>
               </div>
+
+
               <div className="bg-white p-6 rounded-[16px] max-h-[226px] h-full flex flex-col items-left">
                  <div className="flex items-center justify-left mb-4">
                     <div className="bg-green-100 rounded-full p-2"><img alt="Today's Rewards Icon" loading="lazy" width="32"
@@ -333,6 +334,8 @@ const Dashboard = () => {
            </div>
         </div>
      </div>
+
+     
      <div className="flex space-x-4 mt-6">
         <div className="flex items-center"><span
            className="w-[22px] h-[22px] bg-green-500 rounded-full mr-2"></span><span

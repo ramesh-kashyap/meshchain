@@ -44,7 +44,7 @@ export default function Header() {
                 <div className="text-gray-400 text-xs mb-2">MENU</div>
                 <Link
                   className="flex items-center py-2 px-3 mb-2 rounded-md bg-green-500 text-white"
-                  to="/"
+                  to="/Dashboard"
                 >
                   <img
                     alt="overview Icon"
@@ -60,7 +60,7 @@ export default function Header() {
                 </Link>
                 <Link
                   className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                  to="/nodedetails"
+                  to="/Node"
                 >
                   <img
                     alt="my_nodes Icon"
@@ -74,7 +74,7 @@ export default function Header() {
                   />
                   <span className="ml-4">Nodes</span>
                 </Link>
-                <Link
+                {/* <Link
                   className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
                   to="/"
                 >
@@ -89,10 +89,10 @@ export default function Header() {
                     style={{ color: "transparent" }}
                   />
                   <span className="ml-4">Rewards</span>
-                </Link>
+                </Link> */}
                 <Link
                   className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                  to="/"
+                  to="/Team"
                 >
                   <img
                     alt="referrals Icon"
@@ -108,7 +108,7 @@ export default function Header() {
                 </Link>
                 <Link
                   className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                  to="/"
+                  to="/Wallet"
                 >
                   <img
                     alt="wallet Icon"
@@ -124,7 +124,7 @@ export default function Header() {
                 </Link>
                 <Link
                   className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                  to="/"
+                  to="/Profile"
                 >
                   <img
                     alt="profile Icon"
@@ -204,4 +204,3 @@ export default function Header() {
     </>
   );
 }
-

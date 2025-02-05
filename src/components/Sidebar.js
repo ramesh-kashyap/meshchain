@@ -1,7 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Header() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // Remove token
+    navigate("/login"); // Redirect to login page
+  };
+
   return (
     <>
       <div class="hidden max-h-screen md:flex flex-col text-black transition-all duration-300 justify-between w-[264px]">
@@ -44,7 +51,7 @@ export default function Header() {
                 <div className="text-gray-400 text-xs mb-2">MENU</div>
                 <Link
                   className="flex items-center py-2 px-3 mb-2 rounded-md bg-green-500 text-white"
-                  to="/Dashboard"
+                  to="/"
                 >
                   <img
                     alt="overview Icon"
@@ -74,7 +81,7 @@ export default function Header() {
                   />
                   <span className="ml-4">Nodes</span>
                 </Link>
-                {/* <Link
+                <Link
                   className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
                   to="/"
                 >
@@ -89,7 +96,7 @@ export default function Header() {
                     style={{ color: "transparent" }}
                   />
                   <span className="ml-4">Rewards</span>
-                </Link> */}
+                </Link>
                 <Link
                   className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
                   to="/Team"

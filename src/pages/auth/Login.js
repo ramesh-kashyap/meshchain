@@ -21,7 +21,7 @@ console.log(response);
             // Store username in local storage
             localStorage.setItem("username", response.data.username);
             setMessage("Login successful! Redirecting...");
-            setTimeout(() => navigate("/dashboard"), 1000); // Redirect after 1 second
+            setTimeout(() => navigate("/Dashboard"), 1000); // Redirect after 1 second
         }
 
     } catch (error) {
@@ -68,6 +68,11 @@ console.log(response);
         </p>
         <form onSubmit={handleLogin}> {/* Change here */}
           <div className="mb-3">
+          <label className="block text-sm font-medium text-gray-700">
+              Username
+            </label>
+            <div className="relative">
+
             <input
               name="username"
               type="text"
@@ -77,6 +82,8 @@ console.log(response);
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
             />
           </div>
+          </div>
+
           <div className="mb-3">
             <label className="block text-sm font-medium text-gray-700">
               Password

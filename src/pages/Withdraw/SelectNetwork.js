@@ -25,7 +25,7 @@ const SelectNetwork = () => {
                         <br /><br />
 
                         <div>
-                            <div onClick={() => window.location.href='user/Withdraw'} className="flex items-center justify-between bg-[#F9F9F9] h-[72px] mb-2 p-[15px] rounded-[16px] cursor-pointer hover:bg-[#ebe8e8]">
+                            <div onClick={() => window.location.href='/WithdrawReq'} className="flex items-center justify-between bg-[#F9F9F9] h-[72px] mb-2 p-[15px] rounded-[16px] cursor-pointer hover:bg-[#ebe8e8]">
                                 <div className="py-4 flex items-center space-x-2 lg:space-x-3 text-sm">
                                     <img alt="USDT logo" loading="lazy" width="40" height="40" src="upnl/assets/icons/logo_usdt_2.svg" style={{ color: 'transparent' }} />
                                     <div>

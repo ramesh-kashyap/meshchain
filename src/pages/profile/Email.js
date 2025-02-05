@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Email = () => {
-    const [email, setEmail] = useState('kumar@gmail.com');
+    const [email, setEmail] = useState('');
     const [firstCode, setFirstCode] = useState('');
     const [newEmail, setNewEmail] = useState('');
     const [secondCode, setSecondCode] = useState('');

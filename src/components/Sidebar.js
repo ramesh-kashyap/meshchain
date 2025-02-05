@@ -1,14 +1,7 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    localStorage.removeItem("token"); // Remove token
-    navigate("/login"); // Redirect to login page
-  };
-
   return (
     <>
       <div class="hidden max-h-screen md:flex flex-col text-black transition-all duration-300 justify-between w-[264px]">
@@ -67,7 +60,7 @@ export default function Header() {
                 </Link>
                 <Link
                   className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                  to="/Node"
+                  to="/nodedetails"
                 >
                   <img
                     alt="my_nodes Icon"
@@ -99,7 +92,7 @@ export default function Header() {
                 </Link>
                 <Link
                   className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                  to="/Team"
+                  to="/"
                 >
                   <img
                     alt="referrals Icon"
@@ -115,7 +108,7 @@ export default function Header() {
                 </Link>
                 <Link
                   className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                  to="/Wallet"
+                  to="/"
                 >
                   <img
                     alt="wallet Icon"
@@ -131,7 +124,7 @@ export default function Header() {
                 </Link>
                 <Link
                   className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                  to="/Profile"
+                  to="/"
                 >
                   <img
                     alt="profile Icon"
@@ -211,3 +204,4 @@ export default function Header() {
     </>
   );
 }
+

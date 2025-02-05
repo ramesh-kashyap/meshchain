@@ -8,7 +8,7 @@ const Footer = () => {
         
       {/* Overview link */}
       <Link
-        to="/user/dashboard" // Replace with the actual route
+        to="/Dashboard" // Replace with the actual route
         className="flex w-1/5 p-[12px] flex-col items-center"
       >
         <img

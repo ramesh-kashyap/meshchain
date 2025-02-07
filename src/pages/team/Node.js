@@ -2,14 +2,19 @@ import React, { useEffect, useState } from 'react';
 
 const Node = () => {
     const [incomeData, setIncomeData] = useState([]);
+    const username = localStorage.getItem("username"); // Fetch logged-in user's username
 
     useEffect(() => {
-        fetch("http://localhost:3002/income") // Change the URL according to your backend
+        if (!username) {
+            console.error("Username not found in localStorage");
+            return;
+        }
+    
+        fetch(`http://localhost:3002/income?username=${username}`)
             .then((response) => response.json())
             .then((data) => setIncomeData(data))
             .catch((error) => console.error("Error fetching income data:", error));
-    }, []);
-
+    }, [username]);
     return (
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
             <div className="w-full mt-10 flex justify-center text-primary">

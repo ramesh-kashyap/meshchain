@@ -13,25 +13,21 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post("http://localhost:3002/login",{ username, password });
-         console.log(response);
-        // Check if the response is successful (status code 200)
+        const response = await axios.post("http://localhost:3002/login", { username, password });
+
         if (response.status === 200) {
-            // Store username in local storage
-            localStorage.setItem("username", response.data.username);
+            // Store JWT token in localStorage
+            localStorage.setItem("token", response.data.token);
             setMessage("Login successful! Redirecting...");
             setTimeout(() => navigate("/Dashboard"), 1000); // Redirect after 1 second
         }
-
-    }  catch (error) {
-      console.error("Error during login:", error);
-
-      // Handle server response error
-      if (error.response) {
-        setError(error.response.data.error || "Invalid username or password.");
-      } else {
-        setError("Server error. Please try again later.");
-      }
+    } catch (error) {
+        console.error("Error during login:", error);
+        if (error.response) {
+            setError(error.response.data.error || "Invalid username or password.");
+        } else {
+            setError("Server error. Please try again later.");
+        }
     }
 };
 

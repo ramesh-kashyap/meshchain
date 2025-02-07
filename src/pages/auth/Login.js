@@ -15,7 +15,7 @@ const Login = () => {
             "http://localhost:5001/api/auth/login", // URL for login API
             { username, password } // Data to send in the body
         );
-console.log(response);
+console.log('response',response);
         // Check if the response is successful (status code 200)
         if (response.status === 200) {
             // Store username in local storage
@@ -32,7 +32,7 @@ console.log(response);
 };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center pt-[100px] bg-gray-50 p-6">
+    <div className=" flex flex-col items-center justify-center pt-[100px]  p-6">
       <div className="absolute top-6 flex justify-between w-full px-6">
         <img
           alt="MeshNode Logo"
@@ -48,13 +48,13 @@ console.log(response);
           width="40"
           height="40"
           className="flex sm:hidden"
-          src="/upnl/assets/icons/logo_meshchain.svg"
+          src="upnl/assets/icons/logo.png"
         />
         <div className="flex">
-          <button className="w-[80px] md:w-[100px] mr-2 md:mr-4 py-2 px-2 md:px-4 bg-green-500 text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
+          <button className="w-[80px] md:w-[100px] mr-2 md:mr-4 py-2 px-2 md:px-4 bg-green-500 text-white rounded-[30px] ">
             Log In
           </button>
-          <button className="w-[100px] py-2 px-2 md:px-4 bg-[#171717] text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
+          <button className="w-[100px] py-2 px-2 md:px-4 bg-[#171717] text-white rounded-[30px] shadow-md  " style={{color:'white'}}>
             Sign Up
           </button>
         </div>

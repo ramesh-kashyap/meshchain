@@ -1,26 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Node = () => {
-    const [incomeData, setIncomeData] = useState([]);
-    const username = localStorage.getItem("username"); // Fetch logged-in user's username
+    const [incomeData, setIncome] = useState([]);
+    const [error, setError] = useState("");
 
     useEffect(() => {
-        if (!username) {
-            console.error("Username not found in localStorage");
-            return;
-        }
-    
-        fetch(`http://localhost:3002/income?username=${username}`)
-            .then((response) => response.json())
-            .then((data) => setIncomeData(data))
-            .catch((error) => console.error("Error fetching income data:", error));
-    }, [username]);
+        const fetchDirectIncome = async () => {
+            const token = localStorage.getItem("token"); // Get JWT Token
+
+            if (!token) {
+                setError("User not authenticated!");
+                return;
+            }
+
+            try {
+                const response = await axios.get("http://localhost:3002/income", {
+                    headers: { Authorization: token } // Send Token in Headers
+                });
+
+                setIncome(response.data.data);
+            } catch (err) {
+                setError(err.response?.data?.error || "Error fetching income");
+            }
+        };
+
+        fetchDirectIncome();
+    }, []);
     return (
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
             <div className="w-full mt-10 flex justify-center text-primary">
                 <div className="w-full max-w-[1440px] rounded-lg">
                     <div className="flex justify-between mb-4 items-center">
                         <a href="user/subscribe">
+                        {error && <p style={{ color: "red" }}>{error}</p>}
+
                             <button className="px-3 flex items-center h-[34px] bg-[#171717] rounded-[22px] text-[14px] text-white">
                                 <img
                                     alt="Add Node Icon"

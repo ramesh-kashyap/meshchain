@@ -6,16 +6,15 @@ const Login = () => {
   const [username, setusername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [error, setError] = useState(""); // Error state
+
   const navigate = useNavigate(); // Redirect function
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post(
-            "http://localhost:5001/api/auth/login", // URL for login API
-            { username, password } // Data to send in the body
-        );
-console.log(response);
+        const response = await axios.post("http://localhost:3002/login",{ username, password });
+         console.log(response);
         // Check if the response is successful (status code 200)
         if (response.status === 200) {
             // Store username in local storage
@@ -24,10 +23,15 @@ console.log(response);
             setTimeout(() => navigate("/Dashboard"), 1000); // Redirect after 1 second
         }
 
-    } catch (error) {
-        // Handle error from the server
-        console.error("Error during login:", error); // Log the error
-        setMessage(error.response?.data?.error || "Login failed"); // Show the error message
+    }  catch (error) {
+      console.error("Error during login:", error);
+
+      // Handle server response error
+      if (error.response) {
+        setError(error.response.data.error || "Invalid username or password.");
+      } else {
+        setError("Server error. Please try again later.");
+      }
     }
 };
 
@@ -66,6 +70,11 @@ console.log(response);
         <p className="text-sm text-gray-500 text-center mb-6">
           Welcome back! Log in to stay updated with all your nodes and rewards.
         </p>
+        {/* Display Error Message */}
+        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+
+        {/* Display Success Message */}
+        {message && <p className="text-green-500 text-center mb-4">{message}</p>}
         <form onSubmit={handleLogin}> {/* Change here */}
           <div className="mb-3">
           <label className="block text-sm font-medium text-gray-700">

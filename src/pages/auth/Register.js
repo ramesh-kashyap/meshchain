@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios';
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -26,10 +27,8 @@ const Register = () => {
     setError("");    
 
     try {
-      const response = await fetch("http://localhost:5001/api/auth/register", {
-        method: "POST",
+      const response = await axios.post('http://localhost:3002/api/auth/register', user, {
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user),
       });
 
       const data = await response.json();

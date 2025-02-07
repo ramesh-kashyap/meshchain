@@ -1,21 +1,7 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
 const Email = () => {
-    const [email, setEmail] = useState('kumar@gmail.com');
-    const [firstCode, setFirstCode] = useState('');
-    const [newEmail, setNewEmail] = useState('');
-    const [secondCode, setSecondCode] = useState('');
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission logic here
-        console.log({
-            email,
-            firstCode,
-            newEmail,
-            secondCode,
-        });
-    };
+   
 
     return (
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
@@ -25,16 +11,14 @@ const Email = () => {
                         <center>
                             <h3 className="font-semibold mb-3">Change Email</h3>
                         </center>
-                        <form method="post" onSubmit={handleSubmit}>
+                        <form method="post" >
                             <input type="hidden" name="_token" value="KKX0De0b1aF69ZyhV4ctcUqPaDEGxVrpSEIoZILh" />
                             <div className="mb-4">
                                 <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email</label>
                                 <input
                                     type="email"
-                                    name="email"
                                     readOnly
                                     style={{ width: '100%' }}
-                                    value={email}
                                     className="w-full px-3 py-2 border border-gray-300 rounded-[12px]"
                                 />
                             </div>
@@ -46,8 +30,7 @@ const Email = () => {
                                         type="text"
                                         name="first_code"
                                         placeholder="Enter verification code"
-                                        value={firstCode}
-                                        onChange={(e) => setFirstCode(e.target.value)}
+                                       
                                         className="w-full px-3 py-2 border border-gray-300 rounded-[12px] pr-20"
                                     />
                                     <span
@@ -66,8 +49,7 @@ const Email = () => {
                                     id="newEmail"
                                     placeholder="Please enter the new email"
                                     name="newEmail"
-                                    value={newEmail}
-                                    onChange={(e) => setNewEmail(e.target.value)}
+                                  
                                     className="w-full px-3 py-2 border border-gray-300 rounded-[12px]"
                                 />
                             </div>
@@ -79,8 +61,7 @@ const Email = () => {
                                         type="text"
                                         name="second_code"
                                         placeholder="Enter verification code"
-                                        value={secondCode}
-                                        onChange={(e) => setSecondCode(e.target.value)}
+                                      
                                         className="w-full px-3 py-2 border border-gray-300 rounded-[12px] pr-20"
                                     />
                                     <span

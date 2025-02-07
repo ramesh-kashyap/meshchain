@@ -41,6 +41,14 @@ const Profile = () => {
                         </div>
                     </div>
 
+
+
+
+
+
+
+                    
+
                     {/* Change Password Modal */}
                     {isPasswordPopupOpen && (
                         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">

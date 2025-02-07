@@ -1,7 +1,15 @@
-import React from 'react';
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Dashboard = () => {
+   const [user, setUser] = useState(null);
+
+   useEffect(() => {
+       axios.get("http://localhost:5000/auth/user", { withCredentials: true })
+           .then((response) => setUser(response.data))
+           .catch(() => setUser(null));
+   }, []);
+
     return (
         
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">

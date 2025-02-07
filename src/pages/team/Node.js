@@ -1,32 +1,27 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+// import React from 'react';
+
 
 const Node = () => {
-    const [incomeData, setIncome] = useState([]);
-    const [error, setError] = useState("");
+    // const [incomes, setIncomes] = useState([]);
+    // const [loading, setLoading] = useState(true);
+  
+    // useEffect(() => {
+    //     const token = localStorage.getItem("token");
+    //     if (token) {
+    //         fetch("http://localhost:5001/api/auth/income/roi", {
+    //           method: "GET",
+    //           headers: {
+    //             "Authorization": `Bearer ${token}`,
+    //             "Content-Type": "application/json",
+    //           },
+    //         })
+    //         .then((res) => res.json())
+    //         .then((data) => console.log("API Response:", data))
+    //         .catch((err) => console.error("Fetch error:", err));
+    //     }
+    // }, [localStorage.getItem("token")]);
 
-    useEffect(() => {
-        const fetchDirectIncome = async () => {
-            const token = localStorage.getItem("token"); // Get JWT Token
-
-            if (!token) {
-                setError("User not authenticated!");
-                return;
-            }
-
-            try {
-                const response = await axios.get("http://localhost:3002/income", {
-                    headers: { Authorization: token } // Send Token in Headers
-                });
-
-                setIncome(response.data.data);
-            } catch (err) {
-                setError(err.response?.data?.error || "Error fetching income");
-            }
-        };
-
-        fetchDirectIncome();
-    }, []);
+      
     return (
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
             <div className="w-full mt-10 flex justify-center text-primary">
@@ -59,6 +54,10 @@ const Node = () => {
                             </button>
                         </div>
                     </div>
+
+
+
+
                     <div className="bg-white mb-3 p-4 rounded-[16px] font-semibold text-gray-600 text-center">
                         <div className="hidden md:grid grid-cols-5 lg:grid-cols-6">
                             <div className="text-left">User ID</div>
@@ -70,45 +69,57 @@ const Node = () => {
                         </div>
                     </div>
                     <div className="space-y-4">
-                        {incomeData.length > 0 ? (
-                            incomeData.map((income, index) => (
-                                <a href="/nodedetails" key={index}>
-                                    <div className="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
-                                        <div className="hidden md:grid grid-cols-5 lg:grid-cols-6 items-center">
-                                            <div className="flex items-center space-x-3">
-                                                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
-                                                    <img
-                                                        alt="Node Icon"
-                                                        loading="lazy"
-                                                        width="16"
-                                                        height="16"
-                                                        src="upnl/assets/icons/icon-referrals.svg"
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <p className="text-sm font-medium">{income.user_id_fk}</p>
-                                                </div>
-                                            </div>
-                                            <p className="hidden lg:block text-sm text-center font-medium">{income.amt}</p>
-                                            <div className="flex justify-center">
-                                                <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{income.comm}</span>
-                                            </div>
-                                            <div className="flex justify-center">
-                                                <p className="text-sm w-fit text-center px-3">{income.remarks}</p>
-                                            </div>
-                                            <div className="flex justify-center">
-                                                <p className="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">{income.ttime}</p>
-                                            </div>
-                                            <div className="text-right">
-                                                <p className="text-xs"><span>{income.level}</span></p>
-                                            </div>
+                        <a href="/nodedetails">
+                            <div className="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
+
+
+
+
+                                
+                                <div className="hidden md:grid grid-cols-5 lg:grid-cols-6 items-center">
+                                    <div className="flex items-center space-x-3">
+                                        <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                            <img
+                                                alt="Node Icon"
+                                                loading="lazy"
+                                                width="16"
+                                                height="16"
+                                                src="upnl/assets/icons/icon-referrals.svg"
+                                            />
+                                        </div>
+
+
+
+                                        <div>
+                                            <p className="text-sm font-medium">raj</p>
+                                            <p className="text-xs text-[#999999]">Telegram Node</p>
                                         </div>
                                     </div>
-                                </a>
-                            ))
-                        ) : (
-                            <p className="text-center text-gray-500">No Income Data Found</p>
-                        )}
+                                    <p className="hidden lg:block text-sm text-center font-medium">1236796590</p>
+                                    <div className="flex justify-center">
+                                        <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">Online</span>
+                                    </div>
+                                    <div className="flex justify-center">
+                                        <p className="text-sm w-fit text-center px-3">0.25 TH/s</p>
+                                    </div>
+                                    <div className="flex justify-center">
+                                        <p className="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">0 hr, 0 min</p>
+                                    </div>
+                                    <div className="text-right">
+                                        <p className="text-lg font-semibold"><span>0pt</span></p>
+                                        <p className="text-xs">Total: <span>0pt</span></p>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+                            
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

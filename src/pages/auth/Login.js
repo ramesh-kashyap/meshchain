@@ -1,6 +1,17 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import Api2, { googleAuth } from '../../Requests/Api';
+import Api from '../../Requests/Api';
+import { useGoogleLogin } from '@react-oauth/google';
+import { useNavigate } from 'react-router-dom';
+import { BrowserRouter as Route, Router,Routes, Link } from 'react-router-dom';
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import axios from "axios";
+
+
+// import PhoneInput from "react-phone-input-2";
+
+// import "react-phone-input-2/lib/newcss.css";
+// import CustomPopup from '../auth/Successfullypass';
 
 const Login = () => {
   const [username, setusername] = useState("");
@@ -15,7 +26,7 @@ const Login = () => {
             "http://localhost:5001/api/auth/login", // URL for login API
             { username, password } // Data to send in the body
         );
-console.log('response',response);
+console.log(response);
         // Check if the response is successful (status code 200)
         if (response.status === 200) {
             // Store username in local storage
@@ -66,22 +77,18 @@ console.log('response',response);
         <p className="text-sm text-gray-500 text-center mb-6">
           Welcome back! Log in to stay updated with all your nodes and rewards.
         </p>
-        <form onSubmit={handleLogin}> {/* Change here */}
+        <form onSubmit={(e) => e.preventDefault()}> {/* Prevent default form submission */}
           <div className="mb-3">
-          <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-gray-700">
               Username
             </label>
             <div className="relative">
-
-            <input
-              name="username"
-              type="text"
-              value={username}
-              onChange={(e) => setusername(e.target.value)}
-              placeholder="Enter username"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
-            />
-          </div>
+              <input
+                type="text"
+                placeholder="Enter username"
+                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
+              />
+            </div>
           </div>
 
           <div className="mb-3">
@@ -90,20 +97,10 @@ console.log('response',response);
             </label>
             <div className="relative">
               <input
-                name="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
                 required
                 placeholder="Enter Password"
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
               />
-              <span
-                className="absolute inset-y-0 right-3 flex items-center cursor-pointer"
-                onClick=""
-              >
-                <i className ></i>
-              </span>
             </div>
           </div>
           <div className="flex items-center justify-end">
@@ -118,6 +115,16 @@ console.log('response',response);
             Log In
           </button>
         </form>
+
+        {/* Google Login Button */}
+        <div className="mt-6 text-center">
+        <GoogleLogin
+  onSuccess={handleLoginSuccess}
+  onError={responseGoogle}
+  flow="auth-code"
+/>
+        </div>
+
         <div className="mt-6 text-center">
           <span className="text-sm text-gray-600">
             Don't have an account? 

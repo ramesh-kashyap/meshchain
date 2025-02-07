@@ -12,7 +12,7 @@ import Wallet from './pages/invest/Wallet';
 import RechargeFunds from './pages/invest/RechargeFunds';
 import Transferfund from './pages/invest/Transferfund';
 import PublicRoute from './components/PublicRoute'; 
-// import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './pages/home/dashboard';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
@@ -37,18 +37,20 @@ function Layout({ children }) {
                         <Routes>
                             
                         <Route path="/" element={<Navigate to="/login" />} />
-                            <Route path="/Dashboard" element={<PublicRoute><Dashboard /></PublicRoute>} />
-                            <Route path="/nodedetails" element={<PublicRoute><NodeDetails /></PublicRoute>} />
-                            <Route path="/Team" element={<PublicRoute><Team /></PublicRoute>} />
-                            <Route path="/Node" element={<PublicRoute><Node /></PublicRoute>} />
-                            <Route path="/Wallet" element={<PublicRoute><Wallet /></PublicRoute>} />
-                            <Route path="/Profile" element={<PublicRoute><Profile /></PublicRoute>} />
-                            <Route path="/Tpassword" element={<PublicRoute><Tpassword /></PublicRoute>} />
-                            <Route path="/Email" element={<PublicRoute><Email /></PublicRoute>} />
-                            <Route path="/RechargeFunds" element={<PublicRoute><RechargeFunds/></PublicRoute>} />
-                            <Route path="/SelectNetwork" element={<PublicRoute><SelectNetwork/></PublicRoute>} />
-                            <Route path="/WithdrawReq" element={<PublicRoute><WithdrawReq/></PublicRoute>} />
-                            <Route path="/Transferfund" element={<PublicRoute><Transferfund/></PublicRoute>} />
+                        <Route path="/Dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+                        <Route path="/Node" element={<ProtectedRoute><Node /></ProtectedRoute>} />
+
+
+                            <Route path="/nodedetails" element={<ProtectedRoute><NodeDetails /></ProtectedRoute>} />
+                            <Route path="/Team" element={<ProtectedRoute><Team /></ProtectedRoute>} />
+                            <Route path="/Wallet" element={<ProtectedRoute><Wallet /></ProtectedRoute>} />
+                            <Route path="/Profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+                            <Route path="/Tpassword" element={<ProtectedRoute><Tpassword /></ProtectedRoute>} />
+                            <Route path="/Email" element={<ProtectedRoute><Email /></ProtectedRoute>} />
+                            <Route path="/RechargeFunds" element={<ProtectedRoute><RechargeFunds/></ProtectedRoute>} />
+                            <Route path="/SelectNetwork" element={<ProtectedRoute><SelectNetwork/></ProtectedRoute>} />
+                            <Route path="/WithdrawReq" element={<ProtectedRoute><WithdrawReq/></ProtectedRoute>} />
+                            <Route path="/Transferfund" element={<ProtectedRoute><Transferfund/></ProtectedRoute>} />
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />
                             <Route path="/forgot-password" element={<ForgotPassword />} />

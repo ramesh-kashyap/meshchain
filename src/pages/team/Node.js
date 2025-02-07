@@ -1,41 +1,25 @@
 // import React from 'react';
-import React, { useEffect, useState } from "react";
 
 
 const Node = () => {
-    const [incomes, setIncomes] = useState([]);
-    const [loading, setLoading] = useState(true);
+    // const [incomes, setIncomes] = useState([]);
+    // const [loading, setLoading] = useState(true);
   
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-      
-        if (!token) {
-          console.error("❌ Token not found. Please login first.");
-          return;
-        }
-      
-        fetch("http://localhost:5001/api/auth/income/roi", {
-          method: "GET",
-          headers: {
-            "Authorization": `Bearer ${token}`,  // ✅ Token Header में भेजें
-            "Content-Type": "application/json",
-          },
-        })
-          .then((res) => {
-            console.log("Response status:", res.status); // ✅ Debugging
-            return res.json();
-          })
-          .then((data) => {
-            console.log("API Response:", data); // ✅ Debugging
-            if (data.success) {
-              setIncomes(data.data);
-            } else {
-              console.error("Error fetching income data:", data.message);
-            }
-            setLoading(false);
-          })
-          .catch((err) => console.error("Fetch error:", err));
-      }, []);
+    // useEffect(() => {
+    //     const token = localStorage.getItem("token");
+    //     if (token) {
+    //         fetch("http://localhost:5001/api/auth/income/roi", {
+    //           method: "GET",
+    //           headers: {
+    //             "Authorization": `Bearer ${token}`,
+    //             "Content-Type": "application/json",
+    //           },
+    //         })
+    //         .then((res) => res.json())
+    //         .then((data) => console.log("API Response:", data))
+    //         .catch((err) => console.error("Fetch error:", err));
+    //     }
+    // }, [localStorage.getItem("token")]);
 
       
     return (

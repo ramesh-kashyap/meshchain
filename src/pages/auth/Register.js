@@ -30,7 +30,7 @@ const Register = () => {
       const response = await axios.post('http://localhost:3002/api/auth/register', user, {
         headers: { "Content-Type": "application/json" },
       });
-
+       
       const data = await response.json();
 
       if (!response.ok) {

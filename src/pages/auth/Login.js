@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/auth/login", // API endpoint for login
+        "http://localhost:3002/api/auth/login", // API endpoint for login
         { username, password } // Sending data (username and password)
       );
 

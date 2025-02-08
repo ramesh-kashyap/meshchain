@@ -1,7 +1,14 @@
-import React from 'react';
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Dashboard = () => {
+   const [user, setUser] = useState(null);
+
+   useEffect(() => {
+       axios.get("http://localhost:5000/auth/user", { withCredentials: true })
+           .then((response) => setUser(response.data))
+           .catch(() => setUser(null));
+   }, []);
 
     return (
         
@@ -28,6 +35,8 @@ const Dashboard = () => {
                     </div>
                  </div>
               </div>
+
+
               <div className="bg-white p-6 rounded-[16px] max-h-[226px] h-full flex flex-col items-left">
                  <div className="flex items-center justify-left mb-4">
                     <div className="bg-green-100 rounded-full p-2"><img alt="Today's Rewards Icon" loading="lazy" width="32"
@@ -333,6 +342,8 @@ const Dashboard = () => {
            </div>
         </div>
      </div>
+
+     
      <div className="flex space-x-4 mt-6">
         <div className="flex items-center"><span
            className="w-[22px] h-[22px] bg-green-500 rounded-full mr-2"></span><span

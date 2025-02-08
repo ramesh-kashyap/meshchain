@@ -1,38 +1,48 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { GoogleLogin } from '@react-oauth/google'; // Make sure you have this import for Google login
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [username, setusername] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
-  const navigate = useNavigate(); // Redirect function
-
+  const [username, setUsername] = useState(""); // State for username
+  const [password, setPassword] = useState(""); // State for password
+  const [message, setMessage] = useState(""); // State for message
+  const navigate = useNavigate(); // For navigation
+  
+  // Handle login for local authentication (username + password)
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post(
-            "http://localhost:5001/api/auth/login", // URL for login API
-            { username, password } // Data to send in the body
-        );
-console.log('response',response);
-        // Check if the response is successful (status code 200)
-        if (response.status === 200) {
-            // Store username in local storage
-            localStorage.setItem("username", response.data.username);
-            setMessage("Login successful! Redirecting...");
-            setTimeout(() => navigate("/Dashboard"), 1000); // Redirect after 1 second
-        }
+      const response = await axios.post(
+        "http://localhost:5001/api/auth/login", // API endpoint for login
+        { username, password } // Sending data (username and password)
+      );
 
+      if (response.status === 200) {
+        localStorage.setItem("username", response.data.username);
+        setMessage("Login successful! Redirecting...");
+        setTimeout(() => navigate("/Dashboard"), 1000); // Redirect after 1 second
+      }
     } catch (error) {
-        // Handle error from the server
-        console.error("Error during login:", error); // Log the error
-        setMessage(error.response?.data?.error || "Login failed"); // Show the error message
+      console.error("Error during login:", error);
+      setMessage(error.response?.data?.error || "Login failed");
     }
-};
+  };
+
+  // Handle success after Google login
+  const handleLoginSuccess = (response) => {
+    console.log("Google Login Success: ", response);
+    // You can send the response to the backend for further processing or store user info in localStorage
+  };
+
+  // Handle error during Google login
+  const responseGoogle = (error) => {
+    console.error("Google Login Error:", error);
+    setMessage("Google login failed");
+  };
 
   return (
-    <div className=" flex flex-col items-center justify-center pt-[100px]  p-6">
+    <div className="flex flex-col items-center justify-center pt-[100px] p-6">
       <div className="absolute top-6 flex justify-between w-full px-6">
         <img
           alt="MeshNode Logo"
@@ -54,7 +64,7 @@ console.log('response',response);
           <button className="w-[80px] md:w-[100px] mr-2 md:mr-4 py-2 px-2 md:px-4 bg-green-500 text-white rounded-[30px] ">
             Log In
           </button>
-          <button className="w-[100px] py-2 px-2 md:px-4 bg-[#171717] text-white rounded-[30px] shadow-md  " style={{color:'white'}}>
+          <button className="w-[100px] py-2 px-2 md:px-4 bg-[#171717] text-white rounded-[30px] shadow-md ">
             Sign Up
           </button>
         </div>
@@ -66,22 +76,20 @@ console.log('response',response);
         <p className="text-sm text-gray-500 text-center mb-6">
           Welcome back! Log in to stay updated with all your nodes and rewards.
         </p>
-        <form onSubmit={handleLogin}> {/* Change here */}
+        <form onSubmit={handleLogin}>
           <div className="mb-3">
-          <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-gray-700">
               Username
             </label>
             <div className="relative">
-
-            <input
-              name="username"
-              type="text"
-              value={username}
-              onChange={(e) => setusername(e.target.value)}
-              placeholder="Enter username"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
-            />
-          </div>
+              <input
+                type="text"
+                value={username} // Bind value to state
+                onChange={(e) => setUsername(e.target.value)} // Update state on change
+                placeholder="Enter username"
+                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
+              />
+            </div>
           </div>
 
           <div className="mb-3">
@@ -90,20 +98,13 @@ console.log('response',response);
             </label>
             <div className="relative">
               <input
-                name="password"
                 type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={password} // Bind value to state
+                onChange={(e) => setPassword(e.target.value)} // Update state on change
                 required
                 placeholder="Enter Password"
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
               />
-              <span
-                className="absolute inset-y-0 right-3 flex items-center cursor-pointer"
-                onClick=""
-              >
-                <i className ></i>
-              </span>
             </div>
           </div>
           <div className="flex items-center justify-end">
@@ -118,6 +119,16 @@ console.log('response',response);
             Log In
           </button>
         </form>
+
+        {/* Google Login Button */}
+        <div className="mt-6 text-center">
+          <GoogleLogin
+            onSuccess={handleLoginSuccess}
+            onError={responseGoogle}
+            flow="auth-code"
+          />
+        </div>
+
         <div className="mt-6 text-center">
           <span className="text-sm text-gray-600">
             Don't have an account? 

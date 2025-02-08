@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const DirectIncome = () => {
+const LevelIncome = () => {
     const [income, setIncome] = useState([]);
     const [error, setError] = useState("");
 
     useEffect(() => {
-        const fetchDirectIncome = async () => {
+        const fetchLevelIncome = async () => {
             const token = localStorage.getItem("token"); // Get JWT Token
             console.log("Token from LocalStorage:", token); // Debugging
     
@@ -16,7 +16,7 @@ const DirectIncome = () => {
             }
     
             try {
-                const response = await axios.get("http://localhost:3002/api/auth/direct-income", {
+                const response = await axios.get("http://localhost:3002/api/auth/level-income", {
                     headers: { Authorization: `Bearer ${token}` } // ✅ Correct format
                 });
     
@@ -26,7 +26,7 @@ const DirectIncome = () => {
             }
         };
     
-        fetchDirectIncome();
+        fetchLevelIncome();
     }, []);
     
     return (
@@ -119,4 +119,4 @@ const DirectIncome = () => {
     );
 };
 
-export default DirectIncome;
+export default LevelIncome;

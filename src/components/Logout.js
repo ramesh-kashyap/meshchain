@@ -7,7 +7,7 @@ const Logout = () => {
 
     const handleLogout = async () => {
         try {
-            await axios.post("http://localhost:5001/api/auth/logout");
+            await axios.post("http://localhost:3002/api/auth/logout");
             localStorage.removeItem("token"); // Remove JWT token
             navigate("/login"); // Redirect to login
         } catch (error) {

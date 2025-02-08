@@ -3,6 +3,7 @@ import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import Team from './pages/team/Team';
 import Node from './pages/team/Node';
+import LevelIncomes from './pages/income/LevelIncomes';
 import Profile from './pages/profile/Profile';
 import Tpassword from './pages/profile/Tpassword';
 import Email from './pages/profile/Email';
@@ -11,7 +12,7 @@ import WithdrawReq from './pages/Withdraw/WithdrawReq';
 import Wallet from './pages/invest/Wallet';
 import RechargeFunds from './pages/invest/RechargeFunds';
 import Transferfund from './pages/invest/Transferfund';
-import PublicRoute from './components/PublicRoute'; 
+// import PublicRoute from './components/PublicRoute'; 
 import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './pages/home/dashboard';
 import Sidebar from './components/Sidebar';
@@ -51,6 +52,8 @@ function Layout({ children }) {
                             <Route path="/SelectNetwork" element={<ProtectedRoute><SelectNetwork/></ProtectedRoute>} />
                             <Route path="/WithdrawReq" element={<ProtectedRoute><WithdrawReq/></ProtectedRoute>} />
                             <Route path="/Transferfund" element={<ProtectedRoute><Transferfund/></ProtectedRoute>} />
+                            <Route path="/LevelIncome" element={<ProtectedRoute><LevelIncomes/></ProtectedRoute>} />
+
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />
                             <Route path="/forgot-password" element={<ForgotPassword />} />

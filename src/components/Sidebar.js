@@ -58,7 +58,7 @@ export default function Header() {
             />
             <span className="ml-4">Overview</span>
           </Link>
-          <Link className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" to="/Node">
+          <Link className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" to="/DirectIncome">
             <img
               alt="my_nodes Icon"
               loading="lazy"
@@ -69,7 +69,33 @@ export default function Header() {
               src="upnl/assets/icons/icon-nodes.svg"
               style={{ color: "transparent" }}
             />
-            <span className="ml-4">Nodes</span>
+            <span className="ml-4">Direct Income</span>
+          </Link>
+          <Link className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" to="/RoiIncome">
+            <img
+              alt="my_nodes Icon"
+              loading="lazy"
+              width="16"
+              height="16"
+              decoding="async"
+              data-nimg="1"
+              src="upnl/assets/icons/icon-nodes.svg"
+              style={{ color: "transparent" }}
+            />
+            <span className="ml-4">Roi Income</span>
+          </Link>
+          <Link className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" to="/LevelIncome">
+            <img
+              alt="rewards Icon"
+              loading="lazy"
+              width="16"
+              height="16"
+              decoding="async"
+              data-nimg="1"
+              src="upnl/assets/icons/icon-rewards.svg"
+              style={{ color: "transparent" }}
+            />
+            <span className="ml-4">Level Income</span>
           </Link>
           <Link className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" to="/">
             <img

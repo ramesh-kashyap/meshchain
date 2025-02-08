@@ -2,8 +2,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'r
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import Team from './pages/team/Team';
-import Node from './pages/team/Node';
+import DirectIncome from './pages/income/DirectIncome';
 import LevelIncomes from './pages/income/LevelIncomes';
+import RoiIncome from './pages/income/RoiIncome';
+
 import Profile from './pages/profile/Profile';
 import Tpassword from './pages/profile/Tpassword';
 import Email from './pages/profile/Email';
@@ -39,7 +41,7 @@ function Layout({ children }) {
                             
                         <Route path="/" element={<Navigate to="/login" />} />
                         <Route path="/Dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-                        <Route path="/Node" element={<ProtectedRoute><Node /></ProtectedRoute>} />
+                        <Route path="/DirectIncome" element={<ProtectedRoute><DirectIncome /></ProtectedRoute>} />
 
 
                             <Route path="/nodedetails" element={<ProtectedRoute><NodeDetails /></ProtectedRoute>} />
@@ -53,6 +55,7 @@ function Layout({ children }) {
                             <Route path="/WithdrawReq" element={<ProtectedRoute><WithdrawReq/></ProtectedRoute>} />
                             <Route path="/Transferfund" element={<ProtectedRoute><Transferfund/></ProtectedRoute>} />
                             <Route path="/LevelIncome" element={<ProtectedRoute><LevelIncomes/></ProtectedRoute>} />
+                            <Route path="/RoiIncome" element={<ProtectedRoute><RoiIncome/></ProtectedRoute>} />
 
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />

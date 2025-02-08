@@ -4,30 +4,74 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [username, setUsername] = useState(""); // State for username
-  const [password, setPassword] = useState(""); // State for password
-  const [message, setMessage] = useState(""); // State for message
-  const navigate = useNavigate(); // For navigation
-  
-  // Handle login for local authentication (username + password)
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(
-        "http://localhost:3002/api/auth/login", // API endpoint for login
-        { username, password } // Sending data (username and password)
-      );
-
-      if (response.status === 200) {
-        localStorage.setItem("username", response.data.username);
-        setMessage("Login successful! Redirecting...");
-        setTimeout(() => navigate("/Dashboard"), 1000); // Redirect after 1 second
-      }
-    } catch (error) {
-      console.error("Error during login:", error);
-      setMessage(error.response?.data?.error || "Login failed");
-    }
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    // Redirecting to your Google login API
+    window.location.href = "http://localhost:3002/google";
   };
+
+
+  
+
+  const responseGoogle = async (authResult)=>{
+    try{
+        console.log(authResult);
+        if(authResult['code']){
+            const result = await googleAuth(authResult['code']); 
+            console.log(result.data);
+            // Extract user information from the result (assuming the backend returns this)
+            const { name, email, picture } = result.data.user;
+
+            // Log the user information
+            console.log(`User's Name: ${name}`);
+            console.log(`User's Email: ${email}`);
+            console.log(`User's Profile Image: ${picture}`);
+
+            localStorage.setItem('authToken', result.data.token);
+
+            // Redirect to dashboard
+            navigate('/');
+       
+        }else {
+            // If there's no authorization code, handle the error
+            console.error('Authorization code not received');
+        }
+    }catch(err){
+        console.error('Error while requesting google code:', err);
+    }
+}
+
+    const googleLogin= useGoogleLogin({
+        onSuccess: responseGoogle,
+        onError: responseGoogle,
+        flow: 'auth-code',
+      });
+
+      const handleLoginSuccess = async(credentialResponse) => {
+        // credentialResponse contains the credential/token information
+        console.log('Login Success:', credentialResponse);
+        // You might want to send the credentialResponse.credential to your backend for verification
+
+        try {
+          // Send the Google credential to your backend
+          const response = await axios.post('http://localhost:3002/api/auth/google', {
+            token: credentialResponse.credential,
+          });
+           console.log('reaponse',response);
+          // Assuming the backend returns a JSON object with a property `jwtToken`
+          const { jwtToken } = response.data;
+          console.log('check',jwtToken);
+          if (jwtToken) {
+            // Save JWT to local storage
+            localStorage.setItem('token', jwtToken);
+            // Navigate to a protected route (e.g., /dashboard)
+            navigate('/Dashboard');
+          } else {
+            console.error('JWT token not found in the response');
+          }
+        } catch (error) {
+          console.error('Error during token generation:', error);
+        }
 
   // Handle success after Google login
   const handleLoginSuccess = (response) => {

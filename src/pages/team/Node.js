@@ -120,3 +120,4 @@ const DirectIncome = () => {
 };
 
 export default DirectIncome;
+    

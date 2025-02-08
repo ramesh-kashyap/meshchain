@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/auth/login", // API endpoint for login
+        "http://localhost:3002/api/auth/login", // API endpoint for login
         { username, password } // Sending data (username and password)
       );
 
@@ -22,18 +22,18 @@ const Login = () => {
         localStorage.setItem("username", response.data.username);
         setMessage("Login successful! Redirecting...");
         setTimeout(() => navigate("/Dashboard"), 1000); // Redirect after 1 second
-      }
-    } catch (error) {
+          }
+        } catch (error) {
       console.error("Error during login:", error);
       setMessage(error.response?.data?.error || "Login failed");
-    }
+        }
   };
 
   // Handle success after Google login
   const handleLoginSuccess = (response) => {
     console.log("Google Login Success: ", response);
     // You can send the response to the backend for further processing or store user info in localStorage
-  };
+      };
 
   // Handle error during Google login
   const responseGoogle = (error) => {
@@ -122,11 +122,11 @@ const Login = () => {
 
         {/* Google Login Button */}
         <div className="mt-6 text-center">
-          <GoogleLogin
-            onSuccess={handleLoginSuccess}
-            onError={responseGoogle}
-            flow="auth-code"
-          />
+        <GoogleLogin
+  onSuccess={handleLoginSuccess}
+  onError={responseGoogle}
+  flow="auth-code"
+/>
         </div>
 
         <div className="mt-6 text-center">

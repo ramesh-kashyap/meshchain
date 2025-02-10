@@ -1,26 +1,37 @@
-// import React from 'react';
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 
 
 const Node = () => {
-    // const [incomes, setIncomes] = useState([]);
-    // const [loading, setLoading] = useState(true);
-  
-    // useEffect(() => {
-    //     const token = localStorage.getItem("token");
-    //     if (token) {
-    //         fetch("http://localhost:5001/api/auth/income/roi", {
-    //           method: "GET",
-    //           headers: {
-    //             "Authorization": `Bearer ${token}`,
-    //             "Content-Type": "application/json",
-    //           },
-    //         })
-    //         .then((res) => res.json())
-    //         .then((data) => console.log("API Response:", data))
-    //         .catch((err) => console.error("Fetch error:", err));
-    //     }
-    // }, [localStorage.getItem("token")]);
 
+
+    const [income, setIncome] = useState([]);
+    const [error, setError] = useState("");
+    useEffect(() => {
+        const fetchNode = async () => {
+            const token = localStorage.getItem("token"); // Get JWT Token
+            console.log("Token from LocalStorage:", token); // Debugging
+    
+            if (!token) {
+                setError("User not authenticated!");
+                return;
+            }
+    
+            try {
+                const response = await axios.get("http://localhost:3002/api/auth/direct-income", {
+                    headers: { Authorization: `Bearer ${token}` } // ✅ Correct format
+                });
+    
+                setIncome(response.data.data);
+                console.log(response)
+            } catch (err) {
+                setError(err.response?.data?.error || "Error fetching income");
+            }
+        };
+    
+        fetchNode();
+    }, []);
       
     return (
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
@@ -71,14 +82,16 @@ const Node = () => {
                             <div className="text-right hidden sm:block">Today Rewards</div>
                         </div>
                     </div>
-                    <div className="space-y-4">
+
+
+                    {income.length > 0 ? (
+                            income.map((income, index) => (
+
+
+
+                    <div className="space-y-4"   key={index}>
                         <a href="/nodedetails">
                             <div className="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
-
-
-
-
-                                
                                 <div className="hidden md:grid grid-cols-5 lg:grid-cols-6 items-center">
                                     <div className="flex items-center space-x-3">
                                         <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
@@ -91,39 +104,40 @@ const Node = () => {
                                             />
                                         </div>
 
-
-
                                         <div>
-                                            <p className="text-sm font-medium">raj</p>
-                                            <p className="text-xs text-[#999999]">Telegram Node</p>
+                                            <p className="text-sm font-medium">{income.name}</p>
+                                            <p className="text-xs text-[#999999]">{income.type}</p>
                                         </div>
                                     </div>
-                                    <p className="hidden lg:block text-sm text-center font-medium">1236796590</p>
+                                    <p className="hidden lg:block text-sm text-center font-medium">{income.user_id_fk}</p>
                                     <div className="flex justify-center">
-                                        <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">Online</span>
+                                        <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{income.status}</span>
                                     </div>
                                     <div className="flex justify-center">
-                                        <p className="text-sm w-fit text-center px-3">0.25 TH/s</p>
+                                        <p className="text-sm w-fit text-center px-3">{income.hash_rate}</p>
                                     </div>
                                     <div className="flex justify-center">
-                                        <p className="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">0 hr, 0 min</p>
+                                        <p className="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">{income.total_uptime}</p>
                                     </div>
                                     <div className="text-right">
-                                        <p className="text-lg font-semibold"><span>0pt</span></p>
-                                        <p className="text-xs">Total: <span>0pt</span></p>
+                                        <p className="text-lg font-semibold"><span>0</span></p>
+                                        <p className="text-xs">Total: <span>{income.today_reward}</span></p>
                                     </div>
                                 </div>
 
-
-
-
-
-
-
-                            
                             </div>
                         </a>
                     </div>
+
+
+))
+) : (
+    <p className="text-center text-gray-500">No Income Data Found</p>
+)}
+
+
+
+
                 </div>
             </div>
             <div className="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg">

@@ -4,11 +4,7 @@ import axios from "axios";
 const Dashboard = () => {
    const [user, setUser] = useState(null);
 
-   useEffect(() => {
-       axios.get("http://localhost:5000/auth/user", { withCredentials: true })
-           .then((response) => setUser(response.data))
-           .catch(() => setUser(null));
-   }, []);
+ 
 
     return (
         

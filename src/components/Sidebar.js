@@ -58,7 +58,7 @@ export default function Header() {
             />
             <span className="ml-4">Overview</span>
           </Link>
-          <Link className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" to="/DirectIncome">
+          {/* <Link className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" to="/DirectIncome">
             <img
               alt="my_nodes Icon"
               loading="lazy"
@@ -96,7 +96,7 @@ export default function Header() {
               style={{ color: "transparent" }}
             />
             <span className="ml-4">Level Income</span>
-          </Link>
+          </Link> */}
           <Link className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" to="/">
             <img
               alt="rewards Icon"

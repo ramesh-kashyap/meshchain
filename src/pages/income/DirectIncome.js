@@ -19,7 +19,9 @@ const DirectIncome = () => {
                 const response = await axios.get("http://localhost:3002/api/auth/direct-income", {
                     headers: { Authorization: `Bearer ${token}` } // ✅ Correct format
                 });
+                // const response = await Api.get("/direct-income", {data});
     
+             
                 setIncome(response.data.data);
             } catch (err) {
                 setError(err.response?.data?.error || "Error fetching income");

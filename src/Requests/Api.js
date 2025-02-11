@@ -21,6 +21,29 @@ Api.interceptors.request.use(
     }
 );
 
+const Api3 = axios.create({
+    baseURL: 'http://localhost:3002/api3/withdrawal', // Ensure this is your API's base URL
+    headers: {
+        'Content-Type': 'application/json', // Fixed 'Content-type' to 'Content-Type'
+    },
+});
+// Function to make a withdrawal request
+export const makeWithdrawal = async (withdrawData, token) => {
+    try {
+      const response = await Api3.post(
+        "/withdraw",
+        withdrawData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Send JWT token in the Authorization header
+          }
+        }
+      );
+      return response.data;
+    } catch (error) {
+      throw error.response?.data || error.message;
+    }
+  };
 // Interceptors for responses
 Api.interceptors.response.use(
     (response) => response, // Pass through successful responses

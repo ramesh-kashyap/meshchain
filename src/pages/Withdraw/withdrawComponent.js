@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import axios from 'axios';
 
 const networkOptions = [
   {
@@ -10,12 +11,37 @@ const networkOptions = [
     name: "USDT",
     logo: "upnl/assets/icons/logo_usdt_2.svg",
   },
-  {
-    name: "Polygon",
-    logo: "upnl/assets/icons/logo_eth_2.svg",
-  },
+
 ];
 
+
+const WithdrawComponent = () => {
+  const [selectedOption, setSelectedOption] = useState(networkOptions[0]);
+  const [address, setAddress] = useState("");
+  const [amount, setAmount] = useState("");
+  
+  const handleWithdraw = async () => {
+      if (!address || !amount) {
+          alert("Please enter a valid address and amount!");
+          return;
+      }
+
+      try {
+        
+          const response = await axios.post("http://localhost:3002/api/auth/withdrawal", {
+           
+
+              network: selectedOption.name,
+              address,
+              amount: parseFloat(amount),
+          });
+          console.log("ss:", response);
+          alert(response.data.message);
+      } catch (error) {
+          console.error("Withdrawal error:", error);
+          alert("Failed to process withdrawal!");
+      }
+  };
 const DropdownExample = ({ selectedOption, setSelectedOption }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -43,7 +69,7 @@ const DropdownExample = ({ selectedOption, setSelectedOption }) => {
       {isOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-md rounded-2xl mt-1 z-10">
           {networkOptions.map((option, index) => (
-            <div
+            <div 
               key={index}
               onClick={() => handleOptionClick(option)}
               className="p-3 flex items-center gap-3 hover:bg-gray-100 cursor-pointer"
@@ -58,8 +84,6 @@ const DropdownExample = ({ selectedOption, setSelectedOption }) => {
   );
 };
 
-const WithdrawComponent = () => {
-  const [selectedOption, setSelectedOption] = useState(networkOptions[0]);
 
   return (
     <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
@@ -83,16 +107,26 @@ const WithdrawComponent = () => {
 
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-medium">Address</label>
-                <div className="flex gap-3 rounded-2xl border border-[#F1F1F1] bg-white w-full items-center h-[65px] p-3 sm:p-5">
-                  <input className="w-full placeholder:text-[#999999] text-sm md:text-base" placeholder="Enter The Address" />
-                </div>
+                <div className="flex gap-3 rounded-2xl  bg-white w-full items-center h-[65px]">
+                <input
+                className="w-full rounded-2xl border bg-white p-3 sm:p-5 text-sm md:text-base"
+                placeholder="Enter The Address"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+              />                </div>
               </div>
 
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-medium">Amount</label>
-                <div className="flex gap-3 rounded-2xl border border-[#F1F1F1] bg-white w-full items-center h-[65px] p-3 sm:p-5">
-                  <input className="w-full placeholder:text-[#999999]  md:text-base" placeholder="Minimum withdrawal 0.01 USDT" type="text" defaultValue="0" inputMode="numeric" />
-                  <div className="text-green font-semibold cursor-pointer">Max</div>
+                <div className="flex gap-3 rounded-2xl  bg-white w-full items-center h-[65px]">
+                <input
+                className="w-full rounded-2xl border  bg-white p-3 sm:p-5 text-sm md:text-base"
+                placeholder="Minimum withdrawal 0.01 USDT"
+                type="number"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+              />                 <div className="font-semibold cursor-pointer" style={{ color: '#32CD32', fontWeight: '600', cursor: 'pointer' }}>Max</div>
+
                 </div>
               </div>
             </div>
@@ -110,7 +144,7 @@ const WithdrawComponent = () => {
             </div>
 
             <div className="mt-8 w-full flex justify-end">
-              <button disabled className="bg-gray-400 text-white px-6 py-3 rounded-[30px]  md:w-auto disabled:opacity-50">Confirm</button>
+              <button onClick={handleWithdraw} className="bg-green-500 text-white px-3 py-1 rounded-[30px]  md:w-auto disabled:opacity-50">Confirm</button>
             </div>
           </div>
           <div className="bg-white rounded-[16px] p-6 lg:col-span-2 xl:col-span-1">

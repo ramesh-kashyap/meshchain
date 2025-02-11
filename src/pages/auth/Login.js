@@ -1,7 +1,17 @@
 import React, { useState } from "react";
-import { GoogleLogin } from '@react-oauth/google'; // Make sure you have this import for Google login
-import axios from "axios";
+import Api2, { googleAuth } from '../../Requests/Api';
+import Api from '../../Requests/Api';
+import { useGoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
+import { BrowserRouter as Route, Router,Routes, Link } from 'react-router-dom';
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import axios from "axios";
+
+
+// import PhoneInput from "react-phone-input-2";
+
+// import "react-phone-input-2/lib/newcss.css";
+// import CustomPopup from '../auth/Successfullypass';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -73,20 +83,11 @@ const Login = () => {
           console.error('Error during token generation:', error);
         }
 
-  // Handle success after Google login
-  const handleLoginSuccess = (response) => {
-    console.log("Google Login Success: ", response);
-    // You can send the response to the backend for further processing or store user info in localStorage
-  };
+      };
 
-  // Handle error during Google login
-  const responseGoogle = (error) => {
-    console.error("Google Login Error:", error);
-    setMessage("Google login failed");
-  };
 
   return (
-    <div className="flex flex-col items-center justify-center pt-[100px] p-6">
+    <div className="min-h-screen flex flex-col items-center justify-center pt-[100px] bg-gray-50 p-6">
       <div className="absolute top-6 flex justify-between w-full px-6">
         <img
           alt="MeshNode Logo"
@@ -102,13 +103,13 @@ const Login = () => {
           width="40"
           height="40"
           className="flex sm:hidden"
-          src="upnl/assets/icons/logo.png"
+          src="/upnl/assets/icons/logo_meshchain.svg"
         />
         <div className="flex">
-          <button className="w-[80px] md:w-[100px] mr-2 md:mr-4 py-2 px-2 md:px-4 bg-green-500 text-white rounded-[30px] ">
+          <button className="w-[80px] md:w-[100px] mr-2 md:mr-4 py-2 px-2 md:px-4 bg-green-500 text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
             Log In
           </button>
-          <button className="w-[100px] py-2 px-2 md:px-4 bg-[#171717] text-white rounded-[30px] shadow-md ">
+          <button className="w-[100px] py-2 px-2 md:px-4 bg-[#171717] text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
             Sign Up
           </button>
         </div>
@@ -120,7 +121,7 @@ const Login = () => {
         <p className="text-sm text-gray-500 text-center mb-6">
           Welcome back! Log in to stay updated with all your nodes and rewards.
         </p>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={(e) => e.preventDefault()}> {/* Prevent default form submission */}
           <div className="mb-3">
             <label className="block text-sm font-medium text-gray-700">
               Username
@@ -128,8 +129,6 @@ const Login = () => {
             <div className="relative">
               <input
                 type="text"
-                value={username} // Bind value to state
-                onChange={(e) => setUsername(e.target.value)} // Update state on change
                 placeholder="Enter username"
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
               />
@@ -142,9 +141,6 @@ const Login = () => {
             </label>
             <div className="relative">
               <input
-                type="password"
-                value={password} // Bind value to state
-                onChange={(e) => setPassword(e.target.value)} // Update state on change
                 required
                 placeholder="Enter Password"
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
@@ -166,11 +162,11 @@ const Login = () => {
 
         {/* Google Login Button */}
         <div className="mt-6 text-center">
-          <GoogleLogin
-            onSuccess={handleLoginSuccess}
-            onError={responseGoogle}
-            flow="auth-code"
-          />
+        <GoogleLogin
+  onSuccess={handleLoginSuccess}
+  onError={responseGoogle}
+  flow="auth-code"
+/>
         </div>
 
         <div className="mt-6 text-center">

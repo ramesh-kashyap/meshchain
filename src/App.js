@@ -2,10 +2,9 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'r
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import Team from './pages/team/Team';
-import DirectIncome from './pages/income/DirectIncome';
-import LevelIncomes from './pages/income/LevelIncomes';
-import RoiIncome from './pages/income/RoiIncome';
+import Level from './pages/team/Level';
 
+import Node from './pages/team/Node';
 import Profile from './pages/profile/Profile';
 import Tpassword from './pages/profile/Tpassword';
 import Email from './pages/profile/Email';
@@ -46,6 +45,8 @@ function Layout({ children }) {
 
                             <Route path="/nodedetails" element={<ProtectedRoute><NodeDetails /></ProtectedRoute>} />
                             <Route path="/Team" element={<ProtectedRoute><Team /></ProtectedRoute>} />
+                            <Route path="/Level" element={<ProtectedRoute><Level/></ProtectedRoute>} />
+
                             <Route path="/Wallet" element={<ProtectedRoute><Wallet /></ProtectedRoute>} />
                             <Route path="/Profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
                             <Route path="/Tpassword" element={<ProtectedRoute><Tpassword /></ProtectedRoute>} />

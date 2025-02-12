@@ -62,8 +62,17 @@ const Header = () => {
                   src="upnl/assets/icons/icon_user_add.svg"
                   style={{ color: "transparent" }}
                 />
-                <span> {username} </span>
+                <span> username </span>
+
+
               </div>
+
+
+              
+
+
+
+              
               <div className="flex mx-2 items-center justify-center font-bold"></div>
             </a>
           </div>

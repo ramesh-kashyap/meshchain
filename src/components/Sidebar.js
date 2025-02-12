@@ -16,7 +16,7 @@ export default function Header() {
           <Link
             className="flex items-center py-5 pl-[22px] h-[80px]"
             to="/"
-            style={{ width: "119px" }}
+            style={{ width: "182px" }}
           >
             <img
               alt="Logo"
@@ -58,9 +58,19 @@ export default function Header() {
             />
             <span className="ml-4">Overview</span>
           </Link>
-        
-         
-         
+          <Link className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" to="/Node">
+            <img
+              alt="my_nodes Icon"
+              loading="lazy"
+              width="16"
+              height="16"
+              decoding="async"
+              data-nimg="1"
+              src="upnl/assets/icons/icon-nodes.svg"
+              style={{ color: "transparent" }}
+            />
+            <span className="ml-4">Nodes</span>
+          </Link>
           {/* <Link className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" to="/">
             <img
               alt="rewards Icon"

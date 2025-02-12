@@ -1,11 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
 
 const Header = () => {
+    const [name, setName] = useState("");
+    const [username, setUsername] = useState("");
+  
+    const token = localStorage.getItem("token"); // Token retrieve karna
+  
+    useEffect(() => {
+      if (!token) return;
+  
+      axios.get("http://localhost:3002/api/auth/header", {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((response) => {
+          console.log("Header Data:", response.data); // Debugging ke liye
+  
+          // Agar response me `name` aur `username` dono milte hain toh set karein
+          setName(response.data.name || "Guest");
+          setUsername(response.data.username || "Unknown");
+        })
+        .catch((error) => {
+          console.error("Error fetching header:", error.response?.data);
+        });
+    }, [token]);
+  
   return (
     
       <div className="flex items-center justify-between py-2 mt-5 px-4 md:px-10 lg:px-10 xl:px-20">
         {/* Logo Section */}
-        <a className="md:hidden" href="/">
+        <a className="md:hidden" href="/Dashboard">
           <img
             alt="Logo"
             loading="lazy"
@@ -37,7 +62,7 @@ const Header = () => {
                   src="upnl/assets/icons/icon_user_add.svg"
                   style={{ color: "transparent" }}
                 />
-                <span> username </span>
+                <span> {username} </span>
               </div>
               <div className="flex mx-2 items-center justify-center font-bold"></div>
             </a>
@@ -45,7 +70,7 @@ const Header = () => {
 
           {/* Button Section */}
           <div className="relative flex items-center space-x-2 font-semibold">
-            <span className="hidden lg:inline text-xl">Hello, raj!</span>
+            <span className="hidden lg:inline text-xl">Hello, {name}!</span>
             <button>
               <div
                 className="flex items-center justify-center w-[40px] h-[38px] rounded-full mx-auto text-[24px] font-semibold"
@@ -57,7 +82,7 @@ const Header = () => {
             
               </div>
             </button>
-            <div className="hidden md:inline-block">
+            {/* <div className="hidden md:inline-block">
               <div className="relative inline-block text-[16px] font-bold">
                 <button
                   className="flex p-2 items-center bg-white border justify-center align-center h-[38px] w-[60px] rounded-[20px] hover:bg-gray-200 focus:outline-none"
@@ -65,7 +90,7 @@ const Header = () => {
                   EN
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ import Profile from './pages/profile/Profile';
 import Tpassword from './pages/profile/Tpassword';
 import Email from './pages/profile/Email';
 import SelectNetwork from './pages/Withdraw/withdrawComponent';
-import WithdrawReq from './pages/Withdraw/WithdrawReq';
+// import WithdrawReq from './pages/Withdraw/WithdrawReq';
 import Wallet from './pages/invest/Wallet';
 import RechargeFunds from './pages/invest/RechargeFunds';
 import Transferfund from './pages/invest/Transferfund';
@@ -52,7 +52,7 @@ function Layout({ children }) {
                             <Route path="/Email" element={<ProtectedRoute><Email /></ProtectedRoute>} />
                             <Route path="/RechargeFunds" element={<ProtectedRoute><RechargeFunds/></ProtectedRoute>} />
                             <Route path="/SelectNetwork" element={<ProtectedRoute><SelectNetwork/></ProtectedRoute>} />
-                            <Route path="/WithdrawReq" element={<ProtectedRoute><WithdrawReq/></ProtectedRoute>} />
+                            {/* <Route path="/WithdrawReq" element={<ProtectedRoute><WithdrawReq/></ProtectedRoute>} /> */}
                             <Route path="/Transferfund" element={<ProtectedRoute><Transferfund/></ProtectedRoute>} />
                             <Route path="/LevelIncome" element={<ProtectedRoute><LevelIncomes/></ProtectedRoute>} />
                             <Route path="/RoiIncome" element={<ProtectedRoute><RoiIncome/></ProtectedRoute>} />

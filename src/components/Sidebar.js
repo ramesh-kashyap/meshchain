@@ -45,7 +45,7 @@ export default function Header() {
 
         <nav className="my-5 px-5 text-sm font-medium text-[#555]">
           <div className="text-gray-400 text-xs mb-2">MENU</div>
-          <Link className="flex items-center py-2 px-3 mb-2 rounded-md bg-green-500 text-white" to="/">
+          <Link className="flex items-center py-2 px-3 mb-2 rounded-md bg-green-500 text-white" to="/Dashboard">
             <img
               alt="overview Icon"
               loading="lazy"

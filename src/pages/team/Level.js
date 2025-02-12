@@ -1,12 +1,34 @@
-import React from 'react';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Api from "../../Requests/Api";
 
 const Level = () => {
-    const copyToClipboard = () => {
-        const textToCopy = document.getElementById('textToCopy').innerText;
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            alert('Copied to clipboard!');
-        });
+    const [level, setLevel] = useState([]);
+    const [error, setError] = useState("");
+   
+    useEffect(() => {
+        fetchteam();
+    }, []);
+
+
+    const fetchteam = async () => {
+        const token = localStorage.getItem("token"); // Get JWT Token
+        console.log("Token from LocalStorage:", token); // Debugging
+
+        if (!token) {
+            setError("User not authenticated!");
+            return;
+        }
+        try {
+            const data2 ={token:token};
+            const response =await Api.post('auth/list',data2);                
+            setLevel(response.data);
+            // console.log(response.data)
+        } catch (err) {
+            setError(err.response?.data?.error || "Error fetching income");
+        }
     };
+
 
     return (
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">

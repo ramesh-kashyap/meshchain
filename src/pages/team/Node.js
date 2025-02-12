@@ -23,6 +23,7 @@ const Node = () => {
                     headers: { Authorization: `Bearer ${token}` } // ✅ Correct format
                 });
     
+                
                 setIncome(response.data.data);
                 console.log(response)
             } catch (err) {

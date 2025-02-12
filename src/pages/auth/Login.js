@@ -51,7 +51,7 @@ const Login = () => {
     }
 }
 
-    const googleLogin= useGoogleLogin({
+    const googleLogin = useGoogleLogin({
         onSuccess: responseGoogle,
         onError: responseGoogle,
         flow: 'auth-code',

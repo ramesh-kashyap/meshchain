@@ -1,5 +1,6 @@
-import React from 'react';
-
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Api from "../../Requests/Api";
 const Team = () => {
     const copyToClipboard = () => {
         const textToCopy = document.getElementById('textToCopy').innerText;
@@ -7,6 +8,35 @@ const Team = () => {
             alert('Copied to clipboard!');
         });
     };
+
+
+
+    const [income, setIncome] = useState([]);
+    const [error, setError] = useState("");
+    useEffect(() => {
+        fetchteam();
+    }, []);
+
+
+    const fetchteam = async () => {
+        const token = localStorage.getItem("token"); // Get JWT Token
+        console.log("Token from LocalStorage:", token); // Debugging
+
+        if (!token) {
+            setError("User not authenticated!");
+            return;
+        }
+        try {
+            const data2 ={token:token};
+            const response =await Api.post('auth/team',data2);                
+            setIncome(response.data);
+            // console.log(response.data)
+        } catch (err) {
+            setError(err.response?.data?.error || "Error fetching income");
+        }
+    };
+
+
 
     return (
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
@@ -23,7 +53,7 @@ const Team = () => {
                                 <h3 className="font-medium mb-1">Total Members</h3>
                                 <div className="flex items-baseline">
                                     <p className="text-[32px] font-semibold mr-2" style={{ fontFamily: 'ClashDisplay-Semibold' }}>
-                                        <span>5</span>
+                                        <span>{income.data?.totalTeam}</span>
                                     </p>
                                     <p className="text-secondary">Members</p>
                                 </div>
@@ -39,7 +69,7 @@ const Team = () => {
                                 <h3 className="font-medium mb-1">Total Valid</h3>
                                 <div className="flex items-baseline">
                                     <p className="text-[32px] font-semibold mr-2" style={{ fontFamily: 'ClashDisplay-Semibold' }}>
-                                        <span>4</span>
+                                        <span> {income.data?.ActivetotalTeam}</span>
                                     </p>
                                     <p className="text-secondary">Members</p>
                                 </div>
@@ -79,8 +109,9 @@ const Team = () => {
                         </div>
                     </div>
                     <div className="space-y-4">
-                        {[1, 2, 3, 4, 5].map((level) => (
-                            <a key={level} href={`user/list?selected_level=${level}`}>
+                    {/* {income.data?.totalTeam} */}
+                                               
+                            <a >
                                 <div className="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
                                     <div className="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
                                         <div className="flex items-center space-x-3">
@@ -88,18 +119,18 @@ const Team = () => {
                                                 <i className="fas fa-arrow-right"></i>
                                             </div>
                                             <div>
-                                                <p className="text-sm font-medium">{level} generation data</p>
+                                                <p className="text-sm font-medium"> First generation data</p>
                                             </div>
                                         </div>
-                                        <p className="hidden lg:block text-sm text-center font-medium">1/1</p>
+                                        <p className="hidden lg:block text-sm text-center font-medium">{income.data?.gen_team1total ||0}/{income.data?.active_gen_team1total ||0}</p>
                                         <div className="flex justify-center">
-                                            <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">0.0</span>
+                                            <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{income.data?.gen_team1Recharge || 0}</span>
                                         </div>
                                         <div className="flex justify-center">
-                                            <p className="text-sm w-fit text-center px-3">0.00</p>
+                                            <p className="text-sm w-fit text-center px-3">{income.data?.gen_team1Withdraw || 0}</p>
                                         </div>
                                         <div className="flex justify-center">
-                                            <p className="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">0.00</p>
+                                            <p className="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">{income.data?.gen_team1Earning || 0}</p>
                                         </div>
                                     </div>
                                     <div className="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
@@ -108,7 +139,7 @@ const Team = () => {
                                                 <i className="fas fa-arrow-right"></i>
                                             </div>
                                             <div>
-                                                <p className="text-sm font-medium">{level} generation data</p>
+                                                <p className="text-sm font-medium"> generation data</p>
                                             </div>
                                         </div>
                                         <div className="flex justify-end">
@@ -117,8 +148,240 @@ const Team = () => {
                                     </div>
                                 </div>
                             </a>
-                        ))}
-                    </div>
+
+                
+                
+                
+                 </div>
+
+
+                 <div className="space-y-4">
+                    {/* {income.data?.totalTeam} */}
+                                               
+                            <a >
+                                <div className="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
+                                    <div className="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
+                                        <div className="flex items-center space-x-3">
+                                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                <i className="fas fa-arrow-right"></i>
+                                            </div>
+                                            <div>
+                                                <p className="text-sm font-medium"> Second generation data</p>
+                                            </div>
+                                        </div>
+                                        <p className="hidden lg:block text-sm text-center font-medium">{income.data?.gen_team2total ||0}/{income.data?.active_gen_team2total||0}</p>
+                                        <div className="flex justify-center">
+                                            <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{income.data?.gen_team2Recharge || 0}</span>
+                                        </div>
+                                        <div className="flex justify-center">
+                                            <p className="text-sm w-fit text-center px-3">{income.data?.gen_team2Withdraw || 0}</p>
+                                        </div>
+                                        <div className="flex justify-center">
+                                            <p className="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">{income.data?.gen_team2Earning || 0}</p>
+                                        </div>
+                                    </div>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
+                                        <div className="flex items-center space-x-3">
+                                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                <i className="fas fa-arrow-right"></i>
+                                            </div>
+                                            <div>
+                                                <p className="text-sm font-medium">generation data</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex justify-end">
+                                            <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">1/1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                
+                
+                
+                 </div>
+                 <div className="space-y-4">
+                    {/* {income.data?.totalTeam} */}
+                                               
+                            <a >
+                                <div className="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
+                                    <div className="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
+                                        <div className="flex items-center space-x-3">
+                                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                <i className="fas fa-arrow-right"></i>
+                                            </div>
+                                            <div>
+                                                <p className="text-sm font-medium">Third  generation data</p>
+                                            </div>
+                                        </div>
+                                        <p className="hidden lg:block text-sm text-center font-medium">{income.data?.gen_team3total ||0}/{income.data?.active_gen_team3total ||0}</p>
+                                        <div className="flex justify-center">
+                                            <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{income.data?.gen_team3Recharge || 0}</span>
+                                        </div>
+                                        <div className="flex justify-center">
+                                            <p className="text-sm w-fit text-center px-3">{income.data?.gen_team3Withdraw || 0}</p>
+                                        </div>
+                                        <div className="flex justify-center">
+                                            <p className="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">{income.data?.gen_team3Earning || 0}</p>
+                                        </div>
+                                    </div>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
+                                        <div className="flex items-center space-x-3">
+                                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                <i className="fas fa-arrow-right"></i>
+                                            </div>
+                                            <div>
+                                                <p className="text-sm font-medium"> generation data</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex justify-end">
+                                            <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">1/1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                
+                
+                
+                 </div>
+                 <div className="space-y-4">
+                    {/* {income.data?.totalTeam} */}
+                                               
+                            <a >
+                                <div className="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
+                                    <div className="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
+                                        <div className="flex items-center space-x-3">
+                                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                <i className="fas fa-arrow-right"></i>
+                                            </div>
+                                            <div>
+                                                <p className="text-sm font-medium"> Fourth  generation data</p>
+                                            </div>
+                                        </div>
+                                        <p className="hidden lg:block text-sm text-center font-medium">{income.data?.gen_team4total || 0}/{income.data?.active_gen_team4total|| 0}</p>
+                                        <div className="flex justify-center">
+                                            <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{income.data?.gen_team4Recharge || 0}</span>
+                                        </div>
+                                        <div className="flex justify-center">
+                                            <p className="text-sm w-fit text-center px-3">{income.data?.gen_team4Withdraw || 0}</p>
+                                        </div>
+                                        <div className="flex justify-center">
+                                            <p className="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">{income.data?.gen_team4Earning || 0}</p>
+                                        </div>
+                                    </div>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
+                                        <div className="flex items-center space-x-3">
+                                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                <i className="fas fa-arrow-right"></i>
+                                            </div>
+                                            <div>
+                                                <p className="text-sm font-medium"> generation data</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex justify-end">
+                                            <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">1/1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                
+                
+                
+                 </div>
+                 <div className="space-y-4">
+                    {/* {income.data?.totalTeam} */}
+                                               
+                            <a >
+                                <div className="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
+                                    <div className="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
+                                        <div className="flex items-center space-x-3">
+                                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                <i className="fas fa-arrow-right"></i>
+                                            </div>
+                                            <div>
+                                                <p className="text-sm font-medium"> fifth generation data</p>
+                                            </div>
+                                        </div>
+                                        <p className="hidden lg:block text-sm text-center font-medium">{income.data?.gen_team5total || 0}/{income.data?.active_gen_team5total || 0}</p>
+                                        <div className="flex justify-center">
+                                            <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{income.data?.gen_team5Recharge || 0}</span>
+                                        </div>
+                                        <div className="flex justify-center">
+                                            <p className="text-sm w-fit text-center px-3">{income.data?.gen_team5Withdraw || 0}</p>
+                                        </div>
+                                        <div className="flex justify-center">
+                                            <p className="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">{income.data?.gen_team5Earning || 0}</p>
+                                        </div>
+                                    </div>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
+                                        <div className="flex items-center space-x-3">
+                                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                <i className="fas fa-arrow-right"></i>
+                                            </div>
+                                            <div>
+                                                <p className="text-sm font-medium"> generation data</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex justify-end">
+                                            <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">1/1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                
+                
+                
+                 </div>
+                    <div className="space-y-4">
+                    {/* {income.data?.totalTeam} */}
+                                               
+                            <a >
+                                <div className="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
+                                    <div className="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
+                                        <div className="flex items-center space-x-3">
+                                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                <i className="fas fa-arrow-right"></i>
+                                            </div>
+                                            <div>
+                                                <p className="text-sm font-medium"> Sixth generation data</p>
+                                            </div>
+                                        </div>
+                                        <p className="hidden lg:block text-sm text-center font-medium">{income.data?.gen_team6total || 0}/{income.data?.active_gen_team6total || 0}</p>
+                                        <div className="flex justify-center">
+                                            <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{income.data?.gen_team6Recharge || 0}</span>
+                                        </div>
+                                        <div className="flex justify-center">
+                                            <p className="text-sm w-fit text-center px-3">{income.data?.gen_team6Withdraw || 0}</p>
+                                        </div>
+                                        <div className="flex justify-center">
+                                            <p className="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">{income.data?.gen_team6Earning || 0}</p>
+                                        </div>
+                                    </div>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
+                                        <div className="flex items-center space-x-3">
+                                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                <i className="fas fa-arrow-right"></i>
+                                            </div>
+                                            <div>
+                                                <p className="text-sm font-medium"> generation data</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex justify-end">
+                                            <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">1/1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                
+                
+                
+                 </div>
+
+
                 </div>
             </div>
             <div className="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg">

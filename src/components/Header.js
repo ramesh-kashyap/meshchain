@@ -15,7 +15,7 @@ const Header = () => {
             data-nimg="1"
             className="max-w-[156px]"
             src="upnl/assets/icons/logo.png"
-            style={{ color: "transparent", width: "50px" }}
+            style={{ color: "transparent", width: "100px" }}
           />
         </a>
         <div className="w-full flex flex-row justify-end md:justify-between">
@@ -23,7 +23,7 @@ const Header = () => {
           <div className="flex items-center h-[38px] text-gray-800 font-medium">
             <a
               className="hidden md:flex h-[38px] bg-white p-1 rounded-full mr-3"
-              href="/user/team" // Adjust the link here
+              href="/team" // Adjust the link here
             >
               <div className="flex items-center rounded-full pl-3 text-sm">
                 <img

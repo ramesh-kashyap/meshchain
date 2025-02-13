@@ -18,13 +18,13 @@ const Wallet = () => {
                                 <a href="/SelectNetwork">
                                     <button className="border border-black h-[46px] text-black px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center">Withdraw</button>
                                 </a>
-                                <a href="/Transferfund">
+                                {/* <a href="/Transferfund">
                                     <button className="border border-black h-[46px] text-black px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center"
                                         onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#000000'; e.currentTarget.style.color = 'white'; }}
                                         onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'white'; e.currentTarget.style.color = 'black'; }}>
                                         Transfer
                                     </button>
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                     </div>
@@ -101,23 +101,23 @@ const Wallet = () => {
                 </div>
             </div>
             <div className="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg">
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/dashboard">
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="dashboard">
                     <img alt="overview Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-overview.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-gray-400">Overview</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/node-power">
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="Node">
                     <img alt="my_nodes Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-gray-400">Nodes</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/team">
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="team">
                     <img alt="referrals Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-gray-400">Referrals</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/wallet">
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="wallet">
                     <img alt="wallet Icon" loading="lazy" width="20" height="20" className="green-filter" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-green-500">Wallet</span>
                 </a>
-                <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/profile-setting">
+                <a className="flex w-1/5 p-[12px] flex-col items-center" href="Profile">
                     <img alt="wallet Icon" loading="lazy" width="20" height="20" className="green-filter" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                     <span className="text-xs mt-1 text-green-500">Profile</span>
                 </a>

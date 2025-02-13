@@ -181,23 +181,23 @@ const Nodepower = () => {
                     </div>
                 </div>
                 <div className="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg">
-                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/dashboard">
+                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="dashboard">
                         <img alt="overview Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-overview.svg" style={{ color: 'transparent' }} />
                         <span className="text-xs mt-1 text-gray-400">Overview</span>
                     </a>
-                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/node-power">
+                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="Node">
                         <img alt="my_nodes Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
                         <span className="text-xs mt-1 text-gray-400">Nodes</span>
                     </a>
-                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/team">
+                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="team">
                         <img alt="referrals Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                         <span className="text-xs mt-1 text-gray-400">Referrals</span>
                     </a>
-                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/wallet">
+                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="wallet">
                         <img alt="wallet Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                         <span className="text-xs mt-1 text-green-500">Wallet</span>
                     </a>
-                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/profile-setting">
+                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="Profile">
                         <img alt="profile Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                         <span className="text-xs mt-1 text-green-500">Profile</span>
                     </a>

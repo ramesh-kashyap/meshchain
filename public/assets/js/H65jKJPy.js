@@ -10833,7 +10833,7 @@ const Y = {
             loginPsdUpdate: "/api/user/password/login/update",
             transferPsdUpdate: "/api/user/password/transaction/update",
             feedbackCreate: "/api/feedback/create",
-            profileInfoUpdate: "/api/user/info/profile/update",
+            profileInfoUpdate: "/api/info/profile/update",
             message_type: "/api/message/type/list",
             message_list: "/api/message/list",
             message_info: "/api/message/list/info",

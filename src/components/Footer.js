@@ -26,7 +26,7 @@ const Footer = () => {
 
       {/* Market link */}
       <Link
-        to="/user/Market" // Replace with the actual route
+        to="Market" // Replace with the actual route
         className="flex w-1/5 p-[12px] flex-col items-center"
       >
         <img
@@ -44,7 +44,7 @@ const Footer = () => {
 
       {/* Referrals link */}
       <Link
-        to="/user/team" // Replace with the actual route
+        to="/team" // Replace with the actual route
         className="flex w-1/5 p-[12px] flex-col items-center"
       >
         <img
@@ -62,7 +62,7 @@ const Footer = () => {
 
       {/* Profile link */}
       <Link
-        to="/user/profile-setting" // Replace with the actual route
+        to="profile-setting" // Replace with the actual route
         className="flex w-1/5 p-[12px] flex-col items-center"
       >
         <img

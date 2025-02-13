@@ -8,11 +8,6 @@ import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import axios from "axios";
 
 
-// import PhoneInput from "react-phone-input-2";
-
-// import "react-phone-input-2/lib/newcss.css";
-// import CustomPopup from '../auth/Successfullypass';
-
 const Login = () => {
   const navigate = useNavigate();
   const handleLogin = () => {

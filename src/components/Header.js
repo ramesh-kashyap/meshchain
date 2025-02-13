@@ -38,7 +38,16 @@ const Header = () => {
                   style={{ color: "transparent" }}
                 />
                 <span> username </span>
+
+
               </div>
+
+
+              
+
+
+
+              
               <div className="flex mx-2 items-center justify-center font-bold"></div>
             </a>
           </div>

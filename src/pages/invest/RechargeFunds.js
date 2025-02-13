@@ -27,7 +27,7 @@ const RechargeFunds = () => {
             <div>
                 <div className="flex justify-between">
                     <span className="text-white text-sm rounded-[22px] h-[33px] px-3 bg-black mb-4 mt-10 flex items-center space-x-2 cursor-pointer">
-                        <img alt="Back Icons" loading="lazy" width="17" height="12" src="upnl/assets/icons/icon-back.svg" style={{ color: 'transparent' }} />
+                        <img alt="Back Icons" loading="lazy" width="17" height="12" src="/upnl/assets/icons/icon-back.svg" style={{ color: 'transparent' }} />
                         <span>Back</span>
                     </span>
                 </div>
@@ -36,9 +36,9 @@ const RechargeFunds = () => {
                         <h2 className="text-xl sm:text-2xl font-bold">Deposit</h2>
                         <div className="flex justify-between items-center w-full bg-[#F9F9F9] rounded-[27px] px-[40px] max-sm:px-[20px] py-[4px] max-sm:py-[10px] text-[14px] text-[#999999] my-4 sm:my-6 sm:py-6 max-sm:gap-0">
                             <span className="text-center text-[#171717] cursor-pointer" onClick={toggleBinanceVisibility}>Select token</span>
-                            <img alt="right-arrow" loading="lazy" width="30" height="30" src="upnl/assets/icons/right-arrow.svg" style={{ color: 'transparent' }} />
+                            <img alt="right-arrow" loading="lazy" width="30" height="30" src="/upnl/assets/icons/right-arrow.svg" style={{ color: 'transparent' }} />
                             <span className="text-center" onClick={toggleEthereumVisibility}>Select network</span>
-                            <img alt="right-arrow" loading="lazy" width="30" height="30" src="upnl/assets/icons/right-arrow-inactive.svg" style={{ color: 'transparent' }} />
+                            <img alt="right-arrow" loading="lazy" width="30" height="30" src="/upnl/assets/icons/right-arrow-inactive.svg" style={{ color: 'transparent' }} />
                             <span className="text-center">Deposit details</span>
                         </div>
                         <br />
@@ -46,67 +46,67 @@ const RechargeFunds = () => {
                             {/* Collapsed Div */}
                             <div className="flex items-center justify-between bg-[#F9F9F9] h-[72px] mb-2 p-[15px] rounded-[16px] cursor-pointer hover:bg-[#ebe8e8]" onClick={toggleCollapse}>
                                 <div className="py-4 flex items-center space-x-2 lg:space-x-3 text-sm">
-                                    <img alt="BNB logo" loading="lazy" width="40" height="40" src="upnl/assets/icons/logo_bnb_2.svg" style={{ color: 'transparent' }} />
+                                    <img alt="BNB logo" loading="lazy" width="40" height="40" src="/upnl/assets/icons/logo_bnb_2.svg" style={{ color: 'transparent' }} />
                                     <div>
                                         <div className="text-[16px] text-[#171717] font-semibold">BNB</div>
                                         <div className="text-[12px] text-[#999999]">BNB</div>
                                     </div>
                                 </div>
-                                <img alt="BNB logo" loading="lazy" width="20" height="20" src="upnl/assets/icons/right-repo.svg" style={{ color: 'transparent' }} />
+                                <img alt="BNB logo" loading="lazy" width="20" height="20" src="/upnl/assets/icons/right-repo.svg" style={{ color: 'transparent' }} />
                             </div>
 
                             {/* Expanded Div */}
                             {!isCollapsed && (
                                 <div className="flex items-center justify-between bg-[#F9F9F9] h-[120px] mb-2 p-[15px] rounded-[16px] cursor-pointer hover:bg-[#ebe8e8]" onClick={toggleCollapse}>
                                     <div className="py-4 flex items-start space-x-2 lg:space-x-3 text-sm">
-                                        <img alt="BSC logo" loading="lazy" width="40" height="40" src="upnl/assets/icons/logo_bsc_2.svg" style={{ color: 'transparent' }} />
+                                        <img alt="BSC logo" loading="lazy" width="40" height="40" src="/upnl/assets/icons/logo_bsc_2.svg" style={{ color: 'transparent' }} />
                                         <div>
                                             <div className="text-[16px] text-[#171717] font-semibold mb-2">Binance Smart Chain</div>
                                             <div className="text-[12px] text-[#999999]">1 block confirmations</div>
                                             <div className="text-[12px] text-[#999999]">Estimated time up to 1 minute</div>
                                         </div>
                                     </div>
-                                    <img alt="BSC logo" loading="lazy" width="20" height="20" src="upnl/assets/icons/right-repo.svg" style={{ color: 'transparent' }} />
+                                    <img alt="BSC logo" loading="lazy" width="20" height="20" src="/upnl/assets/icons/right-repo.svg" style={{ color: 'transparent' }} />
                                 </div>
                             )}
 
                             {/* USDT Section */}
                             <div className="flex items-center justify-between bg-[#F9F9F9] h-[72px] mb-2 p-[15px] rounded-[16px] cursor-pointer hover:bg-[#ebe8e8]" onClick={toggleBinanceVisibility}>
                                 <div className="py-4 flex items-center space-x-2 lg:space-x-3 text-sm">
-                                    <img alt="USDT logo" loading="lazy" width="40" height="40" src="upnl/assets/icons/logo_usdt_2.svg" style={{ color: 'transparent' }} />
+                                    <img alt="USDT logo" loading="lazy" width="40" height="40" src="/upnl/assets/icons/logo_usdt_2.svg" style={{ color: 'transparent' }} />
                                     <div>
                                         <div className="text-[16px] text-[#171717] font-semibold">USDT</div>
                                         <div className="text-[12px] text-[#999999]">TetherUS</div>
                                     </div>
                                 </div>
-                                <img alt="USDT logo" loading="lazy" width="20" height="20" src="upnl/assets/icons/right-repo.svg" style={{ color: 'transparent' }} />
+                                <img alt="USDT logo" loading="lazy" width="20" height="20" src="/upnl/assets/icons/right-repo.svg" style={{ color: 'transparent' }} />
                             </div>
 
                             {/* Hidden divs for Binance and Ethereum */}
                             {isBinanceVisible && (
                                 <div className="flex items-center justify-between bg-[#F9F9F9] h-[120px] mb-2 p-[15px] rounded-[16px] cursor-pointer hover:bg-[#ebe8e8]">
                                     <div className="py-4 flex items-start space-x-2 lg:space-x-3 text-sm">
-                                        <img alt="BSC logo" loading="lazy" width="40" height="40" src="upnl/assets/icons/logo_bsc_2.svg" style={{ color: 'transparent' }} />
+                                        <img alt="BSC logo" loading="lazy" width="40" height="40" src="/upnl/assets/icons/logo_bsc_2.svg" style={{ color: 'transparent' }} />
                                         <div>
                                             <div className="text-[16px] text-[#171717] font-semibold mb-2">Binance Smart Chain</div>
                                             <div className="text-[12px] text-[#999999]">1 block confirmations</div>
                                             <div className="text-[12px] text-[#999999]">Estimated time up to 1 minute</div>
                                         </div>
                                     </div>
-                                    <img alt="BSC logo" loading="lazy" width="20" height="20" src="upnl/assets/icons/right-repo.svg" style={{ color: 'transparent' }} />
+                                    <img alt="BSC logo" loading="lazy" width="20" height="20" src="/upnl/assets/icons/right-repo.svg" style={{ color: 'transparent' }} />
                                 </div>
                             )}
                             {isEthereumVisible && (
                                 <div className="flex items-center justify-between bg-[#F9F9F9] h-[120px] mb-2 p-[15px] rounded-[16px] cursor-pointer hover:bg-[#ebe8e8]">
                                     <div className="py-4 flex items-start space-x-2 lg:space-x-3 text-sm">
-                                        <img alt="ETH logo" loading="lazy" width="40" height="40" src="upnl/assets/icons/logo_eth_2.svg" style={{ color: 'transparent' }} />
+                                        <img alt="ETH logo" loading="lazy" width="40" height="40" src="/upnl/assets/icons/logo_eth_2.svg" style={{ color: 'transparent' }} />
                                         <div>
                                             <div className="text-[16px] text-[#171717] font-semibold mb-2">Ethereum</div>
                                             <div className="text-[12px] text-[#999999]">1 block confirmations</div>
                                             <div className="text-[12px] text-[#999999]">Estimated time up to 2 minute</div>
                                         </div>
                                     </div>
-                                    <img alt="ETH logo" loading="lazy" width="20" height="20" src="upnl/assets/icons/right-repo.svg" style={{ color: 'transparent' }} />
+                                    <img alt="ETH logo" loading="lazy" width="20" height="20" src="/upnl/assets/icons/right-repo.svg" style={{ color: 'transparent' }} />
                                 </div>
                             )}
                         </div>
@@ -117,7 +117,7 @@ const RechargeFunds = () => {
                             <div className="flex justify-between items-center text-sm mb-4">
                                 <div className="flex">
                                     <div className="flex items-center justify-center hover:cursor-pointer rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
-                                        <img alt="IN Icon" loading="lazy" width="28" height="28" src="upnl/assets/icons/icon_down.svg" style={{ color: 'transparent' }} />
+                                        <img alt="IN Icon" loading="lazy" width="28" height="28" src="/upnl/assets/icons/icon_down.svg" style={{ color: 'transparent' }} />
                                     </div>
                                     <div className="ml-3">
                                         <p className="font-medium mb-1">Deposit</p>

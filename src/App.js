@@ -47,7 +47,7 @@ function Layout({ children }) {
 
                             <Route path="/nodedetails" element={<ProtectedRoute><NodeDetails /></ProtectedRoute>} />
                             <Route path="/Team" element={<ProtectedRoute><Team /></ProtectedRoute>} />
-                            <Route path="/Level" element={<ProtectedRoute><Level/></ProtectedRoute>} />
+                            <Route path="/Level" element={<ProtectedRoute><Level /></ProtectedRoute>} />
 
                             <Route path="/Wallet" element={<ProtectedRoute><Wallet /></ProtectedRoute>} />
                             <Route path="/Profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />

@@ -44,7 +44,7 @@ const Team = () => {
                         <div className="bg-white p-5 rounded-[16px] flex flex-col items-left">
                             <div className="flex mb-[14px]">
                                 <div className="bg-green-100 rounded-full p-2">
-                                    <img alt="Total Rewards Icon" loading="lazy" width="32" height="32" src="upnl/assets/icons/stats_reward.svg" />
+                                    <img alt="Total Rewards Icon" loading="lazy" width="32" height="32" src="/upnl/assets/icons/stats_reward.svg" />
                                 </div>
                             </div>
                             <div>
@@ -60,7 +60,7 @@ const Team = () => {
                         <div className="bg-white p-5 rounded-[16px] max-h-[226px] h-full flex flex-col">
                             <div className="flex items-center justify-between w-full mb-[14px]">
                                 <div className="bg-blue-100 rounded-full p-2">
-                                    <img alt="Today's Rewards Icon" loading="lazy" width="32" height="32" src="upnl/assets/icons/icon_total_rewards.svg" />
+                                    <img alt="Today's Rewards Icon" loading="lazy" width="32" height="32" src="/upnl/assets/icons/icon_total_rewards.svg" />
                                 </div>
                             </div>
                             <div>
@@ -78,14 +78,14 @@ const Team = () => {
                                 <div className="flex justify-between items-center mb-[14px]">
                                     <h3 className="text-[20px] font-medium text-primary">Referrals</h3>
                                     <button className="text-sm flex items-center h-[32px] px-4 py-1 rounded-[22px] bg-[#F1F1F1]">
-                                        <img alt="Filter Icon" loading="lazy" width="20" height="20" src="upnl/assets/icons/users.svg" />
+                                        <img alt="Filter Icon" loading="lazy" width="20" height="20" src="/upnl/assets/icons/users.svg" />
                                         <p className="pl-3 font-semibold text-[16px]">0</p>
                                     </button>
                                 </div>
                             </div>
                             <button className="flex rounded-[24px] justify-center items-center align-center border border-[#F1F1F1] text-[#373737] bg-[#F9F9F9] h-[36px] py-2 px-3" style={{ fontFamily: 'ClashDisplay-Semibold' }}>
                                 <p className="mr-3" id="textToCopy">11223344</p>
-                                <img alt="Copy Icon" loading="lazy" width="16" height="16" onClick={copyToClipboard} src="upnl/assets/icons/copy_clipboard.svg" />
+                                <img alt="Copy Icon" loading="lazy" width="16" height="16" onClick={copyToClipboard} src="/upnl/assets/icons/copy_clipboard.svg" />
                             </button>
                             <button className="mt-1 text-[#00C076] font-medium">Copy referral link</button>
                         </div>

@@ -1,34 +1,50 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { useParams } from "react-router-dom";
 import Api from "../../Requests/Api";
+import Loader from "../../components/Loader";
 
 const Level = () => {
     const [level, setLevel] = useState([]);
     const [error, setError] = useState("");
-   
+    const [users, setUsers] = useState([]);
+    const [search, setSearch] = useState("");
+    const [page, setPage] = useState(1);
+    const [limit] = useState(10); // Default limit
+    const [selectedLevel, setSelectedLevel] = useState(0);
+    const [loading, setLoading] = useState(false);
+    const { lvl } = useParams(); // 🔹 Get the 'lvl' parameter from URL
+
     useEffect(() => {
-        fetchteam();
-    }, []);
-
-
-    const fetchteam = async () => {
-        const token = localStorage.getItem("token"); // Get JWT Token
-        console.log("Token from LocalStorage:", token); // Debugging
-
-        if (!token) {
-            setError("User not authenticated!");
-            return;
-        }
+        loadUsers();
+    }, [page, selectedLevel]);
+    const loadUsers = async () => {
+        setLoading(true);
         try {
-            const data2 ={token:token};
-            const response =await Api.post('auth/list',data2);                
-            setLevel(response.data);
-            // console.log(response.data)
-        } catch (err) {
-            setError(err.response?.data?.error || "Error fetching income");
+            const data = await Api.get('auth/list',{ limit, page, selected_level: selectedLevel, search });
+            setUsers(data.direct_team);
+        } catch (error) {
+            console.error("❌ Error fetching users:", error);
         }
+        setLoading(false);
+    };
+    const handleSearch = (e) => {
+        setSearch(e.target.value);
     };
 
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        setPage(1); // Reset to first page when searching
+        loadUsers();
+    };
+
+    const handleLevelChange = (e) => {
+        setSelectedLevel(e.target.value);
+        setPage(1); // Reset page on level change
+    };
+    // ✅ Show a loader while fetching data
+if (loading) {
+    return <Loader />;
+}
 
     return (
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">

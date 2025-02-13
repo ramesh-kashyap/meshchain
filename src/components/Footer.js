@@ -19,7 +19,7 @@ const Footer = () => {
           decoding="async"
           className=""
           
-          src="upnl/assets/icons/icon-overview.svg"
+          src="/upnl/assets/icons/icon-overview.svg"
         />
         <span className="text-xs mt-1 text-white">Nodes</span>
       </Link>
@@ -36,7 +36,7 @@ const Footer = () => {
           height="20"
           decoding="async"
           className=""
-          src="upnl/assets/icons/icon-nodes.svg"
+          src="/upnl/assets/icons/icon-nodes.svg"
           style={{ color: 'transparent' }}
         />
         <span className="text-xs mt-1 text-white">Earn</span>
@@ -54,7 +54,7 @@ const Footer = () => {
           height="20"
           decoding="async"
           className=""
-          src="upnl/assets/icons/icon-referrals.svg"
+          src="/upnl/assets/icons/icon-referrals.svg"
           style={{ color: 'transparent' }}
         />
         <span className="text-xs mt-1 text-white">Referrals</span>
@@ -72,7 +72,7 @@ const Footer = () => {
           height="20"
           decoding="async"
           className=""
-          src="upnl/assets/icons/icon-profile.svg"
+          src="/upnl/assets/icons/icon-profile.svg"
           style={{ color: 'transparent' }}
         />
         <span className="text-xs mt-1 text-white">Profile</span>

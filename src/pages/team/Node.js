@@ -47,7 +47,7 @@ const Node = () => {
                                     width="16"
                                     height="16"
                                     className="mr-1"
-                                    src="upnl/assets/icons/add_node.svg"
+                                    src="/upnl/assets/icons/add_node.svg"
                                 />
                                 raj
                             </button>
@@ -59,7 +59,7 @@ const Node = () => {
                                     loading="lazy"
                                     width="16"
                                     height="16"
-                                    src="upnl/assets/icons/bars-filter.svg"
+                                    src="/upnl/assets/icons/bars-filter.svg"
                                 />
                             </button>
                         </div>
@@ -101,7 +101,7 @@ const Node = () => {
                                                 loading="lazy"
                                                 width="16"
                                                 height="16"
-                                                src="upnl/assets/icons/icon-referrals.svg"
+                                                src="/upnl/assets/icons/icon-referrals.svg"
                                             />
                                         </div>
 
@@ -148,7 +148,7 @@ const Node = () => {
                         loading="lazy"
                         width="20"
                         height="20"
-                        src="upnl/assets/icons/icon-overview.svg"
+                        src="/upnl/assets/icons/icon-overview.svg"
                     />
                     <span className="text-xs mt-1 text-gray-400">Overview</span>
                 </a>
@@ -158,7 +158,7 @@ const Node = () => {
                         loading="lazy"
                         width="20"
                         height="20"
-                        src="upnl/assets/icons/icon-nodes.svg"
+                        src="/upnl/assets/icons/icon-nodes.svg"
                     />
                     <span className="text-xs mt-1 text-gray-400">Nodes</span>
                 </a>
@@ -168,7 +168,7 @@ const Node = () => {
                         loading="lazy"
                         width="20"
                         height="20"
-                        src="upnl/assets/icons/icon-referrals.svg"
+                        src="/upnl/assets/icons/icon-referrals.svg"
                     />
                     <span className="text-xs mt-1 text-gray-400">Referrals</span>
                 </a>
@@ -179,7 +179,7 @@ const Node = () => {
                         width="20"
                         height="20"
                         className="green-filter"
-                        src="upnl/assets/icons/icon-wallet.svg"
+                        src="/upnl/assets/icons/icon-wallet.svg"
                     />
                     <span className="text-xs mt-1 text-green-500">Wallet</span>
                 </a>
@@ -190,7 +190,7 @@ const Node = () => {
                         width="20"
                         height="20"
                         className="green-filter"
-                        src="upnl/assets/icons/icon-wallet.svg"
+                        src="/upnl/assets/icons/icon-wallet.svg"
                     />
                     <span className="text-xs mt-1 text-green-500">Profile</span>
                 </a>

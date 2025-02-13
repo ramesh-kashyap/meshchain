@@ -10,30 +10,30 @@ const Nodepower = () => {
                         <div>
                             <div className="flex items-center justify-between border-b border-gray-200">
                                 <a className="flex items-center py-5 pl-[22px] h-[80px]" href="/Dashboard" style={{ width: '119px' }}>
-                                    <img alt="Logo" loading="lazy" width="163" height="40" decoding="async" src="upnl/assets/icons/logo.png" style={{ color: 'transparent', width: '150px' }} />
+                                    <img alt="Logo" loading="lazy" width="163" height="40" decoding="async" src="/upnl/assets/icons/logo.png" style={{ color: 'transparent', width: '150px' }} />
                                 </a>
                             </div>
 
                             <nav className="my-5 px-5 text-sm font-medium text-[#555]">
                                 <div className="text-gray-400 text-xs mb-2">MENU</div>
                                 <a className="flex items-center py-2 px-3 mb-2 rounded-md bg-green-500 text-white" href="/Dashboard">
-                                    <img alt="overview Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-overview_active.svg" style={{ color: 'transparent' }} />
+                                    <img alt="overview Icon" loading="lazy" width="16" height="16" decoding="async" src="/upnl/assets/icons/icon-overview_active.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Overview</span>
                                 </a>
                                 <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="/Nodepower">
-                                    <img alt="my_nodes Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
+                                    <img alt="my_nodes Icon" loading="lazy" width="16" height="16" decoding="async" src="/upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Nodes</span>
                                 </a>
                                 <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="/Team">
-                                    <img alt="referrals Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
+                                    <img alt="referrals Icon" loading="lazy" width="16" height="16" decoding="async" src="/upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Referrals</span>
                                 </a>
                                 <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="/Wallet">
-                                    <img alt="wallet Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
+                                    <img alt="wallet Icon" loading="lazy" width="16" height="16" decoding="async" src="/upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Wallet</span>
                                 </a>
                                 <a className="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="/Profile">
-                                    <img alt="profile Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-profile.svg" style={{ color: 'transparent' }} />
+                                    <img alt="profile Icon" loading="lazy" width="16" height="16" decoding="async" src="/upnl/assets/icons/icon-profile.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Profile</span>
                                 </a>
                             </nav>
@@ -41,21 +41,21 @@ const Nodepower = () => {
                         <footer className="my-5 px-5 text-sm font-medium text-[#555] hidden md:block">
                             <div className="text-gray-400 text-xs mb-2">FOLLOW US</div>
                             <a className="flex items-center py-2 px-3 mb-4 rounded" href="#">
-                                <img alt="X.com Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon_twitter.svg" style={{ color: 'transparent' }} />
+                                <img alt="X.com Icon" loading="lazy" width="16" height="16" decoding="async" src="/upnl/assets/icons/icon_twitter.svg" style={{ color: 'transparent' }} />
                                 <span className="ml-4">X.com</span>
                             </a>
                             <a className="flex items-center py-2 px-3 mb-4 rounded" href="#">
-                                <img alt="Telegram Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon_telegram_2.svg" style={{ color: 'transparent' }} />
+                                <img alt="Telegram Icon" loading="lazy" width="16" height="16" decoding="async" src="/upnl/assets/icons/icon_telegram_2.svg" style={{ color: 'transparent' }} />
                                 <span className="ml-4">Telegram</span>
                             </a>
                             <a className="flex items-center py-2 px-3 mb-4 rounded" href="#">
-                                <img alt="Discord Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon_discord.svg" style={{ color: 'transparent' }} />
+                                <img alt="Discord Icon" loading="lazy" width="16" height="16" decoding="async" src="/upnl/assets/icons/icon_discord.svg" style={{ color: 'transparent' }} />
                                 <span className="ml-4">Discord</span>
                             </a>
                             <div style={{ borderTop: '1px solid rgb(241, 241, 241)', margin: '20px 0px' }}></div>
                             <div>
                                 <a className="flex items-center py-2 px-3 mb-4 rounded" href="logout" onClick={(e) => { e.preventDefault(); document.getElementById('logout-form').submit(); }}>
-                                    <img alt="Contact Us Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/customer-service.svg" style={{ color: 'transparent' }} />
+                                    <img alt="Contact Us Icon" loading="lazy" width="16" height="16" decoding="async" src="/upnl/assets/icons/customer-service.svg" style={{ color: 'transparent' }} />
                                     <span className="ml-4">Log out</span>
                                 </a>
                                 <form id="logout-form" action="logout" method="POST" className="d-none">
@@ -67,13 +67,13 @@ const Nodepower = () => {
                     <div className="flex-1 flex flex-col text-black bg-[#F1F1F1] h-screen">
                         <div className="flex items-center justify-between py-2 mt-5 px-4 md:px-10 lg:px-10 xl:px-20">
                             <a className="md:hidden" href="/">
-                                <img alt="Logo" loading="lazy" width="163" height="40" decoding="async" className="max-w-[156px]" src="upnl/assets/icons/logo.png" style={{ color: 'transparent', width: '50px' }} />
+                                <img alt="Logo" loading="lazy" width="163" height="40" decoding="async" className="max-w-[156px]" src="/upnl/assets/icons/logo.png" style={{ color: 'transparent', width: '50px' }} />
                             </a>
                             <div className="w-full flex flex-row justify-end md:justify-between">
                                 <div className="flex items-center h-[38px] text-gray-800 font-medium">
                                     <a className="hidden md:flex h-[38px] bg-white p-1 rounded-full mr-3" href="user/team">
                                         <div className="flex items-center rounded-full pl-3 text-sm">
-                                            <img alt="User  Avatar" loading="lazy" width="16" height="16" decoding="async" className="mr-3" src="upnl/assets/icons/icon_user_add.svg" style={{ color: 'transparent' }} />
+                                            <img alt="User  Avatar" loading="lazy" width="16" height="16" decoding="async" className="mr-3" src="/upnl/assets/icons/icon_user_add.svg" style={{ color: 'transparent' }} />
                                             <span>11223344</span>
                                         </div>
                                         <div className="flex mx-2 items-center justify-center font-bold"></div>
@@ -98,13 +98,13 @@ const Nodepower = () => {
                                     <div className="flex justify-between mb-4 items-center">
                                         <a href="user/subscribe">
                                             <button className="px-3 flex items-center h-[34px] bg-[#171717] rounded-[22px] text-[14px] text-white">
-                                                <img alt="Add Node Icon" loading="lazy" width="16" height="16" decoding="async" className="mr-1" src="upnl/assets/icons/add_node.svg" style={{ color: 'transparent' }} />
+                                                <img alt="Add Node Icon" loading="lazy" width="16" height="16" decoding="async" className="mr-1" src="/upnl/assets/icons/add_node.svg" style={{ color: 'transparent' }} />
                                                 New Node
                                             </button>
                                         </a>
                                         <div className="relative">
                                             <button className="px-3 h-[34px] bg-white rounded-full shadow">
-                                                <img alt="Filter Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/bars-filter.svg" style={{ color: 'transparent' }} />
+                                                <img alt="Filter Icon" loading="lazy" width="16" height="16" decoding="async" src="/upnl/assets/icons/bars-filter.svg" style={{ color: 'transparent' }} />
                                             </button>
                                         </div>
                                     </div>
@@ -129,7 +129,7 @@ const Nodepower = () => {
                                                 <div className="hidden md:grid grid-cols-5 lg:grid-cols-6 items-center">
                                                     <div className="flex items-center space-x-3">
                                                         <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
-                                                            <img alt="Node Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-referrals.svg" />
+                                                            <img alt="Node Icon" loading="lazy" width="16" height="16" decoding="async" src="/upnl/assets/icons/icon-referrals.svg" />
                                                         </div>
                                                         <div>
                                                             <p className="text-sm font-medium">raj</p>
@@ -154,7 +154,7 @@ const Nodepower = () => {
                                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
                                                     <div className="flex items-center space-x-3">
                                                         <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
-                                                            <img alt="Node Icon" loading="lazy" width="16" height="16" decoding="async" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
+                                                            <img alt="Node Icon" loading="lazy" width="16" height="16" decoding="async" src="/upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                                                         </div>
                                                         <div>
                                                             <p className="text-sm font-medium">Sahildewan2</p>
@@ -163,7 +163,7 @@ const Nodepower = () => {
                                                     </div>
                                                     <div className="flex justify-end">
                                                         <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">
-                                                            <img alt="Status Icon" loading="lazy" width="16" height="16" decoding="async" className="mr-1" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
+                                                            <img alt="Status Icon" loading="lazy" width="16" height="16" decoding="async" className="mr-1" src="/upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                                                             Online
                                                         </span>
                                                     </div>
@@ -181,24 +181,24 @@ const Nodepower = () => {
                     </div>
                 </div>
                 <div className="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg">
-                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="dashboard">
-                        <img alt="overview Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-overview.svg" style={{ color: 'transparent' }} />
+                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/dashboard">
+                        <img alt="overview Icon" loading="lazy" width="20" height="20" decoding="async" src="/upnl/assets/icons/icon-overview.svg" style={{ color: 'transparent' }} />
                         <span className="text-xs mt-1 text-gray-400">Overview</span>
                     </a>
-                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="Node">
-                        <img alt="my_nodes Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
+                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/node-power">
+                        <img alt="my_nodes Icon" loading="lazy" width="20" height="20" decoding="async" src="/upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
                         <span className="text-xs mt-1 text-gray-400">Nodes</span>
                     </a>
-                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="team">
-                        <img alt="referrals Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
+                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/team">
+                        <img alt="referrals Icon" loading="lazy" width="20" height="20" decoding="async" src="/upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
                         <span className="text-xs mt-1 text-gray-400">Referrals</span>
                     </a>
-                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="wallet">
-                        <img alt="wallet Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
+                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/wallet">
+                        <img alt="wallet Icon" loading="lazy" width="20" height="20" decoding="async" src="/upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                         <span className="text-xs mt-1 text-green-500">Wallet</span>
                     </a>
-                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="Profile">
-                        <img alt="profile Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
+                    <a className="flex w-1/5 p-[12px] flex-col items-center" href="user/profile-setting">
+                        <img alt="profile Icon" loading="lazy" width="20" height="20" decoding="async" src="/upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
                         <span className="text-xs mt-1 text-green-500">Profile</span>
                     </a>
                 </div>

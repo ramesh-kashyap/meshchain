@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import Api2, { googleAuth } from '../../Requests/Api';
 import Api from '../../Requests/Api';
 import { useGoogleLogin } from '@react-oauth/google';
@@ -15,6 +15,15 @@ const Login = () => {
     window.location.href = "http://localhost:3002/google";
   };
 
+    // 🔹 Check for token on page load
+    useEffect(() => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        console.log("✅ Token found, redirecting to Dashboard...");
+        navigate("/Dashboard"); // Redirect to Dashboard if token exists
+      }
+    }, [navigate]); // Runs only on component mount
+  
 
   
 
@@ -32,7 +41,7 @@ const Login = () => {
             console.log(`User's Email: ${email}`);
             console.log(`User's Profile Image: ${picture}`);
 
-            localStorage.setItem('authToken', result.data.token);
+            localStorage.setItem('token', result.data.token);
 
             // Redirect to dashboard
             navigate('/');

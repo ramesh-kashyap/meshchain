@@ -14,7 +14,7 @@ const Dashboard = () => {
                  <div className="flex items-center justify-left mb-4">
                     <div className="bg-blue-100 rounded-full p-2"><img alt="Total Rewards Icon" loading="lazy" width="32"
                        height="32" decoding="async" data-nimg="1"
-                       src="upnl/assets/icons/icon_total_rewards.svg" style={{color: 'transparent'}}/>
+                       src="/upnl/assets/icons/icon_total_rewards.svg" style={{color: 'transparent'}}/>
                     </div>
                  </div>
                  <div className="text-left">
@@ -36,7 +36,7 @@ const Dashboard = () => {
                  <div className="flex items-center justify-left mb-4">
                     <div className="bg-green-100 rounded-full p-2"><img alt="Today's Rewards Icon" loading="lazy" width="32"
                        height="32" decoding="async" data-nimg="1"
-                       src="upnl/assets/icons/icon_todays_rewards.svg" style={{color: 'transparent'}}/>
+                       src="/upnl/assets/icons/icon_todays_rewards.svg" style={{color: 'transparent'}}/>
                     </div>
                  </div>
                  <div className="text-left">
@@ -369,7 +369,7 @@ const Dashboard = () => {
         </div>
         <div className="w-full"><span className="text-[16px] ml-4">Set Up Telegram Node</span>
         </div><img alt="Set Up Telegram Node" loading="lazy" width="98" height="98" decoding="async"
-        data-nimg="1" src="upnl/assets/images/telegram-svgrepo-com.svg"
+        data-nimg="1" src="/upnl/assets/images/telegram-svgrepo-com.svg"
         style={{
         color: 'transparent',
         position: 'absolute',
@@ -393,7 +393,7 @@ const Dashboard = () => {
      <div className="w-full"><span className="text-[16px] ml-4">Install Browser
      Extension</span></div><img alt="Install Browser Extension" loading="lazy" width="98"
      height="98" decoding="async" data-nimg="1"
-     src="upnl/assets/images/server-square-svgrepo-com.svg"
+     src="/upnl/assets/images/server-square-svgrepo-com.svg"
      style={{
      color: 'transparent',
      position: 'absolute',
@@ -417,7 +417,7 @@ const Dashboard = () => {
         <div className="w-full"><span className="text-[16px] ml-4">Install Desktop Node</span>
         </div>
         <img alt="Install Desktop Node" loading="lazy" width="98" height="98" decoding="async"
-        data-nimg="1" src="upnl/assets/images/extension-puzzle-sharp-svgrepo-com.svg"
+        data-nimg="1" src="/upnl/assets/images/extension-puzzle-sharp-svgrepo-com.svg"
         style={{
         color: 'transparent',
         position: 'absolute',
@@ -436,20 +436,20 @@ const Dashboard = () => {
      </div>
      </div>
      <div className="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg">
-        <a className="flex w-1/5 p-[12px] flex-col items-center" href="Dashboard">
-        <img alt="overview Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-overview.svg" style={{ color: 'transparent' }} />
+        <a className="flex w-1/5 p-[12px] flex-col items-center" to="/Dashboard">
+        <img alt="overview Icon" loading="lazy" width="20" height="20" decoding="async" src="/upnl/assets/icons/icon-overview.svg" style={{ color: 'transparent' }} />
         <span className="text-xs mt-1 text-gray-400">Overview</span>
         </a>
-        <a className="flex w-1/5 p-[12px] flex-col items-center" href="Node">
-        <img alt="my_nodes Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
+        <a className="flex w-1/5 p-[12px] flex-col items-center" to="/">
+        <img alt="my_nodes Icon" loading="lazy" width="20" height="20" decoding="async" src="/upnl/assets/icons/icon-nodes.svg" style={{ color: 'transparent' }} />
         <span className="text-xs mt-1 text-gray-400">Nodes</span>
         </a>
-        <a className="flex w-1/5 p-[12px] flex-col items-center" href="Team">
-        <img alt="referrals Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
+        <a className="flex w-1/5 p-[12px] flex-col items-center" to="/">
+        <img alt="referrals Icon" loading="lazy" width="20" height="20" decoding="async" src="/upnl/assets/icons/icon-referrals.svg" style={{ color: 'transparent' }} />
         <span className="text-xs mt-1 text-gray-400">Referrals</span>
         </a>
-        <a className="flex w-1/5 p-[12px] flex-col items-center" href="Wallet">
-        <img alt="wallet Icon" loading="lazy" width="20" height="20" decoding="async" src="upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
+        <a className="flex w-1/5 p-[12px] flex-col items-center" to="/">
+        <img alt="wallet Icon" loading="lazy" width="20" height="20" decoding="async" src="/upnl/assets/icons/icon-wallet.svg" style={{ color: 'transparent' }} />
         <span className="text-xs mt-1 text-green-500">Wallet</span>
         </a>
         

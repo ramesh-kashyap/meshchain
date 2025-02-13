@@ -25,7 +25,7 @@ export default function Header() {
               height="40"
               decoding="async"
               data-nimg="1"
-              src="upnl/assets/icons/logo.png"
+              src="/upnl/assets/icons/logo.png"
               style={{ color: "transparent", width: "150px" }}
             />
           </Link>
@@ -37,7 +37,7 @@ export default function Header() {
               height="40"
               decoding="async"
               data-nimg="1"
-              src="upnl/assets/icons/icon_left.svg"
+              src="/upnl/assets/icons/icon_left.svg"
               style={{ color: "transparent" }}
             />
           </button>
@@ -53,7 +53,7 @@ export default function Header() {
               height="16"
               decoding="async"
               data-nimg="1"
-              src="upnl/assets/icons/icon-overview_active.svg"
+              src="/upnl/assets/icons/icon-overview_active.svg"
               style={{ color: "transparent" }}
             />
             <span className="ml-4">Overview</span>
@@ -66,7 +66,7 @@ export default function Header() {
               height="16"
               decoding="async"
               data-nimg="1"
-              src="upnl/assets/icons/icon-nodes.svg"
+              src="/upnl/assets/icons/icon-nodes.svg"
               style={{ color: "transparent" }}
             />
             <span className="ml-4">Nodes</span>
@@ -79,7 +79,7 @@ export default function Header() {
               height="16"
               decoding="async"
               data-nimg="1"
-              src="upnl/assets/icons/icon-rewards.svg"
+              src="/upnl/assets/icons/icon-rewards.svg"
               style={{ color: "transparent" }}
             />
             <span className="ml-4">Rewards</span>
@@ -92,7 +92,7 @@ export default function Header() {
               height="16"
               decoding="async"
               data-nimg="1"
-              src="upnl/assets/icons/icon-referrals.svg"
+              src="/upnl/assets/icons/icon-referrals.svg"
               style={{ color: "transparent" }}
             />
             <span className="ml-4">Referrals</span>
@@ -105,7 +105,7 @@ export default function Header() {
               height="16"
               decoding="async"
               data-nimg="1"
-              src="upnl/assets/icons/icon-wallet.svg"
+              src="/upnl/assets/icons/icon-wallet.svg"
               style={{ color: "transparent" }}
             />
             <span className="ml-4">Wallet</span>
@@ -118,7 +118,7 @@ export default function Header() {
               height="16"
               decoding="async"
               data-nimg="1"
-              src="upnl/assets/icons/icon-profile.svg"
+              src="/upnl/assets/icons/icon-profile.svg"
               style={{ color: "transparent" }}
             />
             <span className="ml-4">Profile</span>
@@ -135,7 +135,7 @@ export default function Header() {
               height="16"
               decoding="async"
               data-nimg="1"
-              src="upnl/assets/icons/icon_discord.svg"
+              src="/upnl/assets/icons/icon_discord.svg"
               style={{ color: "transparent" }}
             />
             <span className="ml-4">Discord</span>
@@ -154,7 +154,7 @@ export default function Header() {
                 height="16"
                 decoding="async"
                 data-nimg="1"
-                src="upnl/assets/icons/customer-service.svg"
+                src="/upnl/assets/icons/customer-service.svg"
                 style={{ color: "transparent" }}
               />
               <span className="ml-4">Log out</span>

@@ -14,8 +14,8 @@ const Header = () => {
             decoding="async"
             data-nimg="1"
             className="max-w-[156px]"
-            src="upnl/assets/icons/logo.png"
-            style={{ color: "transparent", width: "100px" }}
+            src="/upnl/assets/icons/logo.png"
+            style={{ color: "transparent", width: "50px" }}
           />
         </a>
         <div className="w-full flex flex-row justify-end md:justify-between">
@@ -34,7 +34,7 @@ const Header = () => {
                   decoding="async"
                   data-nimg="1"
                   className="mr-3"
-                  src="upnl/assets/icons/icon_user_add.svg"
+                  src="/upnl/assets/icons/icon_user_add.svg"
                   style={{ color: "transparent" }}
                 />
                 <span> username </span>

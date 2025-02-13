@@ -52,7 +52,7 @@ const NodeDetails = () => {
                   width="60"
                   height="60"
                   decoding="async"
-                  src="upnl/assets/icons/node-icon-telegram.svg"
+                  src="/upnl/assets/icons/node-icon-telegram.svg"
                   style={{ color: "transparent" }}
                 />
               </div>
@@ -65,7 +65,7 @@ const NodeDetails = () => {
                     width="16"
                     height="16"
                     decoding="async"
-                    src="upnl/assets/icons/cross-circle.svg"
+                    src="/upnl/assets/icons/cross-circle.svg"
                     style={{ color: "transparent" }}
                   />
 {hasIncomeData ? income[0].	status : "0"}                </span>
@@ -128,7 +128,7 @@ const NodeDetails = () => {
                       height="40"
                       decoding="async"
                       className="mx-auto mb-2"
-                      src="upnl/assets/images/empty_state.svg"
+                      src="/upnl/assets/images/empty_state.svg"
                       style={{ color: "transparent", width: "unset" }}
                     />
                     <span className="max-w-[100px]">No uptime data yet. Start contributing to see your progress here!</span>
@@ -154,7 +154,7 @@ const NodeDetails = () => {
                       height="40"
                       decoding="async"
                       className="mx-auto mb-2"
-                      src="upnl/assets/images/empty_state.svg"
+                      src="/upnl/assets/images/empty_state.svg"
                       style={{ color: "transparent", width: "unset" }}
                     />
                     <span className="max-w-[100px]">No rewards data yet. Start contributing to see your progress here!</span>

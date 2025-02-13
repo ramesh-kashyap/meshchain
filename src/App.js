@@ -9,7 +9,7 @@ import Profile from './pages/profile/Profile';
 import Tpassword from './pages/profile/Tpassword';
 import Email from './pages/profile/Email';
 import SelectNetwork from './pages/Withdraw/SelectNetwork';
-import WithdrawReq from './pages/Withdraw/WithdrawReq';
+import WithdrawComponent from './pages/Withdraw/WithdrawComponent';
 import Wallet from './pages/invest/Wallet';
 import RechargeFunds from './pages/invest/RechargeFunds';
 import Transferfund from './pages/invest/Transferfund';
@@ -21,8 +21,6 @@ import Header from './components/Header';
 import NodeDetails from './pages/home/NodeDetails';
 import ForgotPassword from "./pages/auth/ForgotPassword"; // Import Forgot Password Page
 import ResetPassword from "./pages/auth/ResetPassword"; // Import Forgot Password Page
-
-
 
 function Layout({ children }) {
     const location = useLocation();
@@ -53,7 +51,7 @@ function Layout({ children }) {
                             <Route path="/Email" element={<ProtectedRoute><Email /></ProtectedRoute>} />
                             <Route path="/RechargeFunds" element={<ProtectedRoute><RechargeFunds/></ProtectedRoute>} />
                             <Route path="/SelectNetwork" element={<ProtectedRoute><SelectNetwork/></ProtectedRoute>} />
-                            <Route path="/WithdrawReq" element={<ProtectedRoute><WithdrawReq/></ProtectedRoute>} />
+                            <Route path="/WithdrawComponent" element={<ProtectedRoute><WithdrawComponent/></ProtectedRoute>} />
                             <Route path="/Transferfund" element={<ProtectedRoute><Transferfund/></ProtectedRoute>} />
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />

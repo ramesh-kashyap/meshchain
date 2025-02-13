@@ -1,5 +1,42 @@
 import axios from "axios";
 
+
+const API_BASE_URL = "http://localhost:3002/api/auth";
+
+export const createWithdrawal = async (address, amount) => {
+    try {
+        const token = localStorage.getItem("token"); // Token Retrieve karein
+        if (!token) throw new Error("No authentication token found.");
+
+        const response = await axios.post(
+            `${API_BASE_URL}/withdrawal`,
+            { address, amount },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
+                withCredentials: true,
+            }
+        );
+
+        return response.data;
+    } catch (error) {
+        console.error("Error in withdrawal request:", error.response?.data || error);
+        throw error;
+    }
+};
+export const getWithdrawalHistory = async (address) => {
+    try {
+        const response = await axios.get(`${API_BASE_URL}/withdrawals/${address}`);
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching withdrawal history:", error);
+        throw error;
+    }
+};
+
+
 const Api = axios.create({
     baseURL: 'http://localhost:3002/api/', // Ensure this is your API's base URL
     headers: {

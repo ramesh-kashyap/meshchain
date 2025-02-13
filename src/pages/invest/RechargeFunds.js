@@ -1,22 +1,13 @@
 import React, { useState } from 'react';
 
 const RechargeFunds = () => {
-    const [isCollapsed, setIsCollapsed] = useState(true);
-    const [isBinanceVisible, setBinanceVisible] = useState(false);
+    
     const [isEthereumVisible, setEthereumVisible] = useState(false);
 
-    const toggleCollapse = () => {
-        setIsCollapsed(!isCollapsed);
-    };
-
-    const toggleBinanceVisibility = () => {
-        setBinanceVisible(!isBinanceVisible);
-        setEthereumVisible(false); // Hide Ethereum when Binance is toggled
-    };
+   
 
     const toggleEthereumVisibility = () => {
         setEthereumVisible(!isEthereumVisible);
-        setBinanceVisible(false); // Hide Binance when Ethereum is toggled
     };
 
     return (
@@ -35,7 +26,7 @@ const RechargeFunds = () => {
                     <div className="lg:col-span-3 xl:col-span-2 bg-white rounded-[16px] p-6">
                         <h2 className="text-xl sm:text-2xl font-bold">Deposit</h2>
                         <div className="flex justify-between items-center w-full bg-[#F9F9F9] rounded-[27px] px-[40px] max-sm:px-[20px] py-[4px] max-sm:py-[10px] text-[14px] text-[#999999] my-4 sm:my-6 sm:py-6 max-sm:gap-0">
-                            <span className="text-center text-[#171717] cursor-pointer" onClick={toggleBinanceVisibility}>Select token</span>
+                            <span className="text-center text-[#171717] cursor-pointer">Select token</span>
                             <img alt="right-arrow" loading="lazy" width="30" height="30" src="upnl/assets/icons/right-arrow.svg" style={{ color: 'transparent' }} />
                             <span className="text-center" onClick={toggleEthereumVisibility}>Select network</span>
                             <img alt="right-arrow" loading="lazy" width="30" height="30" src="upnl/assets/icons/right-arrow-inactive.svg" style={{ color: 'transparent' }} />
@@ -44,7 +35,7 @@ const RechargeFunds = () => {
                         <br />
                         <div>
                             {/* Collapsed Div */}
-                            <div className="flex items-center justify-between bg-[#F9F9F9] h-[72px] mb-2 p-[15px] rounded-[16px] cursor-pointer hover:bg-[#ebe8e8]" onClick={toggleCollapse}>
+                            <div className="flex items-center justify-between bg-[#F9F9F9] h-[72px] mb-2 p-[15px] rounded-[16px] cursor-pointer hover:bg-[#ebe8e8]" >
                                 <div className="py-4 flex items-center space-x-2 lg:space-x-3 text-sm">
                                     <img alt="BNB logo" loading="lazy" width="40" height="40" src="upnl/assets/icons/logo_bnb_2.svg" style={{ color: 'transparent' }} />
                                     <div>
@@ -55,23 +46,10 @@ const RechargeFunds = () => {
                                 <img alt="BNB logo" loading="lazy" width="20" height="20" src="upnl/assets/icons/right-repo.svg" style={{ color: 'transparent' }} />
                             </div>
 
-                            {/* Expanded Div */}
-                            {!isCollapsed && (
-                                <div className="flex items-center justify-between bg-[#F9F9F9] h-[120px] mb-2 p-[15px] rounded-[16px] cursor-pointer hover:bg-[#ebe8e8]" onClick={toggleCollapse}>
-                                    <div className="py-4 flex items-start space-x-2 lg:space-x-3 text-sm">
-                                        <img alt="BSC logo" loading="lazy" width="40" height="40" src="upnl/assets/icons/logo_bsc_2.svg" style={{ color: 'transparent' }} />
-                                        <div>
-                                            <div className="text-[16px] text-[#171717] font-semibold mb-2">Binance Smart Chain</div>
-                                            <div className="text-[12px] text-[#999999]">1 block confirmations</div>
-                                            <div className="text-[12px] text-[#999999]">Estimated time up to 1 minute</div>
-                                        </div>
-                                    </div>
-                                    <img alt="BSC logo" loading="lazy" width="20" height="20" src="upnl/assets/icons/right-repo.svg" style={{ color: 'transparent' }} />
-                                </div>
-                            )}
+                          
 
                             {/* USDT Section */}
-                            <div className="flex items-center justify-between bg-[#F9F9F9] h-[72px] mb-2 p-[15px] rounded-[16px] cursor-pointer hover:bg-[#ebe8e8]" onClick={toggleBinanceVisibility}>
+                            <div className="flex items-center justify-between bg-[#F9F9F9] h-[72px] mb-2 p-[15px] rounded-[16px] cursor-pointer hover:bg-[#ebe8e8]" >
                                 <div className="py-4 flex items-center space-x-2 lg:space-x-3 text-sm">
                                     <img alt="USDT logo" loading="lazy" width="40" height="40" src="upnl/assets/icons/logo_usdt_2.svg" style={{ color: 'transparent' }} />
                                     <div>
@@ -82,20 +60,7 @@ const RechargeFunds = () => {
                                 <img alt="USDT logo" loading="lazy" width="20" height="20" src="upnl/assets/icons/right-repo.svg" style={{ color: 'transparent' }} />
                             </div>
 
-                            {/* Hidden divs for Binance and Ethereum */}
-                            {isBinanceVisible && (
-                                <div className="flex items-center justify-between bg-[#F9F9F9] h-[120px] mb-2 p-[15px] rounded-[16px] cursor-pointer hover:bg-[#ebe8e8]">
-                                    <div className="py-4 flex items-start space-x-2 lg:space-x-3 text-sm">
-                                        <img alt="BSC logo" loading="lazy" width="40" height="40" src="upnl/assets/icons/logo_bsc_2.svg" style={{ color: 'transparent' }} />
-                                        <div>
-                                            <div className="text-[16px] text-[#171717] font-semibold mb-2">Binance Smart Chain</div>
-                                            <div className="text-[12px] text-[#999999]">1 block confirmations</div>
-                                            <div className="text-[12px] text-[#999999]">Estimated time up to 1 minute</div>
-                                        </div>
-                                    </div>
-                                    <img alt="BSC logo" loading="lazy" width="20" height="20" src="upnl/assets/icons/right-repo.svg" style={{ color: 'transparent' }} />
-                                </div>
-                            )}
+                           
                             {isEthereumVisible && (
                                 <div className="flex items-center justify-between bg-[#F9F9F9] h-[120px] mb-2 p-[15px] rounded-[16px] cursor-pointer hover:bg-[#ebe8e8]">
                                     <div className="py-4 flex items-start space-x-2 lg:space-x-3 text-sm">

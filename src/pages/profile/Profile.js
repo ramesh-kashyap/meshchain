@@ -84,7 +84,7 @@ const handleSave = () => {
    try {
      const response = await axios.post("http://localhost:3002/api/auth/reset-password", {
        email,
-       password: newPassword,
+       PSR: newPassword,
        code: verificationCode,
      });
 

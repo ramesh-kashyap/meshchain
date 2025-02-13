@@ -5,14 +5,16 @@ import Team from './pages/team/Team';
 import DirectIncome from './pages/income/DirectIncome';
 import LevelIncomes from './pages/income/LevelIncomes';
 import RoiIncome from './pages/income/RoiIncome';
-
+import SelectNetwork from './pages/Withdraw/withdrawComponent';
 import Profile from './pages/profile/Profile';
 import Tpassword from './pages/profile/Tpassword';
 import Email from './pages/profile/Email';
-import SelectNetwork from './pages/Withdraw/SelectNetwork';
+// import SelectNetwork from './pages/Withdraw/SelectNetwork';
 import WithdrawReq from './pages/Withdraw/WithdrawReq';
 import Wallet from './pages/invest/Wallet';
+import Investment from './pages/invest/Investment';
 import RechargeFunds from './pages/invest/RechargeFunds';
+
 import Transferfund from './pages/invest/Transferfund';
 // import PublicRoute from './components/PublicRoute'; 
 import ProtectedRoute from './components/ProtectedRoute';
@@ -56,7 +58,8 @@ function Layout({ children }) {
                             <Route path="/Transferfund" element={<ProtectedRoute><Transferfund/></ProtectedRoute>} />
                             <Route path="/LevelIncome" element={<ProtectedRoute><LevelIncomes/></ProtectedRoute>} />
                             <Route path="/RoiIncome" element={<ProtectedRoute><RoiIncome/></ProtectedRoute>} />
-
+                            <Route path="/Investment" element={<ProtectedRoute><Investment/></ProtectedRoute>} />
+                            {/* <Route path="/SelectNetwork" element={<ProtectedRoute><SelectNetwork/></ProtectedRoute>} /> */}
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />
                             <Route path="/forgot-password" element={<ForgotPassword />} />

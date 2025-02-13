@@ -64,6 +64,7 @@ Api.interceptors.response.use(
     (error) => {
         // Check if the response status is 401 (Unauthorized)
         if (error.response && error.response.status === 401) {
+            // alert("hiii");
             window.location.href = '/login'; // Redirect to login page
         }
         return Promise.reject(error); // Handle other response errors

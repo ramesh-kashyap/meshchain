@@ -36,8 +36,6 @@ const Team = () => {
         }
     };
 
-
-
     return (
         <div className="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
             <div className="w-full mt-10 flex justify-center text-primary">
@@ -122,10 +120,12 @@ const Team = () => {
                                                 <p className="text-sm font-medium"> First generation data</p>
                                             </div>
                                         </div>
+
                                         <p className="hidden lg:block text-sm text-center font-medium">{income.data?.gen_team1total ||0}/{income.data?.active_gen_team1total ||0}</p>
                                         <div className="flex justify-center">
                                             <span className="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{income.data?.gen_team1Recharge || 0}</span>
                                         </div>
+
                                         <div className="flex justify-center">
                                             <p className="text-sm w-fit text-center px-3">{income.data?.gen_team1Withdraw || 0}</p>
                                         </div>
@@ -133,6 +133,7 @@ const Team = () => {
                                             <p className="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">{income.data?.gen_team1Earning || 0}</p>
                                         </div>
                                     </div>
+                                    
                                     <div className="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
                                         <div className="flex items-center space-x-3">
                                             <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">

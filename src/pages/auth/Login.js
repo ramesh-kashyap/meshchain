@@ -1,11 +1,90 @@
 import React, { useState } from "react";
+import Api2, { googleAuth } from '../../Requests/Api';
+import Api from '../../Requests/Api';
+import { useGoogleLogin } from '@react-oauth/google';
+import { useNavigate } from 'react-router-dom';
+import { BrowserRouter as Route, Router,Routes, Link } from 'react-router-dom';
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import axios from "axios";
 
-const LoginForm = () => {
-  const [passwordVisible, setPasswordVisible] = useState(false);
 
-  const togglePasswordVisibility = () => {
-    setPasswordVisible(!passwordVisible);
+// import PhoneInput from "react-phone-input-2";
+
+// import "react-phone-input-2/lib/newcss.css";
+// import CustomPopup from '../auth/Successfullypass';
+
+const Login = () => {
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    // Redirecting to your Google login API
+    window.location.href = "http://localhost:3002/google";
   };
+
+
+  
+
+  const responseGoogle = async (authResult)=>{
+    try{
+        console.log(authResult);
+        if(authResult['code']){
+            const result = await googleAuth(authResult['code']); 
+            console.log(result.data);
+            // Extract user information from the result (assuming the backend returns this)
+            const { name, email, picture } = result.data.user;
+
+            // Log the user information
+            console.log(`User's Name: ${name}`);
+            console.log(`User's Email: ${email}`);
+            console.log(`User's Profile Image: ${picture}`);
+
+            localStorage.setItem('authToken', result.data.token);
+
+            // Redirect to dashboard
+            navigate('/');
+       
+        }else {
+            // If there's no authorization code, handle the error
+            console.error('Authorization code not received');
+        }
+    }catch(err){
+        console.error('Error while requesting google code:', err);
+    }
+}
+
+    const googleLogin = useGoogleLogin({
+        onSuccess: responseGoogle,
+        onError: responseGoogle,
+        flow: 'auth-code',
+      });
+
+      const handleLoginSuccess = async(credentialResponse) => {
+        // credentialResponse contains the credential/token information
+        console.log('Login Success:', credentialResponse);
+        // You might want to send the credentialResponse.credential to your backend for verification
+
+        try {
+          // Send the Google credential to your backend
+          const response = await axios.post('http://localhost:3002/api/auth/google', {
+            token: credentialResponse.credential,
+          });
+           console.log('reaponse',response);
+          // Assuming the backend returns a JSON object with a property `jwtToken`
+          const { jwtToken } = response.data;
+          console.log('check',jwtToken);
+          if (jwtToken) {
+            // Save JWT to local storage
+            localStorage.setItem('token', jwtToken);
+            // Navigate to a protected route (e.g., /dashboard)
+            navigate('/Dashboard');
+          } else {
+            console.error('JWT token not found in the response');
+          }
+        } catch (error) {
+          console.error('Error during token generation:', error);
+        }
+
+      };
+
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center pt-[100px] bg-gray-50 p-6">
@@ -42,37 +121,30 @@ const LoginForm = () => {
         <p className="text-sm text-gray-500 text-center mb-6">
           Welcome back! Log in to stay updated with all your nodes and rewards.
         </p>
-        <form action="/login" method="POST">
-          <input
-            type="hidden"
-            name="_token"
-            value="YOUR_CSRF_TOKEN"
-          />
+        <form onSubmit={(e) => e.preventDefault()}> {/* Prevent default form submission */}
           <div className="mb-3">
-            <input
-              type="text"
-              name="username"
-              placeholder="Enter username"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
-            />
+            <label className="block text-sm font-medium text-gray-700">
+              Username
+            </label>
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Enter username"
+                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
+              />
+            </div>
           </div>
+
           <div className="mb-3">
             <label className="block text-sm font-medium text-gray-700">
               Password
             </label>
             <div className="relative">
               <input
-                type={passwordVisible ? "text" : "password"}
-                name="password"
+                required
                 placeholder="Enter Password"
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
               />
-              <span
-                className="absolute inset-y-0 right-3 flex items-center cursor-pointer"
-                onClick={togglePasswordVisibility}
-              >
-                <i className={`fa ${passwordVisible ? "fa-eye" : "fa-eye-slash"} text-lg`}></i>
-              </span>
             </div>
           </div>
           <div className="flex items-center justify-end">
@@ -87,6 +159,16 @@ const LoginForm = () => {
             Log In
           </button>
         </form>
+
+        {/* Google Login Button */}
+        <div className="mt-6 text-center">
+        <GoogleLogin
+  onSuccess={handleLoginSuccess}
+  onError={responseGoogle}
+  flow="auth-code"
+/>
+        </div>
+
         <div className="mt-6 text-center">
           <span className="text-sm text-gray-600">
             Don't have an account? 
@@ -100,4 +182,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default Login;

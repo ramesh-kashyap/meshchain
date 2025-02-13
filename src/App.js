@@ -16,6 +16,8 @@ import Transferfund from './pages/invest/Transferfund';
 import PublicRoute from './components/PublicRoute'; 
 import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './pages/home/dashboard';
+import Content from './pages/home/Content';
+
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import NodeDetails from './pages/home/NodeDetails';
@@ -53,6 +55,9 @@ function Layout({ children }) {
                             <Route path="/SelectNetwork" element={<ProtectedRoute><SelectNetwork/></ProtectedRoute>} />
                             <Route path="/WithdrawComponent" element={<ProtectedRoute><WithdrawComponent/></ProtectedRoute>} />
                             <Route path="/Transferfund" element={<ProtectedRoute><Transferfund/></ProtectedRoute>} />
+                            <Route path="/content" element={<ProtectedRoute><Content/></ProtectedRoute>} />
+
+
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />
                             <Route path="/forgot-password" element={<ForgotPassword />} />
